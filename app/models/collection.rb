@@ -6,4 +6,9 @@ class Collection < ApplicationRecord
   validates :name, presence: true
 
   scope :by_language, ->(code) { joins(:language).where(languages: { code: code }) }
+
+  scope :in_user_native_language, ->(user) {
+    language = user&.native_language
+    language ? where(language_id: language.id) : none
+  }
 end

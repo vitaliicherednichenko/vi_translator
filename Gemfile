@@ -41,6 +41,7 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 gem "devise"
+gem "pundit"
 gem "dartsass-rails"
 gem "sass-embedded", "~> 1.77.0"
 gem "bootstrap", "~> 5.3.3"

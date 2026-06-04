@@ -6,7 +6,9 @@
 
 <div class="d-flex justify-content-between align-items-center mb-4">
   <h1 class="mb-0">Collections</h1>
-  <%= link_to "New collection", new_collection_path, class: "btn btn-primary" %>
+  <% if policy(Collection).create? %>
+    <%= link_to "New collection", new_collection_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <% if @collections.any? %>
@@ -28,5 +30,10 @@
     <% end %>
   </div>
 <% else %>
-  <p class="text-muted">No collections yet.</p>
+  <p class="text-muted">
+    No collections in your native language.
+    <% unless current_user&.native_language %>
+      Set your <strong>native language</strong> in <%= link_to "your profile", edit_user_registration_path %> to see matching collections.
+    <% end %>
+  </p>
 <% end %>

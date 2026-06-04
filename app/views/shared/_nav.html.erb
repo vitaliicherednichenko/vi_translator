@@ -13,6 +13,30 @@
           <%= link_to "Collections", collections_path, class: "nav-link #{'active' if controller_name == 'collections'}" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Cards", cards_path, class: "nav-link #{'active' if controller_name == 'all_cards'}" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <%= 'active' if controller_name == 'cards' %>" href="#"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Cards
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">My Collections</li>
+              <% current_user.collections.order(:name).each do |collection| %>
+                <li>
+                  <%= link_to collection.name, collection_cards_path(collection), class: "dropdown-item" %>
+                </li>
+              <% end %>
+              <% if current_user.collections.empty? %>
+                <li><span class="dropdown-item-text text-muted">No collections yet</span></li>
+              <% end %>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "New collection", new_collection_path, class: "dropdown-item" %></li>
+            </ul>
+          </li>
+        <% end %>
+        <li class="nav-item">
           <%= link_to "Languages", languages_path, class: "nav-link #{'active' if controller_name == 'languages'}" %>
         </li>
       </ul>

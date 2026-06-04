@@ -1,33 +1,38 @@
 class CollectionsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_collection, only: %i[ show edit update destroy ]
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
 
   # GET /collections or /collections.json
   def index
-    @collections = Collection.all
+    @collections = policy_scope(Collection).in_user_native_language(current_user)
   end
 
   # GET /collections/1 or /collections/1.json
   def show
+    authorize @collection
   end
 
   # GET /collections/new
   def new
     @collection = Collection.new
+    authorize @collection
   end
 
   # GET /collections/1/edit
   def edit
+    authorize @collection
   end
 
   # POST /collections or /collections.json
   def create
     @collection = Collection.new(collection_params)
-
-    @collection.user ||= current_user
+    @collection.user = current_user
+    authorize @collection
 
     if @collection.save
-      redirect_to @collection
+      redirect_to @collection, notice: "Collection was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,6 +40,8 @@ class CollectionsController < ApplicationController
 
   # PATCH/PUT /collections/1 or /collections/1.json
   def update
+    authorize @collection
+
     respond_to do |format|
       if @collection.update(collection_params)
         format.html { redirect_to @collection, notice: "Collection was successfully updated.", status: :see_other }
@@ -48,6 +55,7 @@ class CollectionsController < ApplicationController
 
   # DELETE /collections/1 or /collections/1.json
   def destroy
+    authorize @collection
     @collection.destroy!
 
     respond_to do |format|
@@ -62,8 +70,9 @@ class CollectionsController < ApplicationController
       @collection = Collection.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through. The owner is always the
+    # current user, so user_id is never accepted from the request.
     def collection_params
-      params.expect(collection: [ :name, :description, :user_id, :language_id ])
+      params.expect(collection: [ :name, :description, :language_id ])
     end
 end

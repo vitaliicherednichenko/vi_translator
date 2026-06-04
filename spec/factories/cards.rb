@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :card do
-    front_text { "MyText" }
-    back_text { "MyText" }
-    user { nil }
-    collection { nil }
-    source_language { nil }
-    target_language { nil }
+    front_text { "front" }
+    back_text { "back" }
+    association :user
+    association :collection
+    association :source_language, factory: :language
+    association :target_language, factory: :language
   end
 end

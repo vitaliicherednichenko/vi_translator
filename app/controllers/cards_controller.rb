@@ -1,28 +1,36 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_collection
   before_action :set_card, only: %i[ show edit update destroy ]
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
 
   # GET /cards or /cards.json
   def index
-    @cards = @collection.cards
+    @cards = policy_scope(@collection.cards).between_user_languages(current_user)
   end
 
   # GET /cards/1 or /cards/1.json
   def show
+    authorize @card
   end
 
   # GET /cards/new
   def new
-    @card = Card.new
+    @card = @collection.cards.new
+    authorize @card
   end
 
   # GET /cards/1/edit
   def edit
+    authorize @card
   end
 
   # POST /cards or /cards.json
   def create
-    @card = Card.new(card_params)
+    @card = @collection.cards.new(card_params)
+    @card.user = current_user
+    authorize @card
 
     respond_to do |format|
       if @card.save
@@ -37,6 +45,8 @@ class CardsController < ApplicationController
 
   # PATCH/PUT /cards/1 or /cards/1.json
   def update
+    authorize @card
+
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to collection_cards_path, notice: "Card was successfully updated.", status: :see_other }
@@ -50,6 +60,7 @@ class CardsController < ApplicationController
 
   # DELETE /cards/1 or /cards/1.json
   def destroy
+    authorize @card
     @card.destroy!
 
     respond_to do |format|
@@ -66,11 +77,13 @@ class CardsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_card
-      @card = Card.find(params.expect(:id))
+      @card = @collection.cards.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through. The owner is always the
+    # current user and the collection comes from the nested route, so neither
+    # user_id nor collection_id is accepted from the request.
     def card_params
-      params.expect(card: [ :front_text, :back_text, :user_id, :collection_id, :source_language_id, :target_language_id ])
+      params.expect(card: [ :front_text, :back_text, :source_language_id, :target_language_id ])
     end
 end

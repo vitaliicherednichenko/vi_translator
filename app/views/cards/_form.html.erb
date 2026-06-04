@@ -10,16 +10,13 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :collection_id, value: @collection.id %>
-
   <div class="row g-3">
     <div class="col-md-6">
       <div class="mb-3">
-        <%= f.label :source_language_id, "From", class: "form-label" %>
-        <%= f.collection_select :source_language_id, Language.all, :id, :name,
-                                { prompt: "Select language", selected: current_user.native_language&.id },
-                                { class: "form-select" } %>
+        <div class="mb-3">
+          From: <%= current_user.native_language.name %>
+          <%= f.hidden_field :source_language_id, value: current_user.native_language&.id %>
+        </div>
       </div>
       <div class="mb-3">
         <%= f.label :front_text, "Front", class: "form-label" %>
@@ -29,10 +26,10 @@
 
     <div class="col-md-6">
       <div class="mb-3">
-        <%= f.label :target_language_id, "To", class: "form-label" %>
-        <%= f.collection_select :target_language_id, Language.all, :id, :name,
-                                { prompt: "Select language", selected: current_user.preferred_language&.id },
-                                { class: "form-select" } %>
+        <div class="mb-3">
+          To: <%= current_user.preferred_language.name %>
+          <%= f.hidden_field :target_language_id, value: current_user.preferred_language&.id %>
+        </div>
       </div>
       <div class="mb-3">
         <%= f.label :back_text, "Back (Translation)", class: "form-label" %>

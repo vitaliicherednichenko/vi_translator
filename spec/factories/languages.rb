@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :language do
-    name { "MyString" }
-    code { "MyString" }
-    native_name { "MyString" }
+    sequence(:name) { |n| "Language #{n}" }
+    sequence(:code) { |n| ("aa".."zz").to_a[n] } # unique two-letter codes
+    native_name { "Native name" }
   end
 end

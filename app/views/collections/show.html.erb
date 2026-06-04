@@ -8,11 +8,15 @@
   <h1 class="mb-0"><%= @collection.name %></h1>
   <div class="d-flex flex-wrap gap-2">
     <%= link_to "Cards", collection_cards_path(@collection), class: "btn btn-primary" %>
-    <%= link_to "Edit", edit_collection_path(@collection), class: "btn btn-outline-secondary" %>
+    <% if policy(@collection).update? %>
+      <%= link_to "Edit", edit_collection_path(@collection), class: "btn btn-outline-secondary" %>
+    <% end %>
     <%= link_to "Back", collections_path, class: "btn btn-outline-secondary" %>
-    <%= button_to "Delete", @collection, method: :delete,
-                  class: "btn btn-outline-danger",
-                  form: { data: { turbo_confirm: "Are you sure?" } } %>
+    <% if policy(@collection).destroy? %>
+      <%= button_to "Delete", @collection, method: :delete,
+                    class: "btn btn-outline-danger",
+                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+    <% end %>
   </div>
 </div>
 

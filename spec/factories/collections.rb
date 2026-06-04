@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :collection do
-    name { "MyString" }
-    description { "MyString" }
-    user { nil }
-    language { nil }
+    name { "My Collection" }
+    description { "A description" }
+    association :user
+    association :language
   end
 end
