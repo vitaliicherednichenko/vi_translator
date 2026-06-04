@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container">
+    <%= link_to "Vi Translator", root_path, class: "navbar-brand" %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Collections", collections_path, class: "nav-link #{'active' if controller_name == 'collections'}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Languages", languages_path, class: "nav-link #{'active' if controller_name == 'languages'}" %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.name.presence || current_user.email %>
+              <% if current_user.preferred_language %>
+                <span class="badge bg-success"><%= current_user.preferred_language.code.upcase %></span>
+              <% end %>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <% if current_user.native_language || current_user.preferred_language %>
+                <li class="dropdown-header">
+                  <% if current_user.native_language %>
+                    Native: <%= current_user.native_language.name %><br>
+                  <% end %>
+                  <% if current_user.preferred_language %>
+                    Learning: <%= current_user.preferred_language.name %>
+                  <% end %>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+              <% end %>
+              <li><%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+              <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<%= form_with(model: language) do |form| %>
+  <% if language.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h6 class="alert-heading"><%= pluralize(language.errors.count, "error") %> prohibited this language from being saved:</h6>
+      <ul class="mb-0">
+        <% language.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :code, class: "form-label" %>
+    <%= form.text_field :code, class: "form-control", maxlength: 2 %>
+    <div class="form-text">Two-letter ISO code (e.g. <code>en</code>).</div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :native_name, class: "form-label" %>
+    <%= form.text_field :native_name, class: "form-control" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

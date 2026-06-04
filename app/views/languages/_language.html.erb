@@ -1,0 +1,15 @@
+<div id="<%= dom_id language %>" class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title mb-3">
+      <%= language.name %>
+      <span class="badge bg-secondary"><%= language.code.upcase %></span>
+    </h5>
+    <dl class="row mb-0">
+      <dt class="col-sm-3">Code</dt>
+      <dd class="col-sm-9"><%= language.code %></dd>
+
+      <dt class="col-sm-3">Native name</dt>
+      <dd class="col-sm-9"><%= language.native_name.presence || tag.span("—", class: "text-muted") %></dd>
+    </dl>
+  </div>
+</div>

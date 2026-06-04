@@ -1,0 +1,16 @@
+<% content_for :title, "Editing card" %>
+
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <h1 class="mb-4">Editing card</h1>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <%= render "form", card: @card %>
+      </div>
+    </div>
+    <div class="mt-3 d-flex gap-3">
+      <%= link_to "Show this card", collection_card_path(@collection, @card), class: "btn btn-link px-0" %>
+      <%= link_to "Back to cards", collection_cards_path(@collection), class: "btn btn-link px-0" %>
+    </div>
+  </div>
+</div>

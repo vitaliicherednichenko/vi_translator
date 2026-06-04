@@ -1,0 +1,20 @@
+<div id="<%= dom_id collection %>" class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title mb-3">
+      <%= collection.name %>
+      <% if collection.language %>
+        <span class="badge bg-success"><%= collection.language.code.upcase %></span>
+      <% end %>
+    </h5>
+    <dl class="row mb-0">
+      <dt class="col-sm-3">Description</dt>
+      <dd class="col-sm-9"><%= collection.description.presence || tag.span("—", class: "text-muted") %></dd>
+
+      <dt class="col-sm-3">Owner</dt>
+      <dd class="col-sm-9"><%= collection.user&.name.presence || tag.span("—", class: "text-muted") %></dd>
+
+      <dt class="col-sm-3">Language</dt>
+      <dd class="col-sm-9"><%= collection.language&.name || tag.span("—", class: "text-muted") %></dd>
+    </dl>
+  </div>
+</div>

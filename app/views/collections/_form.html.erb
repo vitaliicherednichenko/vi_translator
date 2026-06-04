@@ -1,0 +1,33 @@
+<%= form_with model: @collection do |f| %>
+  <% if @collection.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h6 class="alert-heading"><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h6>
+      <ul class="mb-0">
+        <% @collection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :language_id, "Primary Language", class: "form-label" %>
+    <%= f.collection_select :language_id, Language.all, :id, :name,
+                            { prompt: "Optional", selected: current_user.native_language&.id },
+                            { class: "form-select" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :description, class: "form-label" %>
+    <%= f.text_area :description, rows: 3, class: "form-control" %>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
