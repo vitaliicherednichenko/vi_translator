@@ -33,6 +33,8 @@
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "New collection", new_collection_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Import cards (CSV)", import_cards_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Export my cards (CSV)", export_cards_path, class: "dropdown-item" %></li>
 
               <% deleted_cards = current_user.cards.deleted.includes(:collection).order(deleted_at: :desc) %>
               <% if deleted_cards.any? %>

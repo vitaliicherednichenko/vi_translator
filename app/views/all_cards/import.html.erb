@@ -1,0 +1,33 @@
+<% content_for :title, "Import Cards" %>
+
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h1 class="mb-4">Import Cards</h1>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <p class="text-muted small">
+          Upload a CSV with a header row and these columns:
+          <code>collection, front_text, back_text, source_language, target_language</code>
+          (the same format as the export). Languages are matched by name or code;
+          a missing collection is created for you. Rows with blank text or an
+          unknown language are skipped.
+        </p>
+
+        <%= form_with url: import_cards_path, method: :post do |f| %>
+          <div class="mb-3">
+            <%= f.label :file, "CSV file", class: "form-label" %>
+            <%= f.file_field :file, accept: ".csv,text/csv", class: "form-control", required: true %>
+          </div>
+          <div class="d-grid">
+            <%= f.submit "Import", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <%= link_to "← Back to all cards", cards_path, class: "btn btn-link px-0" %>
+    </div>
+  </div>
+</div>
