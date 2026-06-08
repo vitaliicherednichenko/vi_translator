@@ -7,6 +7,9 @@ class Card < ApplicationRecord
   validates :front_text, presence: true
   validates :back_text, presence: true
 
+  scope :kept,    -> { where(deleted_at: nil) }
+  scope :deleted, -> { where.not(deleted_at: nil) }
+
   scope :between_user_languages, ->(user) {
     native = user&.native_language_id
     preferred = user&.preferred_language_id
@@ -18,5 +21,17 @@ class Card < ApplicationRecord
 
   def translation_pair
     "#{source_language&.code} → #{target_language&.code}"
+  end
+
+  def deleted?
+    deleted_at.present?
+  end
+
+  def soft_delete!
+    update!(deleted_at: Time.current)
+  end
+
+  def restore!
+    update!(deleted_at: nil)
   end
 end

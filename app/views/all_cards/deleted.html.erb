@@ -1,0 +1,37 @@
+<% content_for :title, "Deleted Cards" %>
+
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-0">Deleted Cards</h1>
+  <%= link_to "All Cards", cards_path, class: "btn btn-outline-secondary" %>
+</div>
+
+<% if @cards.any? %>
+  <div id="deleted-cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+    <% @cards.each do |card| %>
+      <div class="col">
+        <div id="<%= dom_id card %>" class="card h-100 shadow-sm border-secondary-subtle">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-decoration-line-through"><%= card.front_text %></h5>
+            <p class="card-text text-muted flex-grow-1"><%= card.back_text %></p>
+            <div class="small text-muted mb-3">
+              <%= link_to card.collection.name, collection_path(card.collection), class: "text-reset" %>
+              · <%= card.translation_pair %>
+            </div>
+            <div class="d-flex gap-2 mt-auto">
+              <%= button_to "Restore", restore_collection_card_path(card.collection, card),
+                            method: :patch, class: "btn btn-success btn-sm" %>
+              <%= link_to "View", collection_card_path(card.collection, card),
+                          class: "btn btn-outline-primary btn-sm" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="text-muted">You have no deleted cards.</p>
+<% end %>

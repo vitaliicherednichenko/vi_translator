@@ -28,4 +28,23 @@ RSpec.describe Card, type: :model do
       expect(described_class.between_user_languages(only_native)).to be_empty
     end
   end
+
+  describe "soft delete" do
+    it "soft_delete! marks the card deleted without removing it" do
+      card = create(:card)
+      expect { card.soft_delete! }.not_to change(Card, :count)
+      expect(card.deleted_at).to be_present
+      expect(card).to be_deleted
+    end
+
+    it ".kept excludes and .deleted includes soft-deleted cards" do
+      kept = create(:card)
+      gone = create(:card, deleted_at: Time.current)
+
+      expect(Card.kept).to include(kept)
+      expect(Card.kept).not_to include(gone)
+      expect(Card.deleted).to include(gone)
+      expect(Card.deleted).not_to include(kept)
+    end
+  end
 end

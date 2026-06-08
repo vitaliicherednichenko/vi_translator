@@ -5,16 +5,28 @@
 <% end %>
 
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-  <h1 class="mb-0"><%= @collection.name %> · Card</h1>
-  <div class="d-flex flex-wrap gap-2">
-    <% if policy(@card).update? %>
-      <%= link_to "Edit", edit_collection_card_path(@collection, @card), class: "btn btn-outline-secondary" %>
+  <h1 class="mb-0">
+    <%= @collection.name %> · Card
+    <% if @card.deleted? %>
+      <span class="badge bg-secondary align-middle">Deleted</span>
     <% end %>
+  </h1>
+  <div class="d-flex flex-wrap gap-2">
     <%= link_to "Back", collection_cards_path(@collection), class: "btn btn-outline-secondary" %>
-    <% if policy(@card).destroy? %>
-      <%= button_to "Delete", collection_card_path(@collection, @card), method: :delete,
-                    class: "btn btn-outline-danger",
-                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+    <% if @card.deleted? %>
+      <% if policy(@card).restore? %>
+        <%= button_to "Restore", restore_collection_card_path(@collection, @card),
+                      method: :patch, class: "btn btn-success" %>
+      <% end %>
+    <% else %>
+      <% if policy(@card).update? %>
+        <%= link_to "Edit", edit_collection_card_path(@collection, @card), class: "btn btn-outline-secondary" %>
+      <% end %>
+      <% if policy(@card).destroy? %>
+        <%= button_to "Delete", collection_card_path(@collection, @card), method: :delete,
+                      class: "btn btn-outline-danger",
+                      form: { data: { turbo_confirm: "Are you sure?" } } %>
+      <% end %>
     <% end %>
   </div>
 </div>

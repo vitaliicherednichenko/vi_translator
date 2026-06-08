@@ -26,7 +26,7 @@ RSpec.describe CardPolicy do
     end
   end
 
-  permissions :update?, :edit?, :destroy? do
+  permissions :update?, :edit?, :destroy?, :restore? do
     it "permits the owner" do
       expect(subject).to permit(owner, card)
     end
@@ -45,12 +45,21 @@ RSpec.describe CardPolicy do
   end
 
   describe "Scope" do
-    it "returns every card for any user" do
+    it "returns every kept card for any user" do
       mine = create(:card, user: owner)
       theirs = create(:card, user: other)
 
       expect(CardPolicy::Scope.new(owner, Card).resolve).to include(mine, theirs)
       expect(CardPolicy::Scope.new(nil, Card).resolve).to include(mine, theirs)
+    end
+
+    it "excludes soft-deleted cards" do
+      kept = create(:card, user: owner)
+      gone = create(:card, user: owner, deleted_at: Time.current)
+
+      result = CardPolicy::Scope.new(owner, Card).resolve
+      expect(result).to include(kept)
+      expect(result).not_to include(gone)
     end
   end
 end

@@ -88,19 +88,55 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
   end
 
   describe "DELETE /destroy" do
-    it "lets the owner delete" do
+    it "soft-deletes for the owner (record kept, dropped from listings)" do
       sign_in owner
       expect {
         delete collection_card_url(collection, card)
-      }.to change(Card, :count).by(-1)
+      }.to change { Card.kept.count }.by(-1)
+      expect(Card.exists?(card.id)).to be(true)
+      expect(card.reload.deleted_at).to be_present
     end
 
-    it "forbids a non-owner" do
+    it "forbids a non-owner and does not delete" do
       sign_in other
-      expect {
-        delete collection_card_url(collection, card)
-      }.not_to change(Card, :count)
+      delete collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_nil
       expect(response).to be_redirect
+    end
+
+    it "lets an admin (non-owner) soft-delete" do
+      sign_in admin
+      delete collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_present
+    end
+  end
+
+  describe "PATCH /restore" do
+    before { card.soft_delete! }
+
+    it "lets the owner restore" do
+      sign_in owner
+      patch restore_collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_nil
+    end
+
+    it "lets an admin (non-owner) restore" do
+      sign_in admin
+      patch restore_collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_nil
+    end
+
+    it "forbids a non-owner and keeps it deleted" do
+      sign_in other
+      patch restore_collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_present
+      expect(response).to be_redirect
+    end
+
+    it "redirects a guest to login" do
+      patch restore_collection_card_url(collection, card)
+      expect(card.reload.deleted_at).to be_present
+      expect(response).to redirect_to(new_user_session_path)
     end
   end
 end

@@ -19,6 +19,10 @@ class CardPolicy < ApplicationPolicy
     owner? || admin?
   end
 
+  def restore?
+    owner? || admin?
+  end
+
   private
 
   def owner?
@@ -27,7 +31,7 @@ class CardPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     def resolve
-      scope.all
+      scope.kept
     end
   end
 end

@@ -33,6 +33,24 @@
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "New collection", new_collection_path, class: "dropdown-item" %></li>
+
+              <% deleted_cards = current_user.cards.deleted.includes(:collection).order(deleted_at: :desc) %>
+              <% if deleted_cards.any? %>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Deleted Cards", deleted_cards_path, class: "dropdown-item dropdown-header fw-semibold text-uppercase" %></li>
+                <% deleted_cards.each do |card| %>
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between gap-2 px-3 py-1">
+                      <%= link_to collection_card_path(card.collection, card), class: "text-reset text-decoration-none small text-truncate" do %>
+                        <span class="text-decoration-line-through"><%= card.front_text %></span>
+                        <span class="text-muted">· <%= card.collection.name %></span>
+                      <% end %>
+                      <%= button_to "Restore", restore_collection_card_path(card.collection, card),
+                                    method: :patch, class: "btn btn-sm btn-outline-success py-0 px-2" %>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
             </ul>
           </li>
         <% end %>

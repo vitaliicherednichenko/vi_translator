@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   }
 
   resources :cards, only: [ :index ], controller: "all_cards"
+  get "cards/deleted", to: "all_cards#deleted", as: :deleted_cards
 
   resources :collections do
-    resources :cards
+    resources :cards do
+      member { patch :restore }
+    end
   end
 
   root "collections#index"

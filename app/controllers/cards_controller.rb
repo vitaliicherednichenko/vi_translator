@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_collection
-  before_action :set_card, only: %i[ show edit update destroy ]
+  before_action :set_card, only: %i[ show edit update destroy restore ]
   after_action :verify_authorized, except: :index
   after_action :verify_policy_scoped, only: :index
 
@@ -61,10 +61,21 @@ class CardsController < ApplicationController
   # DELETE /cards/1 or /cards/1.json
   def destroy
     authorize @card
-    @card.destroy!
+    @card.soft_delete!
 
     respond_to do |format|
-      format.html { redirect_to collection_cards_path, notice: "Card was successfully destroyed.", status: :see_other }
+      format.html { redirect_to collection_cards_path, notice: "Card was successfully deleted.", status: :see_other }
+      format.json { head :no_content }
+    end
+  end
+
+  # PATCH /collections/:collection_id/cards/:id/restore
+  def restore
+    authorize @card
+    @card.restore!
+
+    respond_to do |format|
+      format.html { redirect_to collection_cards_path, notice: "Card was successfully restored.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -75,14 +86,10 @@ class CardsController < ApplicationController
       @collection = Collection.find(params[:collection_id])
     end
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_card
       @card = @collection.cards.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through. The owner is always the
-    # current user and the collection comes from the nested route, so neither
-    # user_id nor collection_id is accepted from the request.
     def card_params
       params.expect(card: [ :front_text, :back_text, :source_language_id, :target_language_id ])
     end
