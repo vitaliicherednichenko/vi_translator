@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Health check endpoint used by the Kamal proxy (and load balancers/uptime monitors).
+  get "up" => "rails/health#show", as: :rails_health_check
+
   resources :languages
 
   devise_for :users, path: 'auth', path_names: {
