@@ -90,6 +90,7 @@ production:
     database: vi_translator_production
     username: vi_translator
     password: <%= ENV["VI_TRANSLATOR_DATABASE_PASSWORD"] %>
+    host: <%= ENV["DB_HOST"] %>
   cache:
     <<: *primary_production
     database: vi_translator_production_cache
