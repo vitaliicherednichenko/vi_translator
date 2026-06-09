@@ -10,7 +10,8 @@ languages = [
   { name: "Chinese", code: "zh", native_name: "中文" },
   { name: "Korean", code: "ko", native_name: "한국어" },
   { name: "Arabic", code: "ar", native_name: "العربية" },
-  { name: "Hindi", code: "hi", native_name: "हिन्दी" }
+  { name: "Hindi", code: "hi", native_name: "हिन्दी" },
+  { name: "Ukrainian", code: "uk", native_name: "Українська" }
 ]
 
 languages.each do |attrs|
@@ -20,3 +21,11 @@ languages.each do |attrs|
 end
 
 puts "Seeded #{Language.count} languages"
+
+admin_email = "vitaliy.cherednichenko113@gmail.com"
+if (admin = User.find_by(email: admin_email))
+  admin.update!(admin: true)
+  puts "Granted admin to #{admin_email}"
+else
+  puts "User #{admin_email} not found — sign up first, then re-run `bin/rails db:seed`"
+end
