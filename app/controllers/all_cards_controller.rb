@@ -1,11 +1,8 @@
 class AllCardsController < ApplicationController
   before_action :authenticate_user!, only: %i[deleted export import run_import]
-  after_action :verify_policy_scoped, only: :index
 
-  # GET /cards
   def index
-    @cards = policy_scope(Card)
-             .between_user_languages(current_user)
+    @cards = Card.between_user_languages(current_user)
              .includes(:collection, :source_language, :target_language)
              .order(created_at: :desc)
   end

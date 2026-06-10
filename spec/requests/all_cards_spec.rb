@@ -10,6 +10,18 @@ RSpec.describe "All cards pages", type: :request do
       get cards_url
       expect(response).to be_successful
     end
+
+    it "still shows a card after it has been removed (soft-deleted)" do
+      collection = create(:collection, user: user, language: en)
+      card = create(:card, user: user, collection: collection,
+                    front_text: "stays-in-all-cards", source_language: en, target_language: es)
+      card.soft_delete!
+
+      sign_in user
+      get cards_url
+
+      expect(response.body).to include("stays-in-all-cards")
+    end
   end
 
   describe "GET /cards/deleted" do

@@ -45,7 +45,7 @@ class CardsCsvImporter
     end
 
     collection = user.collections.find_or_create_by!(name: collection_name(row)) do |c|
-      c.language = user.native_language || source
+      c.language = source || user.native_language
     end
 
     card = user.cards.find_or_create_by!(
