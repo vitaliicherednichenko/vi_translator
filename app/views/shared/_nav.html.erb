@@ -15,6 +15,14 @@
         <li class="nav-item">
           <%= link_to "Cards", cards_path, class: "nav-link #{'active' if controller_name == 'all_cards'}" %>
         </li>
+        <li class="nav-item">
+          <button type="button" class="nav-link border-0 bg-transparent"
+                  data-controller="reverse-cards"
+                  data-action="reverse-cards#toggle"
+                  title="Show the back of every card on this page">
+            Back side
+          </button>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle <%= 'active' if controller_name == 'cards' %>" href="#"
@@ -36,11 +44,11 @@
               <li><%= link_to "Import cards (CSV)", import_cards_path, class: "dropdown-item" %></li>
               <li><%= link_to "Export my cards (CSV)", export_cards_path, class: "dropdown-item" %></li>
 
-              <% deleted_cards = current_user.cards.deleted.includes(:collection).order(deleted_at: :desc) %>
+              <% deleted_cards = current_user.cards.deleted.includes(:collection).order(deleted_at: :desc).limit(6).to_a %>
               <% if deleted_cards.any? %>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= link_to "Deleted Cards", deleted_cards_path, class: "dropdown-item dropdown-header fw-semibold text-uppercase" %></li>
-                <% deleted_cards.each do |card| %>
+                <% deleted_cards.first(5).each do |card| %>
                   <li>
                     <div class="d-flex align-items-center justify-content-between gap-2 px-3 py-1">
                       <%= link_to collection_card_path(card.collection, card), class: "text-reset text-decoration-none small text-truncate" do %>
@@ -50,6 +58,13 @@
                       <%= button_to "Restore", restore_collection_card_path(card.collection, card),
                                     method: :patch, class: "btn btn-sm btn-outline-success py-0 px-2" %>
                     </div>
+                  </li>
+                <% end %>
+                <% if deleted_cards.size > 5 %>
+                  <li>
+                    <%= link_to "…", deleted_cards_path,
+                                class: "dropdown-item text-center fs-5 lh-1 py-1",
+                                title: "See all deleted cards" %>
                   </li>
                 <% end %>
               <% end %>
