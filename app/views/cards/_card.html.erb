@@ -3,13 +3,13 @@
     <div class="row g-4">
       <div class="col-md-6">
         <h6 class="text-muted text-uppercase small">
-          Front<%= " (#{card.source_language.code.upcase})" if card.source_language %>
+          <%= t("cards.field_front") %><%= " (#{card.source_language.code.upcase})" if card.source_language %>
         </h6>
         <p class="fs-5 mb-0"><%= card.front_text %></p>
       </div>
       <div class="col-md-6">
         <h6 class="text-muted text-uppercase small">
-          Back<%= " (#{card.target_language.code.upcase})" if card.target_language %>
+          <%= t("cards.field_back") %><%= " (#{card.target_language.code.upcase})" if card.target_language %>
         </h6>
         <p class="fs-5 mb-0"><%= card.back_text %></p>
       </div>
@@ -18,13 +18,13 @@
     <hr>
 
     <dl class="row mb-0">
-      <dt class="col-sm-3">Collection</dt>
+      <dt class="col-sm-3"><%= t("cards.field_collection") %></dt>
       <dd class="col-sm-9"><%= card.collection.name %></dd>
 
-      <dt class="col-sm-3">Owner</dt>
-      <dd class="col-sm-9"><%= card.user&.name.presence || tag.span("—", class: "text-muted") %></dd>
+      <dt class="col-sm-3"><%= t("cards.field_owner") %></dt>
+      <dd class="col-sm-9"><%= card.user&.name.presence || tag.span(t("common.none"), class: "text-muted") %></dd>
 
-      <dt class="col-sm-3">Translation</dt>
+      <dt class="col-sm-3"><%= t("cards.field_translation") %></dt>
       <dd class="col-sm-9"><%= card.translation_pair %></dd>
     </dl>
   </div>

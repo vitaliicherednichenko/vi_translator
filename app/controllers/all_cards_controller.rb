@@ -16,7 +16,7 @@ class AllCardsController < ApplicationController
     collection = current_user.collections.find_by(id: params[:collection_id])
 
     unless collection
-      redirect_back fallback_location: cards_path, alert: "Choose one of your collections to add this card to."
+      redirect_back fallback_location: cards_path, alert: t("cards.flash.choose_collection")
       return
     end
 
@@ -30,9 +30,9 @@ class AllCardsController < ApplicationController
 
     notice =
       if card.previously_new_record?
-        "Added \"#{card.front_text}\" to #{collection.name}."
+        t("cards.flash.added", card: card.front_text, collection: collection.name)
       else
-        "\"#{card.front_text}\" is already in #{collection.name}."
+        t("cards.flash.already_present", card: card.front_text, collection: collection.name)
       end
 
     redirect_back fallback_location: cards_path, notice: notice
@@ -60,7 +60,7 @@ class AllCardsController < ApplicationController
   def run_import
     file = params[:file]
     unless file.respond_to?(:read)
-      redirect_to import_cards_path, alert: "Please choose a CSV file to import."
+      redirect_to import_cards_path, alert: t("import.flash.no_file")
       return
     end
 

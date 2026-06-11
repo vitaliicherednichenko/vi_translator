@@ -8,13 +8,13 @@
   <h1 class="mb-0"><%= @language.name %></h1>
   <div class="d-flex flex-wrap gap-2">
     <% if policy(@language).update? %>
-      <%= link_to "Edit", edit_language_path(@language), class: "btn btn-outline-secondary" %>
+      <%= link_to t("common.edit"), edit_language_path(@language), class: "btn btn-outline-secondary" %>
     <% end %>
-    <%= link_to "Back", languages_path, class: "btn btn-outline-secondary" %>
+    <%= link_to t("common.back"), languages_path, class: "btn btn-outline-secondary" %>
     <% if policy(@language).destroy? %>
-      <%= button_to "Delete", @language, method: :delete,
+      <%= button_to t("common.delete"), @language, method: :delete,
                     class: "btn btn-outline-danger",
-                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+                    form: { data: { turbo_confirm: t("common.confirm_generic") } } %>
     <% end %>
   </div>
 </div>

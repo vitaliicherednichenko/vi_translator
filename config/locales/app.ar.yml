@@ -1,0 +1,216 @@
+ar:
+  app_name: "Vi Translator"
+  locale_name: "العربية"
+
+  nav:
+    collections: "المجموعات"
+    cards: "البطاقات"
+    languages: "اللغات"
+    back_side: "الوجه الخلفي"
+    front_side: "الوجه الأمامي"
+    back_side_title: "إظهار الوجه الخلفي لكل بطاقة في هذه الصفحة"
+    my_cards: "بطاقاتي"
+    my_collections: "مجموعاتي"
+    no_native_collections: "لا توجد مجموعات بلغتك الأم"
+    new_collection: "مجموعة جديدة"
+    import_cards: "استيراد البطاقات (CSV)"
+    export_cards: "تصدير بطاقاتي (CSV)"
+    deleted_cards: "البطاقات المحذوفة"
+    see_all_deleted: "عرض جميع البطاقات المحذوفة"
+    login: "تسجيل الدخول"
+    sign_up: "إنشاء حساب"
+    logout: "تسجيل الخروج"
+    edit_profile: "تعديل الملف الشخصي"
+    native: "الأم"
+    learning: "التعلّم"
+    language_menu: "اللغة"
+
+  common:
+    view: "عرض"
+    edit: "تعديل"
+    delete: "حذف"
+    back: "رجوع"
+    restore: "استعادة"
+    owner: "المالك"
+    description: "الوصف"
+    language: "اللغة"
+    none: "—"
+    confirm_generic: "هل أنت متأكد؟"
+    confirm_delete_card: "حذف هذه البطاقة؟"
+    add_to: "إضافة إلى…"
+    add_to_collection: "إضافة إلى مجموعتي"
+    no_collections_yet: "لا توجد مجموعات بعد"
+
+  errors:
+    prohibited:
+      collection:
+        one: "خطأ واحد (%{count}) منع حفظ هذه المجموعة:"
+        other: "‏%{count} أخطاء منعت حفظ هذه المجموعة:"
+      card:
+        one: "خطأ واحد (%{count}) منع حفظ هذه البطاقة:"
+        other: "‏%{count} أخطاء منعت حفظ هذه البطاقة:"
+      language:
+        one: "خطأ واحد (%{count}) منع حفظ هذه اللغة:"
+        other: "‏%{count} أخطاء منعت حفظ هذه اللغة:"
+
+  collections:
+    title: "المجموعات"
+    new_title: "مجموعة جديدة"
+    edit_title: "تعديل المجموعة"
+    new_button: "مجموعة جديدة"
+    cards_button: "البطاقات"
+    by: "بواسطة %{name}"
+    empty: "لا توجد مجموعات بلغتك الأم."
+    empty_hint_html: "حدّد <strong>لغتك الأم</strong> في %{link} لرؤية المجموعات المطابقة."
+    your_profile: "ملفك الشخصي"
+    back_to_collections: "← العودة إلى المجموعات"
+    back_to_collections_plain: "العودة إلى المجموعات"
+    show_this: "عرض هذه المجموعة"
+    primary_language: "اللغة الأساسية"
+    field_description: "الوصف"
+    field_owner: "المالك"
+    field_language: "اللغة"
+    flash:
+      created: "تم إنشاء المجموعة بنجاح."
+      updated: "تم تحديث المجموعة بنجاح."
+      destroyed: "تم حذف المجموعة بنجاح."
+
+  cards:
+    index_title: "البطاقات"
+    collection_cards: "بطاقات %{name}"
+    new_title: "بطاقة جديدة"
+    edit_title: "تعديل البطاقة"
+    card_title: "بطاقة"
+    show_heading: "%{name} · بطاقة"
+    new_button: "بطاقة جديدة"
+    deleted_badge: "محذوفة"
+    flip_aria: "اقلب البطاقة لرؤية الترجمة"
+    empty_in_collection: "لا توجد بطاقات في هذه المجموعة تطابق لغتك الأم واللغة التي تتعلمها."
+    empty_all: "لا توجد بطاقات تطابق لغتك الأم واللغة التي تتعلمها."
+    set_both_html: "حدّد كليهما في %{link} لرؤية البطاقات المطابقة."
+    your_profile: "ملفك الشخصي"
+    back_to_cards: "← العودة إلى البطاقات"
+    back_to_cards_plain: "العودة إلى البطاقات"
+    show_this: "عرض هذه البطاقة"
+    from: "من"
+    to: "إلى"
+    front: "الوجه الأمامي"
+    back_translation: "الوجه الخلفي (الترجمة)"
+    field_front: "الوجه الأمامي"
+    field_back: "الوجه الخلفي"
+    field_collection: "المجموعة"
+    field_owner: "المالك"
+    field_translation: "الترجمة"
+    flash:
+      created: "تم إنشاء البطاقة بنجاح."
+      updated: "تم تحديث البطاقة بنجاح."
+      deleted: "تم حذف البطاقة بنجاح."
+      restored: "تمت استعادة البطاقة بنجاح."
+      added: "تمت إضافة \"%{card}\" إلى %{collection}."
+      already_present: "\"%{card}\" موجودة بالفعل في %{collection}."
+      choose_collection: "اختر إحدى مجموعاتك لإضافة هذه البطاقة إليها."
+
+  all_cards:
+    title: "جميع البطاقات"
+    import_button: "استيراد (CSV)"
+    export_button: "تصدير بطاقاتي (CSV)"
+
+  deleted_cards:
+    title: "البطاقات المحذوفة"
+    all_cards_button: "جميع البطاقات"
+    empty: "ليس لديك بطاقات محذوفة."
+
+  import:
+    title: "استيراد البطاقات"
+    instructions_html: "ارفع ملف CSV يحتوي على صف عناوين والأعمدة التالية: <code>collection, front_text, back_text, source_language, target_language</code> (نفس تنسيق التصدير). يتم مطابقة اللغات بالاسم أو الرمز؛ وتُنشأ المجموعة المفقودة تلقائيًا. تُتجاهل الصفوف ذات النص الفارغ أو اللغة غير المعروفة."
+    file_label: "ملف CSV"
+    submit: "استيراد"
+    back_to_all_cards: "← العودة إلى جميع البطاقات"
+    flash:
+      no_file: "يرجى اختيار ملف CSV للاستيراد."
+      summary:
+        one: "تم استيراد بطاقة واحدة (%{count})."
+        other: "تم استيراد %{count} بطاقة."
+      skipped:
+        one: "تم تخطّي صف واحد (%{count})."
+        other: "تم تخطّي %{count} صف."
+      parse_error: "تعذّر تحليل هذا الملف كـ CSV."
+
+  languages:
+    title: "اللغات"
+    new_title: "لغة جديدة"
+    edit_title: "تعديل اللغة"
+    new_button: "لغة جديدة"
+    empty: "لا توجد لغات بعد."
+    back_to_languages: "← العودة إلى اللغات"
+    back_to_languages_plain: "العودة إلى اللغات"
+    show_this: "عرض هذه اللغة"
+    field_code: "الرمز"
+    field_native_name: "الاسم المحلي"
+    code_hint_html: "رمز ISO من حرفين (مثل <code>en</code>)."
+    flash:
+      created: "تم إنشاء اللغة بنجاح."
+      updated: "تم تحديث اللغة بنجاح."
+      destroyed: "تم حذف اللغة بنجاح."
+
+  devise_ui:
+    log_in: "تسجيل الدخول"
+    sign_up: "إنشاء حساب"
+    edit_profile: "تعديل الملف الشخصي"
+    forgot_password: "هل نسيت كلمة المرور؟"
+    change_password: "تغيير كلمة المرور"
+    native_language: "اللغة الأم"
+    language_to_learn: "اللغة التي تريد تعلّمها"
+    learning_language: "لغة التعلّم"
+    select_native: "اختر لغتك الأم"
+    select_to_learn: "اختر اللغة التي تريد تعلّمها"
+    select_generic: "اختر..."
+    min_characters: "(‏%{count} أحرف على الأقل)"
+    new_password: "كلمة مرور جديدة"
+    confirm_new_password: "تأكيد كلمة المرور الجديدة"
+    send_reset_instructions: "أرسل لي تعليمات إعادة تعيين كلمة المرور"
+    change_my_password: "تغيير كلمة المرور"
+    update: "تحديث"
+    leave_blank: "(اتركها فارغة إذا كنت لا تريد تغييرها)"
+    need_current_password: "(نحتاج إلى كلمة مرورك الحالية لتأكيد التغييرات)"
+    cancel_account: "إلغاء حسابي"
+    cancel_account_unhappy: "غير راضٍ؟ سيؤدي ذلك إلى حذف حسابك نهائيًا."
+    back: "رجوع"
+
+  flash:
+    not_authorized: "ليست لديك صلاحية لتنفيذ هذا الإجراء."
+
+  helpers:
+    submit:
+      collection:
+        create: "إنشاء مجموعة"
+        update: "تحديث المجموعة"
+      card:
+        create: "إنشاء بطاقة"
+        update: "تحديث البطاقة"
+      language:
+        create: "إنشاء لغة"
+        update: "تحديث اللغة"
+
+  activerecord:
+    attributes:
+      user:
+        name: "الاسم"
+        email: "البريد الإلكتروني"
+        password: "كلمة المرور"
+        password_confirmation: "تأكيد كلمة المرور"
+        current_password: "كلمة المرور الحالية"
+        remember_me: "تذكّرني"
+        native_language_id: "اللغة الأم"
+        preferred_language_id: "اللغة المفضّلة"
+      collection:
+        name: "الاسم"
+        description: "الوصف"
+        language: "اللغة"
+      card:
+        front_text: "الوجه الأمامي"
+        back_text: "الوجه الخلفي"
+      language:
+        name: "الاسم"
+        code: "الرمز"
+        native_name: "الاسم المحلي"

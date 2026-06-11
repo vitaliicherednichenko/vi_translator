@@ -1,7 +1,7 @@
 <%= form_with(model: language) do |form| %>
   <% if language.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h6 class="alert-heading"><%= pluralize(language.errors.count, "error") %> prohibited this language from being saved:</h6>
+      <h6 class="alert-heading"><%= t("errors.prohibited.language", count: language.errors.count) %></h6>
       <ul class="mb-0">
         <% language.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -18,7 +18,7 @@
   <div class="mb-3">
     <%= form.label :code, class: "form-label" %>
     <%= form.text_field :code, class: "form-control", maxlength: 2 %>
-    <div class="form-text">Two-letter ISO code (e.g. <code>en</code>).</div>
+    <div class="form-text"><%= t("languages.code_hint_html").html_safe %></div>
   </div>
 
   <div class="mb-3">

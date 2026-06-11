@@ -7,8 +7,8 @@ class CardsCsvImporter
     end
 
     def summary
-      message = "Imported #{imported} #{'card'.pluralize(imported)}."
-      message += " Skipped #{skipped} #{'row'.pluralize(skipped)}." if skipped.positive?
+      message = I18n.t("import.flash.summary", count: imported)
+      message += " " + I18n.t("import.flash.skipped", count: skipped) if skipped.positive?
       message
     end
   end
@@ -26,7 +26,7 @@ class CardsCsvImporter
 
     Result.new(imported: @imported, skipped: @skipped)
   rescue CSV::MalformedCSVError
-    Result.new(imported: @imported, skipped: @skipped, error: "That file could not be parsed as CSV.")
+    Result.new(imported: @imported, skipped: @skipped, error: I18n.t("import.flash.parse_error"))
   end
 
   private

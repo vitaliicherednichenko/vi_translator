@@ -32,7 +32,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       if @language.save
-        format.html { redirect_to @language, notice: "Language was successfully created." }
+        format.html { redirect_to @language, notice: t("languages.flash.created") }
         format.json { render :show, status: :created, location: @language }
       else
         format.html { render :new, status: :unprocessable_content }
@@ -47,7 +47,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       if @language.update(language_params)
-        format.html { redirect_to @language, notice: "Language was successfully updated.", status: :see_other }
+        format.html { redirect_to @language, notice: t("languages.flash.updated"), status: :see_other }
         format.json { render :show, status: :ok, location: @language }
       else
         format.html { render :edit, status: :unprocessable_content }
@@ -62,7 +62,7 @@ class LanguagesController < ApplicationController
     @language.destroy!
 
     respond_to do |format|
-      format.html { redirect_to languages_path, notice: "Language was successfully destroyed.", status: :see_other }
+      format.html { redirect_to languages_path, notice: t("languages.flash.destroyed"), status: :see_other }
       format.json { head :no_content }
     end
   end

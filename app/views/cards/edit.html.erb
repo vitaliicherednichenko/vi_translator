@@ -1,16 +1,16 @@
-<% content_for :title, "Editing card" %>
+<% content_for :title, t("cards.edit_title") %>
 
 <div class="row justify-content-center">
   <div class="col-lg-10">
-    <h1 class="mb-4">Editing card</h1>
+    <h1 class="mb-4"><%= t("cards.edit_title") %></h1>
     <div class="card shadow-sm">
       <div class="card-body">
         <%= render "form", card: @card %>
       </div>
     </div>
     <div class="mt-3 d-flex gap-3">
-      <%= link_to "Show this card", collection_card_path(@collection, @card), class: "btn btn-link px-0" %>
-      <%= link_to "Back to cards", collection_cards_path(@collection), class: "btn btn-link px-0" %>
+      <%= link_to t("cards.show_this"), collection_card_path(@collection, @card), class: "btn btn-link px-0" %>
+      <%= link_to t("cards.back_to_cards_plain"), collection_cards_path(@collection), class: "btn btn-link px-0" %>
     </div>
   </div>
 </div>

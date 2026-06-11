@@ -1,7 +1,7 @@
 <%= form_with model: [@collection, @card] do |f| %>
   <% if @card.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h6 class="alert-heading"><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h6>
+      <h6 class="alert-heading"><%= t("errors.prohibited.card", count: @card.errors.count) %></h6>
       <ul class="mb-0">
         <% @card.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -14,12 +14,12 @@
     <div class="col-md-6">
       <div class="mb-3">
         <div class="mb-3">
-          From: <%= current_user.native_language.name %>
+          <%= t("cards.from") %>: <%= current_user.native_language.name %>
           <%= f.hidden_field :source_language_id, value: current_user.native_language&.id %>
         </div>
       </div>
       <div class="mb-3">
-        <%= f.label :front_text, "Front", class: "form-label" %>
+        <%= f.label :front_text, t("cards.front"), class: "form-label" %>
         <%= f.text_area :front_text, rows: 3, class: "form-control" %>
       </div>
     </div>
@@ -27,12 +27,12 @@
     <div class="col-md-6">
       <div class="mb-3">
         <div class="mb-3">
-          To: <%= current_user.preferred_language.name %>
+          <%= t("cards.to") %>: <%= current_user.preferred_language.name %>
           <%= f.hidden_field :target_language_id, value: current_user.preferred_language&.id %>
         </div>
       </div>
       <div class="mb-3">
-        <%= f.label :back_text, "Back (Translation)", class: "form-label" %>
+        <%= f.label :back_text, t("cards.back_translation"), class: "form-label" %>
         <%= f.text_area :back_text, rows: 3, class: "form-control" %>
       </div>
     </div>

@@ -1,0 +1,226 @@
+uk:
+  app_name: "Vi Translator"
+  locale_name: "Українська"
+
+  nav:
+    collections: "Колекції"
+    cards: "Картки"
+    languages: "Мови"
+    back_side: "Зворотний бік"
+    front_side: "Лицьовий бік"
+    back_side_title: "Показати зворотний бік усіх карток на цій сторінці"
+    my_cards: "Мої картки"
+    my_collections: "Мої колекції"
+    no_native_collections: "Немає колекцій вашою рідною мовою"
+    new_collection: "Нова колекція"
+    import_cards: "Імпорт карток (CSV)"
+    export_cards: "Експорт моїх карток (CSV)"
+    deleted_cards: "Видалені картки"
+    see_all_deleted: "Показати всі видалені картки"
+    login: "Увійти"
+    sign_up: "Реєстрація"
+    logout: "Вийти"
+    edit_profile: "Редагувати профіль"
+    native: "Рідна"
+    learning: "Вивчаю"
+    language_menu: "Мова"
+
+  common:
+    view: "Переглянути"
+    edit: "Редагувати"
+    delete: "Видалити"
+    back: "Назад"
+    restore: "Відновити"
+    owner: "Власник"
+    description: "Опис"
+    language: "Мова"
+    none: "—"
+    confirm_generic: "Ви впевнені?"
+    confirm_delete_card: "Видалити цю картку?"
+    add_to: "Додати до…"
+    add_to_collection: "Додати до моєї колекції"
+    no_collections_yet: "Колекцій поки немає"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} помилка завадила зберегти цю колекцію:"
+        few: "%{count} помилки завадили зберегти цю колекцію:"
+        many: "%{count} помилок завадили зберегти цю колекцію:"
+        other: "%{count} помилок завадили зберегти цю колекцію:"
+      card:
+        one: "%{count} помилка завадила зберегти цю картку:"
+        few: "%{count} помилки завадили зберегти цю картку:"
+        many: "%{count} помилок завадили зберегти цю картку:"
+        other: "%{count} помилок завадили зберегти цю картку:"
+      language:
+        one: "%{count} помилка завадила зберегти цю мову:"
+        few: "%{count} помилки завадили зберегти цю мову:"
+        many: "%{count} помилок завадили зберегти цю мову:"
+        other: "%{count} помилок завадили зберегти цю мову:"
+
+  collections:
+    title: "Колекції"
+    new_title: "Нова колекція"
+    edit_title: "Редагування колекції"
+    new_button: "Нова колекція"
+    cards_button: "Картки"
+    by: "Автор: %{name}"
+    empty: "Немає колекцій вашою рідною мовою."
+    empty_hint_html: "Укажіть свою <strong>рідну мову</strong> у %{link}, щоб бачити відповідні колекції."
+    your_profile: "профілі"
+    back_to_collections: "← Назад до колекцій"
+    back_to_collections_plain: "Назад до колекцій"
+    show_this: "Показати цю колекцію"
+    primary_language: "Основна мова"
+    field_description: "Опис"
+    field_owner: "Власник"
+    field_language: "Мова"
+    flash:
+      created: "Колекцію успішно створено."
+      updated: "Колекцію успішно оновлено."
+      destroyed: "Колекцію успішно видалено."
+
+  cards:
+    index_title: "Картки"
+    collection_cards: "Картки: %{name}"
+    new_title: "Нова картка"
+    edit_title: "Редагування картки"
+    card_title: "Картка"
+    show_heading: "%{name} · Картка"
+    new_button: "Нова картка"
+    deleted_badge: "Видалено"
+    flip_aria: "Переверніть картку, щоб побачити переклад"
+    empty_in_collection: "У цій колекції немає карток, що відповідають вашій рідній та виучуваній мовам."
+    empty_all: "Немає карток, що відповідають вашій рідній та виучуваній мовам."
+    set_both_html: "Укажіть обидві у %{link}, щоб бачити відповідні картки."
+    your_profile: "профілі"
+    back_to_cards: "← Назад до карток"
+    back_to_cards_plain: "Назад до карток"
+    show_this: "Показати цю картку"
+    from: "З"
+    to: "На"
+    front: "Лицьовий бік"
+    back_translation: "Зворотний бік (переклад)"
+    field_front: "Лицьовий бік"
+    field_back: "Зворотний бік"
+    field_collection: "Колекція"
+    field_owner: "Власник"
+    field_translation: "Переклад"
+    flash:
+      created: "Картку успішно створено."
+      updated: "Картку успішно оновлено."
+      deleted: "Картку успішно видалено."
+      restored: "Картку успішно відновлено."
+      added: "«%{card}» додано до %{collection}."
+      already_present: "«%{card}» вже є в %{collection}."
+      choose_collection: "Виберіть одну зі своїх колекцій, щоб додати цю картку."
+
+  all_cards:
+    title: "Усі картки"
+    import_button: "Імпорт (CSV)"
+    export_button: "Експорт моїх карток (CSV)"
+
+  deleted_cards:
+    title: "Видалені картки"
+    all_cards_button: "Усі картки"
+    empty: "У вас немає видалених карток."
+
+  import:
+    title: "Імпорт карток"
+    instructions_html: "Завантажте CSV із рядком заголовка та цими стовпцями: <code>collection, front_text, back_text, source_language, target_language</code> (той самий формат, що й експорт). Мови визначаються за назвою або кодом; відсутню колекцію буде створено автоматично. Рядки з порожнім текстом або невідомою мовою пропускаються."
+    file_label: "Файл CSV"
+    submit: "Імпортувати"
+    back_to_all_cards: "← Назад до всіх карток"
+    flash:
+      no_file: "Виберіть файл CSV для імпорту."
+      summary:
+        one: "Імпортовано %{count} картку."
+        few: "Імпортовано %{count} картки."
+        many: "Імпортовано %{count} карток."
+        other: "Імпортовано %{count} карток."
+      skipped:
+        one: "Пропущено %{count} рядок."
+        few: "Пропущено %{count} рядки."
+        many: "Пропущено %{count} рядків."
+        other: "Пропущено %{count} рядків."
+      parse_error: "Не вдалося розібрати цей файл як CSV."
+
+  languages:
+    title: "Мови"
+    new_title: "Нова мова"
+    edit_title: "Редагування мови"
+    new_button: "Нова мова"
+    empty: "Мов поки немає."
+    back_to_languages: "← Назад до мов"
+    back_to_languages_plain: "Назад до мов"
+    show_this: "Показати цю мову"
+    field_code: "Код"
+    field_native_name: "Рідна назва"
+    code_hint_html: "Дволітерний код ISO (наприклад, <code>en</code>)."
+    flash:
+      created: "Мову успішно створено."
+      updated: "Мову успішно оновлено."
+      destroyed: "Мову успішно видалено."
+
+  devise_ui:
+    log_in: "Увійти"
+    sign_up: "Реєстрація"
+    edit_profile: "Редагувати профіль"
+    forgot_password: "Забули пароль?"
+    change_password: "Змінити пароль"
+    native_language: "Рідна мова"
+    language_to_learn: "Мова, яку ви хочете вивчати"
+    learning_language: "Мова вивчення"
+    select_native: "Виберіть свою рідну мову"
+    select_to_learn: "Виберіть мову для вивчення"
+    select_generic: "Вибрати..."
+    min_characters: "(щонайменше %{count} символів)"
+    new_password: "Новий пароль"
+    confirm_new_password: "Підтвердьте новий пароль"
+    send_reset_instructions: "Надіслати інструкції зі скидання пароля"
+    change_my_password: "Змінити мій пароль"
+    update: "Оновити"
+    leave_blank: "(залиште порожнім, якщо не хочете його змінювати)"
+    need_current_password: "(нам потрібен ваш поточний пароль для підтвердження змін)"
+    cancel_account: "Видалити мій обліковий запис"
+    cancel_account_unhappy: "Незадоволені? Це назавжди видалить ваш обліковий запис."
+    back: "Назад"
+
+  flash:
+    not_authorized: "Ви не маєте дозволу виконувати цю дію."
+
+  helpers:
+    submit:
+      collection:
+        create: "Створити колекцію"
+        update: "Оновити колекцію"
+      card:
+        create: "Створити картку"
+        update: "Оновити картку"
+      language:
+        create: "Створити мову"
+        update: "Оновити мову"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Ім'я"
+        email: "Електронна пошта"
+        password: "Пароль"
+        password_confirmation: "Підтвердження пароля"
+        current_password: "Поточний пароль"
+        remember_me: "Запам'ятати мене"
+        native_language_id: "Рідна мова"
+        preferred_language_id: "Бажана мова"
+      collection:
+        name: "Назва"
+        description: "Опис"
+        language: "Мова"
+      card:
+        front_text: "Лицьовий бік"
+        back_text: "Зворотний бік"
+      language:
+        name: "Назва"
+        code: "Код"
+        native_name: "Рідна назва"

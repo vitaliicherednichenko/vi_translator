@@ -1,12 +1,12 @@
-<% content_for :title, "Deleted Cards" %>
+<% content_for :title, t("deleted_cards.title") %>
 
 <% if notice.present? %>
   <div class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">Deleted Cards</h1>
-  <%= link_to "All Cards", cards_path, class: "btn btn-outline-secondary" %>
+  <h1 class="mb-0"><%= t("deleted_cards.title") %></h1>
+  <%= link_to t("deleted_cards.all_cards_button"), cards_path, class: "btn btn-outline-secondary" %>
 </div>
 
 <% if @cards.any? %>
@@ -22,9 +22,9 @@
               · <%= card.translation_pair %>
             </div>
             <div class="d-flex gap-2 mt-auto">
-              <%= button_to "Restore", restore_collection_card_path(card.collection, card),
+              <%= button_to t("common.restore"), restore_collection_card_path(card.collection, card),
                             method: :patch, class: "btn btn-success btn-sm" %>
-              <%= link_to "View", collection_card_path(card.collection, card),
+              <%= link_to t("common.view"), collection_card_path(card.collection, card),
                           class: "btn btn-outline-primary btn-sm" %>
             </div>
           </div>
@@ -33,5 +33,5 @@
     <% end %>
   </div>
 <% else %>
-  <p class="text-muted">You have no deleted cards.</p>
+  <p class="text-muted"><%= t("deleted_cards.empty") %></p>
 <% end %>

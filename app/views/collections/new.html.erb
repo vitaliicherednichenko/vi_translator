@@ -1,15 +1,15 @@
-<% content_for :title, "New collection" %>
+<% content_for :title, t("collections.new_title") %>
 
 <div class="row justify-content-center">
   <div class="col-lg-8">
-    <h1 class="mb-4">New collection</h1>
+    <h1 class="mb-4"><%= t("collections.new_title") %></h1>
     <div class="card shadow-sm">
       <div class="card-body">
         <%= render "form", collection: @collection %>
       </div>
     </div>
     <div class="mt-3">
-      <%= link_to "← Back to collections", collections_path, class: "btn btn-link px-0" %>
+      <%= link_to t("collections.back_to_collections"), collections_path, class: "btn btn-link px-0" %>
     </div>
   </div>
 </div>

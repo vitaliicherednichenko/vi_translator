@@ -1,0 +1,220 @@
+ru:
+  app_name: "Vi Translator"
+  locale_name: "Русский"
+
+  nav:
+    collections: "Коллекции"
+    cards: "Карточки"
+    languages: "Языки"
+    back_side: "Обратная сторона"
+    front_side: "Лицевая сторона"
+    back_side_title: "Показать обратную сторону всех карточек на этой странице"
+    my_cards: "Мои карточки"
+    my_collections: "Мои коллекции"
+    no_native_collections: "Нет коллекций на вашем родном языке"
+    new_collection: "Новая коллекция"
+    import_cards: "Импорт карточек (CSV)"
+    export_cards: "Экспорт моих карточек (CSV)"
+    deleted_cards: "Удалённые карточки"
+    see_all_deleted: "Показать все удалённые карточки"
+    login: "Вход"
+    sign_up: "Регистрация"
+    logout: "Выход"
+    edit_profile: "Редактировать профиль"
+    native: "Родной"
+    learning: "Изучаю"
+    language_menu: "Язык"
+
+  common:
+    view: "Просмотр"
+    edit: "Изменить"
+    delete: "Удалить"
+    back: "Назад"
+    restore: "Восстановить"
+    owner: "Владелец"
+    description: "Описание"
+    language: "Язык"
+    none: "—"
+    confirm_generic: "Вы уверены?"
+    confirm_delete_card: "Удалить эту карточку?"
+    add_to: "Добавить в…"
+    add_to_collection: "Добавить в мою коллекцию"
+    no_collections_yet: "Пока нет коллекций"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} ошибка не позволила сохранить эту коллекцию:"
+        other: "%{count} ошибок не позволили сохранить эту коллекцию:"
+      card:
+        one: "%{count} ошибка не позволила сохранить эту карточку:"
+        other: "%{count} ошибок не позволили сохранить эту карточку:"
+      language:
+        one: "%{count} ошибка не позволила сохранить этот язык:"
+        other: "%{count} ошибок не позволили сохранить этот язык:"
+
+  collections:
+    title: "Коллекции"
+    new_title: "Новая коллекция"
+    edit_title: "Редактирование коллекции"
+    new_button: "Новая коллекция"
+    cards_button: "Карточки"
+    by: "Автор: %{name}"
+    empty: "Нет коллекций на вашем родном языке."
+    empty_hint_html: "Укажите свой <strong>родной язык</strong> в %{link}, чтобы увидеть подходящие коллекции."
+    your_profile: "профиле"
+    back_to_collections: "← Назад к коллекциям"
+    back_to_collections_plain: "Назад к коллекциям"
+    show_this: "Показать эту коллекцию"
+    primary_language: "Основной язык"
+    field_description: "Описание"
+    field_owner: "Владелец"
+    field_language: "Язык"
+    flash:
+      created: "Коллекция успешно создана."
+      updated: "Коллекция успешно обновлена."
+      destroyed: "Коллекция успешно удалена."
+
+  cards:
+    index_title: "Карточки"
+    collection_cards: "Карточки: %{name}"
+    new_title: "Новая карточка"
+    edit_title: "Редактирование карточки"
+    card_title: "Карточка"
+    show_heading: "%{name} · Карточка"
+    new_button: "Новая карточка"
+    deleted_badge: "Удалена"
+    flip_aria: "Переверните карточку, чтобы увидеть перевод"
+    empty_in_collection: "В этой коллекции нет карточек, соответствующих вашему родному и изучаемому языкам."
+    empty_all: "Нет карточек, соответствующих вашему родному и изучаемому языкам."
+    set_both_html: "Укажите оба в %{link}, чтобы увидеть подходящие карточки."
+    your_profile: "профиле"
+    back_to_cards: "← Назад к карточкам"
+    back_to_cards_plain: "Назад к карточкам"
+    show_this: "Показать эту карточку"
+    from: "С"
+    to: "На"
+    front: "Лицевая сторона"
+    back_translation: "Обратная сторона (перевод)"
+    field_front: "Лицевая сторона"
+    field_back: "Обратная сторона"
+    field_collection: "Коллекция"
+    field_owner: "Владелец"
+    field_translation: "Перевод"
+    flash:
+      created: "Карточка успешно создана."
+      updated: "Карточка успешно обновлена."
+      deleted: "Карточка успешно удалена."
+      restored: "Карточка успешно восстановлена."
+      added: "«%{card}» добавлена в %{collection}."
+      already_present: "«%{card}» уже есть в %{collection}."
+      choose_collection: "Выберите одну из своих коллекций, чтобы добавить эту карточку."
+
+  all_cards:
+    title: "Все карточки"
+    import_button: "Импорт (CSV)"
+    export_button: "Экспорт моих карточек (CSV)"
+
+  deleted_cards:
+    title: "Удалённые карточки"
+    all_cards_button: "Все карточки"
+    empty: "У вас нет удалённых карточек."
+
+  import:
+    title: "Импорт карточек"
+    instructions_html: "Загрузите CSV-файл со строкой заголовка и этими столбцами: <code>collection, front_text, back_text, source_language, target_language</code> (тот же формат, что и при экспорте). Языки определяются по названию или коду; отсутствующая коллекция создаётся автоматически. Строки с пустым текстом или неизвестным языком пропускаются."
+    file_label: "CSV-файл"
+    submit: "Импортировать"
+    back_to_all_cards: "← Назад ко всем карточкам"
+    flash:
+      no_file: "Выберите CSV-файл для импорта."
+      summary:
+        one: "Импортирована %{count} карточка."
+        few: "Импортировано %{count} карточки."
+        many: "Импортировано %{count} карточек."
+        other: "Импортировано %{count} карточек."
+      skipped:
+        one: "Пропущена %{count} строка."
+        few: "Пропущено %{count} строки."
+        many: "Пропущено %{count} строк."
+        other: "Пропущено %{count} строк."
+      parse_error: "Не удалось разобрать файл как CSV."
+
+  languages:
+    title: "Языки"
+    new_title: "Новый язык"
+    edit_title: "Редактирование языка"
+    new_button: "Новый язык"
+    empty: "Языков пока нет."
+    back_to_languages: "← Назад к языкам"
+    back_to_languages_plain: "Назад к языкам"
+    show_this: "Показать этот язык"
+    field_code: "Код"
+    field_native_name: "Родное название"
+    code_hint_html: "Двухбуквенный код ISO (например, <code>en</code>)."
+    flash:
+      created: "Язык успешно создан."
+      updated: "Язык успешно обновлён."
+      destroyed: "Язык успешно удалён."
+
+  devise_ui:
+    log_in: "Вход"
+    sign_up: "Регистрация"
+    edit_profile: "Редактировать профиль"
+    forgot_password: "Забыли пароль?"
+    change_password: "Изменить пароль"
+    native_language: "Родной язык"
+    language_to_learn: "Язык, который вы хотите изучать"
+    learning_language: "Изучаемый язык"
+    select_native: "Выберите свой родной язык"
+    select_to_learn: "Выберите язык для изучения"
+    select_generic: "Выбрать..."
+    min_characters: "(минимум %{count} символов)"
+    new_password: "Новый пароль"
+    confirm_new_password: "Подтвердите новый пароль"
+    send_reset_instructions: "Отправить инструкции по сбросу пароля"
+    change_my_password: "Изменить мой пароль"
+    update: "Обновить"
+    leave_blank: "(оставьте пустым, если не хотите его менять)"
+    need_current_password: "(нам нужен ваш текущий пароль для подтверждения изменений)"
+    cancel_account: "Удалить мою учётную запись"
+    cancel_account_unhappy: "Недовольны? Это навсегда удалит вашу учётную запись."
+    back: "Назад"
+
+  flash:
+    not_authorized: "У вас нет прав на выполнение этого действия."
+
+  helpers:
+    submit:
+      collection:
+        create: "Создать коллекцию"
+        update: "Обновить коллекцию"
+      card:
+        create: "Создать карточку"
+        update: "Обновить карточку"
+      language:
+        create: "Создать язык"
+        update: "Обновить язык"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Имя"
+        email: "Эл. почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить меня"
+        native_language_id: "Родной язык"
+        preferred_language_id: "Предпочитаемый язык"
+      collection:
+        name: "Название"
+        description: "Описание"
+        language: "Язык"
+      card:
+        front_text: "Лицевая сторона"
+        back_text: "Обратная сторона"
+      language:
+        name: "Название"
+        code: "Код"
+        native_name: "Родное название"

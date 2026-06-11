@@ -1,13 +1,13 @@
-<% content_for :title, "Cards" %>
+<% content_for :title, t("cards.index_title") %>
 
 <% if notice.present? %>
   <div class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0"><%= "#{@collection.name} Cards" %></h1>
+  <h1 class="mb-0"><%= t("cards.collection_cards", name: @collection.name) %></h1>
   <% if policy(Card).create? %>
-    <%= link_to "New card", new_collection_card_path(@collection), class: "btn btn-primary" %>
+    <%= link_to t("cards.new_button"), new_collection_card_path(@collection), class: "btn btn-primary" %>
   <% end %>
 </div>
 
@@ -20,7 +20,7 @@
              data-controller="flip"
              data-action="click->flip#toggle keydown->flip#toggleKey"
              role="button" tabindex="0"
-             aria-label="Flip card to see the translation">
+             aria-label="<%= t('cards.flip_aria') %>">
           <div class="flip-card-inner">
             <div class="flip-card-front bg-body border">
               <% if card.source_language %>
@@ -37,11 +37,11 @@
           </div>
         </div>
         <div class="d-flex justify-content-center gap-2 mt-2">
-          <%= link_to "View", collection_card_path(@collection, card), class: "btn btn-outline-primary btn-sm" %>
+          <%= link_to t("common.view"), collection_card_path(@collection, card), class: "btn btn-outline-primary btn-sm" %>
           <% if policy(card).destroy? %>
-            <%= button_to "Delete", collection_card_path(@collection, card), method: :delete,
+            <%= button_to t("common.delete"), collection_card_path(@collection, card), method: :delete,
                           class: "btn btn-outline-danger btn-sm",
-                          form: { data: { turbo_confirm: "Delete this card?" } } %>
+                          form: { data: { turbo_confirm: t("common.confirm_delete_card") } } %>
           <% end %>
         </div>
       </div>
@@ -49,9 +49,9 @@
   </div>
 <% else %>
   <p class="text-muted">
-    No cards in this collection match your native and preferred languages.
+    <%= t("cards.empty_in_collection") %>
     <% if current_user.nil? || current_user.native_language.nil? || current_user.preferred_language.nil? %>
-      Set both in <%= link_to "your profile", edit_user_registration_path %> to see matching cards.
+      <%= t("cards.set_both_html", link: link_to(t("cards.your_profile"), edit_user_registration_path)).html_safe %>
     <% end %>
   </p>
 <% end %>

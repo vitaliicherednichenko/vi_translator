@@ -7,15 +7,15 @@
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
   <h1 class="mb-0"><%= @collection.name %></h1>
   <div class="d-flex flex-wrap gap-2">
-    <%= link_to "Cards", collection_cards_path(@collection), class: "btn btn-primary" %>
+    <%= link_to t("collections.cards_button"), collection_cards_path(@collection), class: "btn btn-primary" %>
     <% if policy(@collection).update? %>
-      <%= link_to "Edit", edit_collection_path(@collection), class: "btn btn-outline-secondary" %>
+      <%= link_to t("common.edit"), edit_collection_path(@collection), class: "btn btn-outline-secondary" %>
     <% end %>
-    <%= link_to "Back", collections_path, class: "btn btn-outline-secondary" %>
+    <%= link_to t("common.back"), collections_path, class: "btn btn-outline-secondary" %>
     <% if policy(@collection).destroy? %>
-      <%= button_to "Delete", @collection, method: :delete,
+      <%= button_to t("common.delete"), @collection, method: :delete,
                     class: "btn btn-outline-danger",
-                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+                    form: { data: { turbo_confirm: t("common.confirm_generic") } } %>
     <% end %>
   </div>
 </div>

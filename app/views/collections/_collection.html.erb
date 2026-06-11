@@ -7,14 +7,14 @@
       <% end %>
     </h5>
     <dl class="row mb-0">
-      <dt class="col-sm-3">Description</dt>
-      <dd class="col-sm-9"><%= collection.description.presence || tag.span("—", class: "text-muted") %></dd>
+      <dt class="col-sm-3"><%= t("collections.field_description") %></dt>
+      <dd class="col-sm-9"><%= collection.description.presence || tag.span(t("common.none"), class: "text-muted") %></dd>
 
-      <dt class="col-sm-3">Owner</dt>
-      <dd class="col-sm-9"><%= collection.user&.name.presence || tag.span("—", class: "text-muted") %></dd>
+      <dt class="col-sm-3"><%= t("collections.field_owner") %></dt>
+      <dd class="col-sm-9"><%= collection.user&.name.presence || tag.span(t("common.none"), class: "text-muted") %></dd>
 
-      <dt class="col-sm-3">Language</dt>
-      <dd class="col-sm-9"><%= collection.language&.name || tag.span("—", class: "text-muted") %></dd>
+      <dt class="col-sm-3"><%= t("collections.field_language") %></dt>
+      <dd class="col-sm-9"><%= collection.language&.name || tag.span(t("common.none"), class: "text-muted") %></dd>
     </dl>
   </div>
 </div>

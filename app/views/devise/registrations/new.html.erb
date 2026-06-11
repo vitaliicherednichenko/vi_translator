@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<% content_for :title, t("devise_ui.sign_up") %>
+
+<h2><%= t("devise_ui.sign_up") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -15,15 +17,15 @@
 
   <div class="row mb-3">
     <div class="col-md-6">
-      <%= f.label :native_language_id, "Native Language", class: "form-label" %>
+      <%= f.label :native_language_id, t("devise_ui.native_language"), class: "form-label" %>
       <%= f.collection_select :native_language_id, Language.all, :id, :name,
-                              { prompt: "Select your native language" },
+                              { prompt: t("devise_ui.select_native") },
                               { class: "form-select" } %>
     </div>
     <div class="col-md-6">
-      <%= f.label :preferred_language_id, "Language You Want to Learn", class: "form-label" %>
+      <%= f.label :preferred_language_id, t("devise_ui.language_to_learn"), class: "form-label" %>
       <%= f.collection_select :preferred_language_id, Language.all, :id, :name,
-                              { prompt: "Select language to learn" },
+                              { prompt: t("devise_ui.select_to_learn") },
                               { class: "form-select" } %>
     </div>
   </div>
@@ -32,7 +34,7 @@
     <%= f.label :password, class: "form-label" %>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
     <% if @minimum_password_length %>
-      <div class="form-text">(<%= @minimum_password_length %> characters minimum)</div>
+      <div class="form-text"><%= t("devise_ui.min_characters", count: @minimum_password_length) %></div>
     <% end %>
   </div>
 
@@ -42,7 +44,7 @@
   </div>
 
   <div class="d-grid">
-    <%= f.submit "Sign up", class: "btn btn-primary" %>
+    <%= f.submit t("devise_ui.sign_up"), class: "btn btn-primary" %>
   </div>
 <% end %>
 

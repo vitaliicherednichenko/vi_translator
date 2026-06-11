@@ -1,7 +1,7 @@
 <%= form_with model: @collection do |f| %>
   <% if @collection.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h6 class="alert-heading"><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h6>
+      <h6 class="alert-heading"><%= t("errors.prohibited.collection", count: @collection.errors.count) %></h6>
       <ul class="mb-0">
         <% @collection.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="mb-3">
-    Primary Language: <%= current_user.native_language.name %>
+    <%= t("collections.primary_language") %>: <%= current_user.native_language.name %>
     <%= f.hidden_field :language_id, value: current_user.native_language&.id %>
   </div>
 

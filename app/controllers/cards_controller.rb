@@ -34,7 +34,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to collection_cards_path, notice: "Card was successfully created." }
+        format.html { redirect_to collection_cards_path, notice: t("cards.flash.created") }
         format.json { render :show, status: :created, location: @card }
       else
         format.html { render :new, status: :unprocessable_content }
@@ -49,7 +49,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to collection_cards_path, notice: "Card was successfully updated.", status: :see_other }
+        format.html { redirect_to collection_cards_path, notice: t("cards.flash.updated"), status: :see_other }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit, status: :unprocessable_content }
@@ -64,7 +64,7 @@ class CardsController < ApplicationController
     @card.soft_delete!
 
     respond_to do |format|
-      format.html { redirect_to collection_cards_path, notice: "Card was successfully deleted.", status: :see_other }
+      format.html { redirect_to collection_cards_path, notice: t("cards.flash.deleted"), status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -75,7 +75,7 @@ class CardsController < ApplicationController
     @card.restore!
 
     respond_to do |format|
-      format.html { redirect_to collection_cards_path, notice: "Card was successfully restored.", status: :see_other }
+      format.html { redirect_to collection_cards_path, notice: t("cards.flash.restored"), status: :see_other }
       format.json { head :no_content }
     end
   end

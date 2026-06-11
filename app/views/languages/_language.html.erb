@@ -5,11 +5,11 @@
       <span class="badge bg-secondary"><%= language.code.upcase %></span>
     </h5>
     <dl class="row mb-0">
-      <dt class="col-sm-3">Code</dt>
+      <dt class="col-sm-3"><%= t("languages.field_code") %></dt>
       <dd class="col-sm-9"><%= language.code %></dd>
 
-      <dt class="col-sm-3">Native name</dt>
-      <dd class="col-sm-9"><%= language.native_name.presence || tag.span("—", class: "text-muted") %></dd>
+      <dt class="col-sm-3"><%= t("languages.field_native_name") %></dt>
+      <dd class="col-sm-9"><%= language.native_name.presence || tag.span(t("common.none"), class: "text-muted") %></dd>
     </dl>
   </div>
 </div>

@@ -1,0 +1,216 @@
+it:
+  app_name: "Vi Translator"
+  locale_name: "Italiano"
+
+  nav:
+    collections: "Raccolte"
+    cards: "Carte"
+    languages: "Lingue"
+    back_side: "Retro"
+    front_side: "Fronte"
+    back_side_title: "Mostra il retro di ogni carta in questa pagina"
+    my_cards: "Le mie carte"
+    my_collections: "Le mie raccolte"
+    no_native_collections: "Nessuna raccolta nella tua lingua madre"
+    new_collection: "Nuova raccolta"
+    import_cards: "Importa carte (CSV)"
+    export_cards: "Esporta le mie carte (CSV)"
+    deleted_cards: "Carte eliminate"
+    see_all_deleted: "Vedi tutte le carte eliminate"
+    login: "Accedi"
+    sign_up: "Registrati"
+    logout: "Esci"
+    edit_profile: "Modifica profilo"
+    native: "Madre"
+    learning: "Apprendimento"
+    language_menu: "Lingua"
+
+  common:
+    view: "Visualizza"
+    edit: "Modifica"
+    delete: "Elimina"
+    back: "Indietro"
+    restore: "Ripristina"
+    owner: "Proprietario"
+    description: "Descrizione"
+    language: "Lingua"
+    none: "—"
+    confirm_generic: "Sei sicuro?"
+    confirm_delete_card: "Eliminare questa carta?"
+    add_to: "Aggiungi a…"
+    add_to_collection: "Aggiungi alla mia raccolta"
+    no_collections_yet: "Ancora nessuna raccolta"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} errore ha impedito il salvataggio di questa raccolta:"
+        other: "%{count} errori hanno impedito il salvataggio di questa raccolta:"
+      card:
+        one: "%{count} errore ha impedito il salvataggio di questa carta:"
+        other: "%{count} errori hanno impedito il salvataggio di questa carta:"
+      language:
+        one: "%{count} errore ha impedito il salvataggio di questa lingua:"
+        other: "%{count} errori hanno impedito il salvataggio di questa lingua:"
+
+  collections:
+    title: "Raccolte"
+    new_title: "Nuova raccolta"
+    edit_title: "Modifica raccolta"
+    new_button: "Nuova raccolta"
+    cards_button: "Carte"
+    by: "Di %{name}"
+    empty: "Nessuna raccolta nella tua lingua madre."
+    empty_hint_html: "Imposta la tua <strong>lingua madre</strong> in %{link} per vedere le raccolte corrispondenti."
+    your_profile: "il tuo profilo"
+    back_to_collections: "← Torna alle raccolte"
+    back_to_collections_plain: "Torna alle raccolte"
+    show_this: "Mostra questa raccolta"
+    primary_language: "Lingua principale"
+    field_description: "Descrizione"
+    field_owner: "Proprietario"
+    field_language: "Lingua"
+    flash:
+      created: "Raccolta creata con successo."
+      updated: "Raccolta aggiornata con successo."
+      destroyed: "Raccolta eliminata con successo."
+
+  cards:
+    index_title: "Carte"
+    collection_cards: "Carte di %{name}"
+    new_title: "Nuova carta"
+    edit_title: "Modifica carta"
+    card_title: "Carta"
+    show_heading: "%{name} · Carta"
+    new_button: "Nuova carta"
+    deleted_badge: "Eliminata"
+    flip_aria: "Gira la carta per vedere la traduzione"
+    empty_in_collection: "Nessuna carta in questa raccolta corrisponde alla tua lingua madre e a quella che stai imparando."
+    empty_all: "Nessuna carta corrisponde alla tua lingua madre e a quella che stai imparando."
+    set_both_html: "Imposta entrambe in %{link} per vedere le carte corrispondenti."
+    your_profile: "il tuo profilo"
+    back_to_cards: "← Torna alle carte"
+    back_to_cards_plain: "Torna alle carte"
+    show_this: "Mostra questa carta"
+    from: "Da"
+    to: "A"
+    front: "Fronte"
+    back_translation: "Retro (traduzione)"
+    field_front: "Fronte"
+    field_back: "Retro"
+    field_collection: "Raccolta"
+    field_owner: "Proprietario"
+    field_translation: "Traduzione"
+    flash:
+      created: "Carta creata con successo."
+      updated: "Carta aggiornata con successo."
+      deleted: "Carta eliminata con successo."
+      restored: "Carta ripristinata con successo."
+      added: "\"%{card}\" aggiunta a %{collection}."
+      already_present: "\"%{card}\" è già in %{collection}."
+      choose_collection: "Scegli una delle tue raccolte a cui aggiungere questa carta."
+
+  all_cards:
+    title: "Tutte le carte"
+    import_button: "Importa (CSV)"
+    export_button: "Esporta le mie carte (CSV)"
+
+  deleted_cards:
+    title: "Carte eliminate"
+    all_cards_button: "Tutte le carte"
+    empty: "Non hai carte eliminate."
+
+  import:
+    title: "Importa carte"
+    instructions_html: "Carica un CSV con una riga di intestazione e queste colonne: <code>collection, front_text, back_text, source_language, target_language</code> (lo stesso formato dell'esportazione). Le lingue vengono riconosciute per nome o codice; una raccolta mancante viene creata automaticamente. Le righe con testo vuoto o lingua sconosciuta vengono saltate."
+    file_label: "File CSV"
+    submit: "Importa"
+    back_to_all_cards: "← Torna a tutte le carte"
+    flash:
+      no_file: "Scegli un file CSV da importare."
+      summary:
+        one: "Importata %{count} carta."
+        other: "Importate %{count} carte."
+      skipped:
+        one: "Saltata %{count} riga."
+        other: "Saltate %{count} righe."
+      parse_error: "Impossibile analizzare il file come CSV."
+
+  languages:
+    title: "Lingue"
+    new_title: "Nuova lingua"
+    edit_title: "Modifica lingua"
+    new_button: "Nuova lingua"
+    empty: "Ancora nessuna lingua."
+    back_to_languages: "← Torna alle lingue"
+    back_to_languages_plain: "Torna alle lingue"
+    show_this: "Mostra questa lingua"
+    field_code: "Codice"
+    field_native_name: "Nome nativo"
+    code_hint_html: "Codice ISO di due lettere (es. <code>en</code>)."
+    flash:
+      created: "Lingua creata con successo."
+      updated: "Lingua aggiornata con successo."
+      destroyed: "Lingua eliminata con successo."
+
+  devise_ui:
+    log_in: "Accedi"
+    sign_up: "Registrati"
+    edit_profile: "Modifica profilo"
+    forgot_password: "Password dimenticata?"
+    change_password: "Cambia la tua password"
+    native_language: "Lingua madre"
+    language_to_learn: "Lingua che vuoi imparare"
+    learning_language: "Lingua di apprendimento"
+    select_native: "Seleziona la tua lingua madre"
+    select_to_learn: "Seleziona la lingua da imparare"
+    select_generic: "Seleziona..."
+    min_characters: "(minimo %{count} caratteri)"
+    new_password: "Nuova password"
+    confirm_new_password: "Conferma nuova password"
+    send_reset_instructions: "Inviami le istruzioni per reimpostare la password"
+    change_my_password: "Cambia la mia password"
+    update: "Aggiorna"
+    leave_blank: "(lascia vuoto se non vuoi cambiarla)"
+    need_current_password: "(ci serve la tua password attuale per confermare le modifiche)"
+    cancel_account: "Elimina il mio account"
+    cancel_account_unhappy: "Non sei soddisfatto? Questo elimina definitivamente il tuo account."
+    back: "Indietro"
+
+  flash:
+    not_authorized: "Non sei autorizzato a eseguire questa azione."
+
+  helpers:
+    submit:
+      collection:
+        create: "Crea raccolta"
+        update: "Aggiorna raccolta"
+      card:
+        create: "Crea carta"
+        update: "Aggiorna carta"
+      language:
+        create: "Crea lingua"
+        update: "Aggiorna lingua"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Nome"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Conferma password"
+        current_password: "Password attuale"
+        remember_me: "Ricordami"
+        native_language_id: "Lingua madre"
+        preferred_language_id: "Lingua preferita"
+      collection:
+        name: "Nome"
+        description: "Descrizione"
+        language: "Lingua"
+      card:
+        front_text: "Fronte"
+        back_text: "Retro"
+      language:
+        name: "Nome"
+        code: "Codice"
+        native_name: "Nome nativo"

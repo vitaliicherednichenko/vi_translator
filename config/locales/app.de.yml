@@ -1,0 +1,216 @@
+de:
+  app_name: "Vi Translator"
+  locale_name: "Deutsch"
+
+  nav:
+    collections: "Sammlungen"
+    cards: "Karten"
+    languages: "Sprachen"
+    back_side: "Rückseite"
+    front_side: "Vorderseite"
+    back_side_title: "Die Rückseite jeder Karte auf dieser Seite anzeigen"
+    my_cards: "Meine Karten"
+    my_collections: "Meine Sammlungen"
+    no_native_collections: "Keine Sammlungen in deiner Muttersprache"
+    new_collection: "Neue Sammlung"
+    import_cards: "Karten importieren (CSV)"
+    export_cards: "Meine Karten exportieren (CSV)"
+    deleted_cards: "Gelöschte Karten"
+    see_all_deleted: "Alle gelöschten Karten anzeigen"
+    login: "Anmelden"
+    sign_up: "Registrieren"
+    logout: "Abmelden"
+    edit_profile: "Profil bearbeiten"
+    native: "Muttersprache"
+    learning: "Lernsprache"
+    language_menu: "Sprache"
+
+  common:
+    view: "Ansehen"
+    edit: "Bearbeiten"
+    delete: "Löschen"
+    back: "Zurück"
+    restore: "Wiederherstellen"
+    owner: "Besitzer"
+    description: "Beschreibung"
+    language: "Sprache"
+    none: "—"
+    confirm_generic: "Bist du sicher?"
+    confirm_delete_card: "Diese Karte löschen?"
+    add_to: "Hinzufügen zu…"
+    add_to_collection: "Zu meiner Sammlung hinzufügen"
+    no_collections_yet: "Noch keine Sammlungen"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} Fehler hat das Speichern dieser Sammlung verhindert:"
+        other: "%{count} Fehler haben das Speichern dieser Sammlung verhindert:"
+      card:
+        one: "%{count} Fehler hat das Speichern dieser Karte verhindert:"
+        other: "%{count} Fehler haben das Speichern dieser Karte verhindert:"
+      language:
+        one: "%{count} Fehler hat das Speichern dieser Sprache verhindert:"
+        other: "%{count} Fehler haben das Speichern dieser Sprache verhindert:"
+
+  collections:
+    title: "Sammlungen"
+    new_title: "Neue Sammlung"
+    edit_title: "Sammlung bearbeiten"
+    new_button: "Neue Sammlung"
+    cards_button: "Karten"
+    by: "Von %{name}"
+    empty: "Keine Sammlungen in deiner Muttersprache."
+    empty_hint_html: "Lege deine <strong>Muttersprache</strong> in %{link} fest, um passende Sammlungen zu sehen."
+    your_profile: "deinem Profil"
+    back_to_collections: "← Zurück zu den Sammlungen"
+    back_to_collections_plain: "Zurück zu den Sammlungen"
+    show_this: "Diese Sammlung anzeigen"
+    primary_language: "Hauptsprache"
+    field_description: "Beschreibung"
+    field_owner: "Besitzer"
+    field_language: "Sprache"
+    flash:
+      created: "Die Sammlung wurde erfolgreich erstellt."
+      updated: "Die Sammlung wurde erfolgreich aktualisiert."
+      destroyed: "Die Sammlung wurde erfolgreich gelöscht."
+
+  cards:
+    index_title: "Karten"
+    collection_cards: "Karten von %{name}"
+    new_title: "Neue Karte"
+    edit_title: "Karte bearbeiten"
+    card_title: "Karte"
+    show_heading: "%{name} · Karte"
+    new_button: "Neue Karte"
+    deleted_badge: "Gelöscht"
+    flip_aria: "Karte umdrehen, um die Übersetzung zu sehen"
+    empty_in_collection: "Keine Karte in dieser Sammlung passt zu deiner Mutter- und Lernsprache."
+    empty_all: "Keine Karte passt zu deiner Mutter- und Lernsprache."
+    set_both_html: "Lege beide in %{link} fest, um passende Karten zu sehen."
+    your_profile: "deinem Profil"
+    back_to_cards: "← Zurück zu den Karten"
+    back_to_cards_plain: "Zurück zu den Karten"
+    show_this: "Diese Karte anzeigen"
+    from: "Von"
+    to: "Nach"
+    front: "Vorderseite"
+    back_translation: "Rückseite (Übersetzung)"
+    field_front: "Vorderseite"
+    field_back: "Rückseite"
+    field_collection: "Sammlung"
+    field_owner: "Besitzer"
+    field_translation: "Übersetzung"
+    flash:
+      created: "Die Karte wurde erfolgreich erstellt."
+      updated: "Die Karte wurde erfolgreich aktualisiert."
+      deleted: "Die Karte wurde erfolgreich gelöscht."
+      restored: "Die Karte wurde erfolgreich wiederhergestellt."
+      added: "\"%{card}\" wurde zu %{collection} hinzugefügt."
+      already_present: "\"%{card}\" ist bereits in %{collection}."
+      choose_collection: "Wähle eine deiner Sammlungen, um diese Karte hinzuzufügen."
+
+  all_cards:
+    title: "Alle Karten"
+    import_button: "Importieren (CSV)"
+    export_button: "Meine Karten exportieren (CSV)"
+
+  deleted_cards:
+    title: "Gelöschte Karten"
+    all_cards_button: "Alle Karten"
+    empty: "Du hast keine gelöschten Karten."
+
+  import:
+    title: "Karten importieren"
+    instructions_html: "Lade eine CSV-Datei mit einer Kopfzeile und diesen Spalten hoch: <code>collection, front_text, back_text, source_language, target_language</code> (dasselbe Format wie der Export). Sprachen werden anhand von Name oder Code zugeordnet; eine fehlende Sammlung wird für dich angelegt. Zeilen mit leerem Text oder unbekannter Sprache werden übersprungen."
+    file_label: "CSV-Datei"
+    submit: "Importieren"
+    back_to_all_cards: "← Zurück zu allen Karten"
+    flash:
+      no_file: "Bitte wähle eine CSV-Datei zum Importieren aus."
+      summary:
+        one: "%{count} Karte importiert."
+        other: "%{count} Karten importiert."
+      skipped:
+        one: "%{count} Zeile übersprungen."
+        other: "%{count} Zeilen übersprungen."
+      parse_error: "Diese Datei konnte nicht als CSV gelesen werden."
+
+  languages:
+    title: "Sprachen"
+    new_title: "Neue Sprache"
+    edit_title: "Sprache bearbeiten"
+    new_button: "Neue Sprache"
+    empty: "Noch keine Sprachen."
+    back_to_languages: "← Zurück zu den Sprachen"
+    back_to_languages_plain: "Zurück zu den Sprachen"
+    show_this: "Diese Sprache anzeigen"
+    field_code: "Code"
+    field_native_name: "Einheimischer Name"
+    code_hint_html: "Zweibuchstabiger ISO-Code (z. B. <code>en</code>)."
+    flash:
+      created: "Die Sprache wurde erfolgreich erstellt."
+      updated: "Die Sprache wurde erfolgreich aktualisiert."
+      destroyed: "Die Sprache wurde erfolgreich gelöscht."
+
+  devise_ui:
+    log_in: "Anmelden"
+    sign_up: "Registrieren"
+    edit_profile: "Profil bearbeiten"
+    forgot_password: "Passwort vergessen?"
+    change_password: "Passwort ändern"
+    native_language: "Muttersprache"
+    language_to_learn: "Sprache, die du lernen möchtest"
+    learning_language: "Lernsprache"
+    select_native: "Wähle deine Muttersprache"
+    select_to_learn: "Wähle die zu lernende Sprache"
+    select_generic: "Auswählen..."
+    min_characters: "(mindestens %{count} Zeichen)"
+    new_password: "Neues Passwort"
+    confirm_new_password: "Neues Passwort bestätigen"
+    send_reset_instructions: "Anleitung zum Zurücksetzen senden"
+    change_my_password: "Mein Passwort ändern"
+    update: "Aktualisieren"
+    leave_blank: "(leer lassen, wenn du es nicht ändern möchtest)"
+    need_current_password: "(wir benötigen dein aktuelles Passwort, um die Änderungen zu bestätigen)"
+    cancel_account: "Mein Konto löschen"
+    cancel_account_unhappy: "Unzufrieden? Dadurch wird dein Konto dauerhaft gelöscht."
+    back: "Zurück"
+
+  flash:
+    not_authorized: "Du bist nicht berechtigt, diese Aktion durchzuführen."
+
+  helpers:
+    submit:
+      collection:
+        create: "Sammlung erstellen"
+        update: "Sammlung aktualisieren"
+      card:
+        create: "Karte erstellen"
+        update: "Karte aktualisieren"
+      language:
+        create: "Sprache erstellen"
+        update: "Sprache aktualisieren"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "E-Mail"
+        password: "Passwort"
+        password_confirmation: "Passwortbestätigung"
+        current_password: "Aktuelles Passwort"
+        remember_me: "Angemeldet bleiben"
+        native_language_id: "Muttersprache"
+        preferred_language_id: "Bevorzugte Sprache"
+      collection:
+        name: "Name"
+        description: "Beschreibung"
+        language: "Sprache"
+      card:
+        front_text: "Vorderseite"
+        back_text: "Rückseite"
+      language:
+        name: "Name"
+        code: "Code"
+        native_name: "Einheimischer Name"

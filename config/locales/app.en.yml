@@ -1,0 +1,216 @@
+en:
+  app_name: "Vi Translator"
+  locale_name: "English"
+
+  nav:
+    collections: "Collections"
+    cards: "Cards"
+    languages: "Languages"
+    back_side: "Back side"
+    front_side: "Front side"
+    back_side_title: "Show the back of every card on this page"
+    my_cards: "My Cards"
+    my_collections: "My Collections"
+    no_native_collections: "No collections in your native language"
+    new_collection: "New collection"
+    import_cards: "Import cards (CSV)"
+    export_cards: "Export my cards (CSV)"
+    deleted_cards: "Deleted Cards"
+    see_all_deleted: "See all deleted cards"
+    login: "Login"
+    sign_up: "Sign up"
+    logout: "Logout"
+    edit_profile: "Edit Profile"
+    native: "Native"
+    learning: "Learning"
+    language_menu: "Language"
+
+  common:
+    view: "View"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    restore: "Restore"
+    owner: "Owner"
+    description: "Description"
+    language: "Language"
+    none: "—"
+    confirm_generic: "Are you sure?"
+    confirm_delete_card: "Delete this card?"
+    add_to: "Add to…"
+    add_to_collection: "Add to my collection"
+    no_collections_yet: "No collections yet"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} error prohibited this collection from being saved:"
+        other: "%{count} errors prohibited this collection from being saved:"
+      card:
+        one: "%{count} error prohibited this card from being saved:"
+        other: "%{count} errors prohibited this card from being saved:"
+      language:
+        one: "%{count} error prohibited this language from being saved:"
+        other: "%{count} errors prohibited this language from being saved:"
+
+  collections:
+    title: "Collections"
+    new_title: "New collection"
+    edit_title: "Editing collection"
+    new_button: "New collection"
+    cards_button: "Cards"
+    by: "By %{name}"
+    empty: "No collections in your native language."
+    empty_hint_html: "Set your <strong>native language</strong> in %{link} to see matching collections."
+    your_profile: "your profile"
+    back_to_collections: "← Back to collections"
+    back_to_collections_plain: "Back to collections"
+    show_this: "Show this collection"
+    primary_language: "Primary Language"
+    field_description: "Description"
+    field_owner: "Owner"
+    field_language: "Language"
+    flash:
+      created: "Collection was successfully created."
+      updated: "Collection was successfully updated."
+      destroyed: "Collection was successfully destroyed."
+
+  cards:
+    index_title: "Cards"
+    collection_cards: "%{name} Cards"
+    new_title: "New card"
+    edit_title: "Editing card"
+    card_title: "Card"
+    show_heading: "%{name} · Card"
+    new_button: "New card"
+    deleted_badge: "Deleted"
+    flip_aria: "Flip card to see the translation"
+    empty_in_collection: "No cards in this collection match your native and preferred languages."
+    empty_all: "No cards match your native and preferred languages."
+    set_both_html: "Set both in %{link} to see matching cards."
+    your_profile: "your profile"
+    back_to_cards: "← Back to cards"
+    back_to_cards_plain: "Back to cards"
+    show_this: "Show this card"
+    from: "From"
+    to: "To"
+    front: "Front"
+    back_translation: "Back (Translation)"
+    field_front: "Front"
+    field_back: "Back"
+    field_collection: "Collection"
+    field_owner: "Owner"
+    field_translation: "Translation"
+    flash:
+      created: "Card was successfully created."
+      updated: "Card was successfully updated."
+      deleted: "Card was successfully deleted."
+      restored: "Card was successfully restored."
+      added: "Added \"%{card}\" to %{collection}."
+      already_present: "\"%{card}\" is already in %{collection}."
+      choose_collection: "Choose one of your collections to add this card to."
+
+  all_cards:
+    title: "All Cards"
+    import_button: "Import (CSV)"
+    export_button: "Export my cards (CSV)"
+
+  deleted_cards:
+    title: "Deleted Cards"
+    all_cards_button: "All Cards"
+    empty: "You have no deleted cards."
+
+  import:
+    title: "Import Cards"
+    instructions_html: "Upload a CSV with a header row and these columns: <code>collection, front_text, back_text, source_language, target_language</code> (the same format as the export). Languages are matched by name or code; a missing collection is created for you. Rows with blank text or an unknown language are skipped."
+    file_label: "CSV file"
+    submit: "Import"
+    back_to_all_cards: "← Back to all cards"
+    flash:
+      no_file: "Please choose a CSV file to import."
+      summary:
+        one: "Imported %{count} card."
+        other: "Imported %{count} cards."
+      skipped:
+        one: "Skipped %{count} row."
+        other: "Skipped %{count} rows."
+      parse_error: "That file could not be parsed as CSV."
+
+  languages:
+    title: "Languages"
+    new_title: "New language"
+    edit_title: "Editing language"
+    new_button: "New language"
+    empty: "No languages yet."
+    back_to_languages: "← Back to languages"
+    back_to_languages_plain: "Back to languages"
+    show_this: "Show this language"
+    field_code: "Code"
+    field_native_name: "Native name"
+    code_hint_html: "Two-letter ISO code (e.g. <code>en</code>)."
+    flash:
+      created: "Language was successfully created."
+      updated: "Language was successfully updated."
+      destroyed: "Language was successfully destroyed."
+
+  devise_ui:
+    log_in: "Log in"
+    sign_up: "Sign up"
+    edit_profile: "Edit Profile"
+    forgot_password: "Forgot your password?"
+    change_password: "Change your password"
+    native_language: "Native Language"
+    language_to_learn: "Language You Want to Learn"
+    learning_language: "Learning Language"
+    select_native: "Select your native language"
+    select_to_learn: "Select language to learn"
+    select_generic: "Select..."
+    min_characters: "(%{count} characters minimum)"
+    new_password: "New password"
+    confirm_new_password: "Confirm new password"
+    send_reset_instructions: "Send me reset password instructions"
+    change_my_password: "Change my password"
+    update: "Update"
+    leave_blank: "(leave blank if you don't want to change it)"
+    need_current_password: "(we need your current password to confirm your changes)"
+    cancel_account: "Cancel my account"
+    cancel_account_unhappy: "Unhappy? This permanently deletes your account."
+    back: "Back"
+
+  flash:
+    not_authorized: "You are not authorized to perform this action."
+
+  helpers:
+    submit:
+      collection:
+        create: "Create Collection"
+        update: "Update Collection"
+      card:
+        create: "Create Card"
+        update: "Update Card"
+      language:
+        create: "Create Language"
+        update: "Update Language"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
+        remember_me: "Remember me"
+        native_language_id: "Native language"
+        preferred_language_id: "Preferred language"
+      collection:
+        name: "Name"
+        description: "Description"
+        language: "Language"
+      card:
+        front_text: "Front"
+        back_text: "Back"
+      language:
+        name: "Name"
+        code: "Code"
+        native_name: "Native name"

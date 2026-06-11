@@ -1,13 +1,13 @@
-<% content_for :title, "Collections" %>
+<% content_for :title, t("collections.title") %>
 
 <% if notice.present? %>
   <div class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">Collections</h1>
+  <h1 class="mb-0"><%= t("collections.title") %></h1>
   <% if policy(Collection).create? %>
-    <%= link_to "New collection", new_collection_path, class: "btn btn-primary" %>
+    <%= link_to t("collections.new_button"), new_collection_path, class: "btn btn-primary" %>
   <% end %>
 </div>
 
@@ -22,8 +22,8 @@
               <span class="badge bg-success align-self-start mb-2"><%= collection.language.code.upcase %></span>
             <% end %>
             <p class="card-text text-muted small flex-grow-1"><%= collection.description %></p>
-            <div class="text-muted small mb-3">By <%= collection.user&.name %></div>
-            <%= link_to "View", collection, class: "btn btn-outline-primary btn-sm mt-auto" %>
+            <div class="text-muted small mb-3"><%= t("collections.by", name: collection.user&.name) %></div>
+            <%= link_to t("common.view"), collection, class: "btn btn-outline-primary btn-sm mt-auto" %>
           </div>
         </div>
       </div>
@@ -31,9 +31,9 @@
   </div>
 <% else %>
   <p class="text-muted">
-    No collections in your native language.
+    <%= t("collections.empty") %>
     <% unless current_user&.native_language %>
-      Set your <strong>native language</strong> in <%= link_to "your profile", edit_user_registration_path %> to see matching collections.
+      <%= t("collections.empty_hint_html", link: link_to(t("collections.your_profile"), edit_user_registration_path)).html_safe %>
     <% end %>
   </p>
 <% end %>

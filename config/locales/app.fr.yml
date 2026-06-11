@@ -1,0 +1,216 @@
+fr:
+  app_name: "Vi Translator"
+  locale_name: "Français"
+
+  nav:
+    collections: "Collections"
+    cards: "Cartes"
+    languages: "Langues"
+    back_side: "Verso"
+    front_side: "Recto"
+    back_side_title: "Afficher le verso de chaque carte de cette page"
+    my_cards: "Mes cartes"
+    my_collections: "Mes collections"
+    no_native_collections: "Aucune collection dans votre langue maternelle"
+    new_collection: "Nouvelle collection"
+    import_cards: "Importer des cartes (CSV)"
+    export_cards: "Exporter mes cartes (CSV)"
+    deleted_cards: "Cartes supprimées"
+    see_all_deleted: "Voir toutes les cartes supprimées"
+    login: "Connexion"
+    sign_up: "Inscription"
+    logout: "Déconnexion"
+    edit_profile: "Modifier le profil"
+    native: "Maternelle"
+    learning: "Apprentissage"
+    language_menu: "Langue"
+
+  common:
+    view: "Voir"
+    edit: "Modifier"
+    delete: "Supprimer"
+    back: "Retour"
+    restore: "Restaurer"
+    owner: "Propriétaire"
+    description: "Description"
+    language: "Langue"
+    none: "—"
+    confirm_generic: "Êtes-vous sûr ?"
+    confirm_delete_card: "Supprimer cette carte ?"
+    add_to: "Ajouter à…"
+    add_to_collection: "Ajouter à ma collection"
+    no_collections_yet: "Aucune collection pour l'instant"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} erreur a empêché l'enregistrement de cette collection :"
+        other: "%{count} erreurs ont empêché l'enregistrement de cette collection :"
+      card:
+        one: "%{count} erreur a empêché l'enregistrement de cette carte :"
+        other: "%{count} erreurs ont empêché l'enregistrement de cette carte :"
+      language:
+        one: "%{count} erreur a empêché l'enregistrement de cette langue :"
+        other: "%{count} erreurs ont empêché l'enregistrement de cette langue :"
+
+  collections:
+    title: "Collections"
+    new_title: "Nouvelle collection"
+    edit_title: "Modifier la collection"
+    new_button: "Nouvelle collection"
+    cards_button: "Cartes"
+    by: "Par %{name}"
+    empty: "Aucune collection dans votre langue maternelle."
+    empty_hint_html: "Définissez votre <strong>langue maternelle</strong> dans %{link} pour voir les collections correspondantes."
+    your_profile: "votre profil"
+    back_to_collections: "← Retour aux collections"
+    back_to_collections_plain: "Retour aux collections"
+    show_this: "Afficher cette collection"
+    primary_language: "Langue principale"
+    field_description: "Description"
+    field_owner: "Propriétaire"
+    field_language: "Langue"
+    flash:
+      created: "La collection a été créée avec succès."
+      updated: "La collection a été mise à jour avec succès."
+      destroyed: "La collection a été supprimée avec succès."
+
+  cards:
+    index_title: "Cartes"
+    collection_cards: "Cartes de %{name}"
+    new_title: "Nouvelle carte"
+    edit_title: "Modifier la carte"
+    card_title: "Carte"
+    show_heading: "%{name} · Carte"
+    new_button: "Nouvelle carte"
+    deleted_badge: "Supprimée"
+    flip_aria: "Retournez la carte pour voir la traduction"
+    empty_in_collection: "Aucune carte de cette collection ne correspond à votre langue maternelle et à celle que vous apprenez."
+    empty_all: "Aucune carte ne correspond à votre langue maternelle et à celle que vous apprenez."
+    set_both_html: "Définissez les deux dans %{link} pour voir les cartes correspondantes."
+    your_profile: "votre profil"
+    back_to_cards: "← Retour aux cartes"
+    back_to_cards_plain: "Retour aux cartes"
+    show_this: "Afficher cette carte"
+    from: "De"
+    to: "Vers"
+    front: "Recto"
+    back_translation: "Verso (traduction)"
+    field_front: "Recto"
+    field_back: "Verso"
+    field_collection: "Collection"
+    field_owner: "Propriétaire"
+    field_translation: "Traduction"
+    flash:
+      created: "La carte a été créée avec succès."
+      updated: "La carte a été mise à jour avec succès."
+      deleted: "La carte a été supprimée avec succès."
+      restored: "La carte a été restaurée avec succès."
+      added: "\"%{card}\" a été ajoutée à %{collection}."
+      already_present: "\"%{card}\" est déjà dans %{collection}."
+      choose_collection: "Choisissez l'une de vos collections pour y ajouter cette carte."
+
+  all_cards:
+    title: "Toutes les cartes"
+    import_button: "Importer (CSV)"
+    export_button: "Exporter mes cartes (CSV)"
+
+  deleted_cards:
+    title: "Cartes supprimées"
+    all_cards_button: "Toutes les cartes"
+    empty: "Vous n'avez aucune carte supprimée."
+
+  import:
+    title: "Importer des cartes"
+    instructions_html: "Téléversez un CSV avec une ligne d'en-tête et ces colonnes : <code>collection, front_text, back_text, source_language, target_language</code> (le même format que l'export). Les langues sont identifiées par nom ou code ; une collection manquante est créée pour vous. Les lignes vides ou avec une langue inconnue sont ignorées."
+    file_label: "Fichier CSV"
+    submit: "Importer"
+    back_to_all_cards: "← Retour à toutes les cartes"
+    flash:
+      no_file: "Veuillez choisir un fichier CSV à importer."
+      summary:
+        one: "%{count} carte importée."
+        other: "%{count} cartes importées."
+      skipped:
+        one: "%{count} ligne ignorée."
+        other: "%{count} lignes ignorées."
+      parse_error: "Ce fichier n'a pas pu être analysé comme CSV."
+
+  languages:
+    title: "Langues"
+    new_title: "Nouvelle langue"
+    edit_title: "Modifier la langue"
+    new_button: "Nouvelle langue"
+    empty: "Aucune langue pour l'instant."
+    back_to_languages: "← Retour aux langues"
+    back_to_languages_plain: "Retour aux langues"
+    show_this: "Afficher cette langue"
+    field_code: "Code"
+    field_native_name: "Nom natif"
+    code_hint_html: "Code ISO à deux lettres (par ex. <code>en</code>)."
+    flash:
+      created: "La langue a été créée avec succès."
+      updated: "La langue a été mise à jour avec succès."
+      destroyed: "La langue a été supprimée avec succès."
+
+  devise_ui:
+    log_in: "Connexion"
+    sign_up: "Inscription"
+    edit_profile: "Modifier le profil"
+    forgot_password: "Mot de passe oublié ?"
+    change_password: "Changer votre mot de passe"
+    native_language: "Langue maternelle"
+    language_to_learn: "Langue que vous voulez apprendre"
+    learning_language: "Langue d'apprentissage"
+    select_native: "Sélectionnez votre langue maternelle"
+    select_to_learn: "Sélectionnez la langue à apprendre"
+    select_generic: "Sélectionner..."
+    min_characters: "(%{count} caractères minimum)"
+    new_password: "Nouveau mot de passe"
+    confirm_new_password: "Confirmer le nouveau mot de passe"
+    send_reset_instructions: "M'envoyer les instructions de réinitialisation"
+    change_my_password: "Changer mon mot de passe"
+    update: "Mettre à jour"
+    leave_blank: "(laissez vide si vous ne voulez pas le changer)"
+    need_current_password: "(nous avons besoin de votre mot de passe actuel pour confirmer les modifications)"
+    cancel_account: "Supprimer mon compte"
+    cancel_account_unhappy: "Pas satisfait ? Cela supprime définitivement votre compte."
+    back: "Retour"
+
+  flash:
+    not_authorized: "Vous n'êtes pas autorisé à effectuer cette action."
+
+  helpers:
+    submit:
+      collection:
+        create: "Créer la collection"
+        update: "Mettre à jour la collection"
+      card:
+        create: "Créer la carte"
+        update: "Mettre à jour la carte"
+      language:
+        create: "Créer la langue"
+        update: "Mettre à jour la langue"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Nom"
+        email: "E-mail"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        current_password: "Mot de passe actuel"
+        remember_me: "Se souvenir de moi"
+        native_language_id: "Langue maternelle"
+        preferred_language_id: "Langue préférée"
+      collection:
+        name: "Nom"
+        description: "Description"
+        language: "Langue"
+      card:
+        front_text: "Recto"
+        back_text: "Verso"
+      language:
+        name: "Nom"
+        code: "Code"
+        native_name: "Nom natif"

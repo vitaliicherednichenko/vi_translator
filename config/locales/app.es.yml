@@ -1,0 +1,216 @@
+es:
+  app_name: "Vi Translator"
+  locale_name: "Español"
+
+  nav:
+    collections: "Colecciones"
+    cards: "Tarjetas"
+    languages: "Idiomas"
+    back_side: "Reverso"
+    front_side: "Anverso"
+    back_side_title: "Mostrar el reverso de cada tarjeta de esta página"
+    my_cards: "Mis tarjetas"
+    my_collections: "Mis colecciones"
+    no_native_collections: "No hay colecciones en tu idioma nativo"
+    new_collection: "Nueva colección"
+    import_cards: "Importar tarjetas (CSV)"
+    export_cards: "Exportar mis tarjetas (CSV)"
+    deleted_cards: "Tarjetas eliminadas"
+    see_all_deleted: "Ver todas las tarjetas eliminadas"
+    login: "Iniciar sesión"
+    sign_up: "Registrarse"
+    logout: "Cerrar sesión"
+    edit_profile: "Editar perfil"
+    native: "Nativo"
+    learning: "Aprendiendo"
+    language_menu: "Idioma"
+
+  common:
+    view: "Ver"
+    edit: "Editar"
+    delete: "Eliminar"
+    back: "Volver"
+    restore: "Restaurar"
+    owner: "Propietario"
+    description: "Descripción"
+    language: "Idioma"
+    none: "—"
+    confirm_generic: "¿Estás seguro?"
+    confirm_delete_card: "¿Eliminar esta tarjeta?"
+    add_to: "Añadir a…"
+    add_to_collection: "Añadir a mi colección"
+    no_collections_yet: "Aún no hay colecciones"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} error impidió guardar esta colección:"
+        other: "%{count} errores impidieron guardar esta colección:"
+      card:
+        one: "%{count} error impidió guardar esta tarjeta:"
+        other: "%{count} errores impidieron guardar esta tarjeta:"
+      language:
+        one: "%{count} error impidió guardar este idioma:"
+        other: "%{count} errores impidieron guardar este idioma:"
+
+  collections:
+    title: "Colecciones"
+    new_title: "Nueva colección"
+    edit_title: "Editar colección"
+    new_button: "Nueva colección"
+    cards_button: "Tarjetas"
+    by: "Por %{name}"
+    empty: "No hay colecciones en tu idioma nativo."
+    empty_hint_html: "Configura tu <strong>idioma nativo</strong> en %{link} para ver las colecciones correspondientes."
+    your_profile: "tu perfil"
+    back_to_collections: "← Volver a colecciones"
+    back_to_collections_plain: "Volver a colecciones"
+    show_this: "Mostrar esta colección"
+    primary_language: "Idioma principal"
+    field_description: "Descripción"
+    field_owner: "Propietario"
+    field_language: "Idioma"
+    flash:
+      created: "La colección se creó correctamente."
+      updated: "La colección se actualizó correctamente."
+      destroyed: "La colección se eliminó correctamente."
+
+  cards:
+    index_title: "Tarjetas"
+    collection_cards: "Tarjetas de %{name}"
+    new_title: "Nueva tarjeta"
+    edit_title: "Editar tarjeta"
+    card_title: "Tarjeta"
+    show_heading: "%{name} · Tarjeta"
+    new_button: "Nueva tarjeta"
+    deleted_badge: "Eliminada"
+    flip_aria: "Voltea la tarjeta para ver la traducción"
+    empty_in_collection: "Ninguna tarjeta de esta colección coincide con tu idioma nativo y el que aprendes."
+    empty_all: "Ninguna tarjeta coincide con tu idioma nativo y el que aprendes."
+    set_both_html: "Configura ambos en %{link} para ver las tarjetas correspondientes."
+    your_profile: "tu perfil"
+    back_to_cards: "← Volver a tarjetas"
+    back_to_cards_plain: "Volver a tarjetas"
+    show_this: "Mostrar esta tarjeta"
+    from: "De"
+    to: "A"
+    front: "Anverso"
+    back_translation: "Reverso (traducción)"
+    field_front: "Anverso"
+    field_back: "Reverso"
+    field_collection: "Colección"
+    field_owner: "Propietario"
+    field_translation: "Traducción"
+    flash:
+      created: "La tarjeta se creó correctamente."
+      updated: "La tarjeta se actualizó correctamente."
+      deleted: "La tarjeta se eliminó correctamente."
+      restored: "La tarjeta se restauró correctamente."
+      added: "Se añadió \"%{card}\" a %{collection}."
+      already_present: "\"%{card}\" ya está en %{collection}."
+      choose_collection: "Elige una de tus colecciones para añadir esta tarjeta."
+
+  all_cards:
+    title: "Todas las tarjetas"
+    import_button: "Importar (CSV)"
+    export_button: "Exportar mis tarjetas (CSV)"
+
+  deleted_cards:
+    title: "Tarjetas eliminadas"
+    all_cards_button: "Todas las tarjetas"
+    empty: "No tienes tarjetas eliminadas."
+
+  import:
+    title: "Importar tarjetas"
+    instructions_html: "Sube un CSV con una fila de encabezado y estas columnas: <code>collection, front_text, back_text, source_language, target_language</code> (el mismo formato que la exportación). Los idiomas se identifican por nombre o código; si falta una colección, se crea automáticamente. Las filas con texto vacío o un idioma desconocido se omiten."
+    file_label: "Archivo CSV"
+    submit: "Importar"
+    back_to_all_cards: "← Volver a todas las tarjetas"
+    flash:
+      no_file: "Elige un archivo CSV para importar."
+      summary:
+        one: "Se importó %{count} tarjeta."
+        other: "Se importaron %{count} tarjetas."
+      skipped:
+        one: "Se omitió %{count} fila."
+        other: "Se omitieron %{count} filas."
+      parse_error: "No se pudo analizar el archivo como CSV."
+
+  languages:
+    title: "Idiomas"
+    new_title: "Nuevo idioma"
+    edit_title: "Editar idioma"
+    new_button: "Nuevo idioma"
+    empty: "Aún no hay idiomas."
+    back_to_languages: "← Volver a idiomas"
+    back_to_languages_plain: "Volver a idiomas"
+    show_this: "Mostrar este idioma"
+    field_code: "Código"
+    field_native_name: "Nombre nativo"
+    code_hint_html: "Código ISO de dos letras (p. ej. <code>en</code>)."
+    flash:
+      created: "El idioma se creó correctamente."
+      updated: "El idioma se actualizó correctamente."
+      destroyed: "El idioma se eliminó correctamente."
+
+  devise_ui:
+    log_in: "Iniciar sesión"
+    sign_up: "Registrarse"
+    edit_profile: "Editar perfil"
+    forgot_password: "¿Olvidaste tu contraseña?"
+    change_password: "Cambiar tu contraseña"
+    native_language: "Idioma nativo"
+    language_to_learn: "Idioma que quieres aprender"
+    learning_language: "Idioma de aprendizaje"
+    select_native: "Selecciona tu idioma nativo"
+    select_to_learn: "Selecciona el idioma a aprender"
+    select_generic: "Seleccionar..."
+    min_characters: "(mínimo %{count} caracteres)"
+    new_password: "Nueva contraseña"
+    confirm_new_password: "Confirmar nueva contraseña"
+    send_reset_instructions: "Enviarme instrucciones para restablecer la contraseña"
+    change_my_password: "Cambiar mi contraseña"
+    update: "Actualizar"
+    leave_blank: "(déjalo en blanco si no quieres cambiarlo)"
+    need_current_password: "(necesitamos tu contraseña actual para confirmar los cambios)"
+    cancel_account: "Cancelar mi cuenta"
+    cancel_account_unhappy: "¿No estás contento? Esto elimina tu cuenta de forma permanente."
+    back: "Volver"
+
+  flash:
+    not_authorized: "No tienes autorización para realizar esta acción."
+
+  helpers:
+    submit:
+      collection:
+        create: "Crear colección"
+        update: "Actualizar colección"
+      card:
+        create: "Crear tarjeta"
+        update: "Actualizar tarjeta"
+      language:
+        create: "Crear idioma"
+        update: "Actualizar idioma"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Nombre"
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        current_password: "Contraseña actual"
+        remember_me: "Recordarme"
+        native_language_id: "Idioma nativo"
+        preferred_language_id: "Idioma preferido"
+      collection:
+        name: "Nombre"
+        description: "Descripción"
+        language: "Idioma"
+      card:
+        front_text: "Anverso"
+        back_text: "Reverso"
+      language:
+        name: "Nombre"
+        code: "Código"
+        native_name: "Nombre nativo"

@@ -1,0 +1,216 @@
+zh:
+  app_name: "Vi Translator"
+  locale_name: "中文"
+
+  nav:
+    collections: "合集"
+    cards: "卡片"
+    languages: "语言"
+    back_side: "背面"
+    front_side: "正面"
+    back_side_title: "显示本页所有卡片的背面"
+    my_cards: "我的卡片"
+    my_collections: "我的合集"
+    no_native_collections: "没有你母语的合集"
+    new_collection: "新建合集"
+    import_cards: "导入卡片 (CSV)"
+    export_cards: "导出我的卡片 (CSV)"
+    deleted_cards: "已删除的卡片"
+    see_all_deleted: "查看所有已删除的卡片"
+    login: "登录"
+    sign_up: "注册"
+    logout: "退出登录"
+    edit_profile: "编辑资料"
+    native: "母语"
+    learning: "正在学习"
+    language_menu: "语言"
+
+  common:
+    view: "查看"
+    edit: "编辑"
+    delete: "删除"
+    back: "返回"
+    restore: "恢复"
+    owner: "所有者"
+    description: "描述"
+    language: "语言"
+    none: "—"
+    confirm_generic: "确定吗？"
+    confirm_delete_card: "删除这张卡片？"
+    add_to: "添加到…"
+    add_to_collection: "添加到我的合集"
+    no_collections_yet: "还没有合集"
+
+  errors:
+    prohibited:
+      collection:
+        one: "有 %{count} 个错误导致此合集无法保存："
+        other: "有 %{count} 个错误导致此合集无法保存："
+      card:
+        one: "有 %{count} 个错误导致此卡片无法保存："
+        other: "有 %{count} 个错误导致此卡片无法保存："
+      language:
+        one: "有 %{count} 个错误导致此语言无法保存："
+        other: "有 %{count} 个错误导致此语言无法保存："
+
+  collections:
+    title: "合集"
+    new_title: "新建合集"
+    edit_title: "编辑合集"
+    new_button: "新建合集"
+    cards_button: "卡片"
+    by: "作者：%{name}"
+    empty: "没有你母语的合集。"
+    empty_hint_html: "在%{link}中设置你的<strong>母语</strong>，即可看到匹配的合集。"
+    your_profile: "个人资料"
+    back_to_collections: "← 返回合集"
+    back_to_collections_plain: "返回合集"
+    show_this: "显示此合集"
+    primary_language: "主要语言"
+    field_description: "描述"
+    field_owner: "所有者"
+    field_language: "语言"
+    flash:
+      created: "合集创建成功。"
+      updated: "合集更新成功。"
+      destroyed: "合集删除成功。"
+
+  cards:
+    index_title: "卡片"
+    collection_cards: "%{name} 的卡片"
+    new_title: "新建卡片"
+    edit_title: "编辑卡片"
+    card_title: "卡片"
+    show_heading: "%{name} · 卡片"
+    new_button: "新建卡片"
+    deleted_badge: "已删除"
+    flip_aria: "翻转卡片查看翻译"
+    empty_in_collection: "此合集中没有与你的母语和学习语言匹配的卡片。"
+    empty_all: "没有与你的母语和学习语言匹配的卡片。"
+    set_both_html: "在%{link}中同时设置两者，即可看到匹配的卡片。"
+    your_profile: "个人资料"
+    back_to_cards: "← 返回卡片"
+    back_to_cards_plain: "返回卡片"
+    show_this: "显示此卡片"
+    from: "从"
+    to: "到"
+    front: "正面"
+    back_translation: "背面（翻译）"
+    field_front: "正面"
+    field_back: "背面"
+    field_collection: "合集"
+    field_owner: "所有者"
+    field_translation: "翻译"
+    flash:
+      created: "卡片创建成功。"
+      updated: "卡片更新成功。"
+      deleted: "卡片删除成功。"
+      restored: "卡片恢复成功。"
+      added: "已将“%{card}”添加到 %{collection}。"
+      already_present: "“%{card}”已在 %{collection} 中。"
+      choose_collection: "请选择你的一个合集来添加这张卡片。"
+
+  all_cards:
+    title: "所有卡片"
+    import_button: "导入 (CSV)"
+    export_button: "导出我的卡片 (CSV)"
+
+  deleted_cards:
+    title: "已删除的卡片"
+    all_cards_button: "所有卡片"
+    empty: "你没有已删除的卡片。"
+
+  import:
+    title: "导入卡片"
+    instructions_html: "上传一个包含表头行和以下列的 CSV：<code>collection, front_text, back_text, source_language, target_language</code>（与导出格式相同）。语言按名称或代码匹配；缺少的合集会自动为你创建。文本为空或语言未知的行将被跳过。"
+    file_label: "CSV 文件"
+    submit: "导入"
+    back_to_all_cards: "← 返回所有卡片"
+    flash:
+      no_file: "请选择要导入的 CSV 文件。"
+      summary:
+        one: "已导入 %{count} 张卡片。"
+        other: "已导入 %{count} 张卡片。"
+      skipped:
+        one: "已跳过 %{count} 行。"
+        other: "已跳过 %{count} 行。"
+      parse_error: "无法将该文件解析为 CSV。"
+
+  languages:
+    title: "语言"
+    new_title: "新建语言"
+    edit_title: "编辑语言"
+    new_button: "新建语言"
+    empty: "还没有语言。"
+    back_to_languages: "← 返回语言"
+    back_to_languages_plain: "返回语言"
+    show_this: "显示此语言"
+    field_code: "代码"
+    field_native_name: "本地名称"
+    code_hint_html: "两字母的 ISO 代码（例如 <code>en</code>）。"
+    flash:
+      created: "语言创建成功。"
+      updated: "语言更新成功。"
+      destroyed: "语言删除成功。"
+
+  devise_ui:
+    log_in: "登录"
+    sign_up: "注册"
+    edit_profile: "编辑资料"
+    forgot_password: "忘记密码？"
+    change_password: "修改密码"
+    native_language: "母语"
+    language_to_learn: "你想学习的语言"
+    learning_language: "学习语言"
+    select_native: "选择你的母语"
+    select_to_learn: "选择要学习的语言"
+    select_generic: "选择..."
+    min_characters: "（至少 %{count} 个字符）"
+    new_password: "新密码"
+    confirm_new_password: "确认新密码"
+    send_reset_instructions: "向我发送重置密码说明"
+    change_my_password: "修改我的密码"
+    update: "更新"
+    leave_blank: "（如果不想修改，请留空）"
+    need_current_password: "（我们需要你的当前密码来确认更改）"
+    cancel_account: "注销我的账户"
+    cancel_account_unhappy: "不满意吗？这将永久删除你的账户。"
+    back: "返回"
+
+  flash:
+    not_authorized: "你无权执行此操作。"
+
+  helpers:
+    submit:
+      collection:
+        create: "创建合集"
+        update: "更新合集"
+      card:
+        create: "创建卡片"
+        update: "更新卡片"
+      language:
+        create: "创建语言"
+        update: "更新语言"
+
+  activerecord:
+    attributes:
+      user:
+        name: "姓名"
+        email: "电子邮箱"
+        password: "密码"
+        password_confirmation: "确认密码"
+        current_password: "当前密码"
+        remember_me: "记住我"
+        native_language_id: "母语"
+        preferred_language_id: "首选语言"
+      collection:
+        name: "名称"
+        description: "描述"
+        language: "语言"
+      card:
+        front_text: "正面"
+        back_text: "背面"
+      language:
+        name: "名称"
+        code: "代码"
+        native_name: "本地名称"

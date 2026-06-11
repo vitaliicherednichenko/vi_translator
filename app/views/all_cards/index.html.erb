@@ -1,15 +1,15 @@
-<% content_for :title, "All Cards" %>
+<% content_for :title, t("all_cards.title") %>
 
 <% if notice.present? %>
   <div class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">All Cards</h1>
+  <h1 class="mb-0"><%= t("all_cards.title") %></h1>
   <% if user_signed_in? %>
     <div class="d-flex gap-2">
-      <%= link_to "Import (CSV)", import_cards_path, class: "btn btn-outline-secondary" %>
-      <%= link_to "Export my cards (CSV)", export_cards_path, class: "btn btn-outline-secondary" %>
+      <%= link_to t("all_cards.import_button"), import_cards_path, class: "btn btn-outline-secondary" %>
+      <%= link_to t("all_cards.export_button"), export_cards_path, class: "btn btn-outline-secondary" %>
     </div>
   <% end %>
 </div>
@@ -23,7 +23,7 @@
              data-controller="flip"
              data-action="click->flip#toggle keydown->flip#toggleKey"
              role="button" tabindex="0"
-             aria-label="Flip card to see the translation">
+             aria-label="<%= t('cards.flip_aria') %>">
           <div class="flip-card-inner">
             <div class="flip-card-front bg-body border">
               <% if card.source_language %>
@@ -45,16 +45,16 @@
                         class: "badge text-bg-light text-decoration-none" %>
           </div>
           <div class="d-flex justify-content-center gap-2">
-            <%= link_to "View", collection_card_path(card.collection, card),
+            <%= link_to t("common.view"), collection_card_path(card.collection, card),
                         class: "btn btn-outline-primary btn-sm" %>
             <% if user_signed_in? %>
               <div class="dropdown">
                 <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                  Add to…
+                  <%= t("common.add_to") %>
                 </button>
                 <ul class="dropdown-menu">
-                  <li class="dropdown-header">Add to my collection</li>
+                  <li class="dropdown-header"><%= t("common.add_to_collection") %></li>
                   <% @my_collections.each do |collection| %>
                     <li>
                       <%= button_to collection.name,
@@ -64,17 +64,17 @@
                     </li>
                   <% end %>
                   <% if @my_collections.empty? %>
-                    <li><span class="dropdown-item-text text-muted">No collections yet</span></li>
+                    <li><span class="dropdown-item-text text-muted"><%= t("common.no_collections_yet") %></span></li>
                   <% end %>
                   <li><hr class="dropdown-divider"></li>
-                  <li><%= link_to "New collection", new_collection_path, class: "dropdown-item" %></li>
+                  <li><%= link_to t("nav.new_collection"), new_collection_path, class: "dropdown-item" %></li>
                 </ul>
               </div>
             <% end %>
             <% if policy(card).destroy? %>
-              <%= button_to "Delete", collection_card_path(card.collection, card), method: :delete,
+              <%= button_to t("common.delete"), collection_card_path(card.collection, card), method: :delete,
                             class: "btn btn-outline-danger btn-sm",
-                            form: { data: { turbo_confirm: "Delete this card?" } } %>
+                            form: { data: { turbo_confirm: t("common.confirm_delete_card") } } %>
             <% end %>
           </div>
         </div>
@@ -83,9 +83,9 @@
   </div>
 <% else %>
   <p class="text-muted">
-    No cards match your native and preferred languages.
+    <%= t("cards.empty_all") %>
     <% if current_user.nil? || current_user.native_language.nil? || current_user.preferred_language.nil? %>
-      Set both in <%= link_to "your profile", edit_user_registration_path %> to see matching cards.
+      <%= t("cards.set_both_html", link: link_to(t("cards.your_profile"), edit_user_registration_path)).html_safe %>
     <% end %>
   </p>
 <% end %>

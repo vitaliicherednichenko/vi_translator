@@ -58,6 +58,8 @@ RSpec.describe CardsCsvImporter do
 
   it "summary describes imported and skipped counts" do
     result = described_class::Result.new(imported: 2, skipped: 1)
-    expect(result.summary).to eq("Imported 2 cards. Skipped 1 row.")
+    I18n.with_locale(:en) do
+      expect(result.summary).to eq("Imported 2 cards. Skipped 1 row.")
+    end
   end
 end

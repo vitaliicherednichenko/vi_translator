@@ -1,0 +1,216 @@
+ja:
+  app_name: "Vi Translator"
+  locale_name: "日本語"
+
+  nav:
+    collections: "コレクション"
+    cards: "カード"
+    languages: "言語"
+    back_side: "裏面"
+    front_side: "表面"
+    back_side_title: "このページのすべてのカードの裏面を表示"
+    my_cards: "マイカード"
+    my_collections: "マイコレクション"
+    no_native_collections: "母語のコレクションがありません"
+    new_collection: "新しいコレクション"
+    import_cards: "カードをインポート (CSV)"
+    export_cards: "マイカードをエクスポート (CSV)"
+    deleted_cards: "削除済みカード"
+    see_all_deleted: "削除済みカードをすべて表示"
+    login: "ログイン"
+    sign_up: "新規登録"
+    logout: "ログアウト"
+    edit_profile: "プロフィールを編集"
+    native: "母語"
+    learning: "学習中"
+    language_menu: "言語"
+
+  common:
+    view: "表示"
+    edit: "編集"
+    delete: "削除"
+    back: "戻る"
+    restore: "復元"
+    owner: "所有者"
+    description: "説明"
+    language: "言語"
+    none: "—"
+    confirm_generic: "よろしいですか？"
+    confirm_delete_card: "このカードを削除しますか？"
+    add_to: "追加先…"
+    add_to_collection: "マイコレクションに追加"
+    no_collections_yet: "コレクションはまだありません"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} 件のエラーによりこのコレクションを保存できませんでした:"
+        other: "%{count} 件のエラーによりこのコレクションを保存できませんでした:"
+      card:
+        one: "%{count} 件のエラーによりこのカードを保存できませんでした:"
+        other: "%{count} 件のエラーによりこのカードを保存できませんでした:"
+      language:
+        one: "%{count} 件のエラーによりこの言語を保存できませんでした:"
+        other: "%{count} 件のエラーによりこの言語を保存できませんでした:"
+
+  collections:
+    title: "コレクション"
+    new_title: "新しいコレクション"
+    edit_title: "コレクションを編集"
+    new_button: "新しいコレクション"
+    cards_button: "カード"
+    by: "作成者: %{name}"
+    empty: "母語のコレクションがありません。"
+    empty_hint_html: "%{link}で<strong>母語</strong>を設定すると、一致するコレクションが表示されます。"
+    your_profile: "プロフィール"
+    back_to_collections: "← コレクションに戻る"
+    back_to_collections_plain: "コレクションに戻る"
+    show_this: "このコレクションを表示"
+    primary_language: "主要言語"
+    field_description: "説明"
+    field_owner: "所有者"
+    field_language: "言語"
+    flash:
+      created: "コレクションを作成しました。"
+      updated: "コレクションを更新しました。"
+      destroyed: "コレクションを削除しました。"
+
+  cards:
+    index_title: "カード"
+    collection_cards: "%{name} のカード"
+    new_title: "新しいカード"
+    edit_title: "カードを編集"
+    card_title: "カード"
+    show_heading: "%{name} · カード"
+    new_button: "新しいカード"
+    deleted_badge: "削除済み"
+    flip_aria: "カードをめくって翻訳を表示"
+    empty_in_collection: "このコレクションには、あなたの母語と学習言語に一致するカードがありません。"
+    empty_all: "あなたの母語と学習言語に一致するカードがありません。"
+    set_both_html: "%{link}で両方を設定すると、一致するカードが表示されます。"
+    your_profile: "プロフィール"
+    back_to_cards: "← カードに戻る"
+    back_to_cards_plain: "カードに戻る"
+    show_this: "このカードを表示"
+    from: "翻訳元"
+    to: "翻訳先"
+    front: "表面"
+    back_translation: "裏面（翻訳）"
+    field_front: "表面"
+    field_back: "裏面"
+    field_collection: "コレクション"
+    field_owner: "所有者"
+    field_translation: "翻訳"
+    flash:
+      created: "カードを作成しました。"
+      updated: "カードを更新しました。"
+      deleted: "カードを削除しました。"
+      restored: "カードを復元しました。"
+      added: "「%{card}」を %{collection} に追加しました。"
+      already_present: "「%{card}」はすでに %{collection} にあります。"
+      choose_collection: "このカードを追加するコレクションを選んでください。"
+
+  all_cards:
+    title: "すべてのカード"
+    import_button: "インポート (CSV)"
+    export_button: "マイカードをエクスポート (CSV)"
+
+  deleted_cards:
+    title: "削除済みカード"
+    all_cards_button: "すべてのカード"
+    empty: "削除済みのカードはありません。"
+
+  import:
+    title: "カードをインポート"
+    instructions_html: "ヘッダー行と次の列を含む CSV をアップロードしてください: <code>collection, front_text, back_text, source_language, target_language</code>（エクスポートと同じ形式）。言語は名前またはコードで照合され、存在しないコレクションは自動的に作成されます。テキストが空、または不明な言語の行はスキップされます。"
+    file_label: "CSV ファイル"
+    submit: "インポート"
+    back_to_all_cards: "← すべてのカードに戻る"
+    flash:
+      no_file: "インポートする CSV ファイルを選んでください。"
+      summary:
+        one: "%{count} 枚のカードをインポートしました。"
+        other: "%{count} 枚のカードをインポートしました。"
+      skipped:
+        one: "%{count} 行をスキップしました。"
+        other: "%{count} 行をスキップしました。"
+      parse_error: "このファイルを CSV として解析できませんでした。"
+
+  languages:
+    title: "言語"
+    new_title: "新しい言語"
+    edit_title: "言語を編集"
+    new_button: "新しい言語"
+    empty: "言語はまだありません。"
+    back_to_languages: "← 言語に戻る"
+    back_to_languages_plain: "言語に戻る"
+    show_this: "この言語を表示"
+    field_code: "コード"
+    field_native_name: "現地名"
+    code_hint_html: "2 文字の ISO コード（例: <code>en</code>）。"
+    flash:
+      created: "言語を作成しました。"
+      updated: "言語を更新しました。"
+      destroyed: "言語を削除しました。"
+
+  devise_ui:
+    log_in: "ログイン"
+    sign_up: "新規登録"
+    edit_profile: "プロフィールを編集"
+    forgot_password: "パスワードをお忘れですか？"
+    change_password: "パスワードを変更"
+    native_language: "母語"
+    language_to_learn: "学びたい言語"
+    learning_language: "学習言語"
+    select_native: "母語を選択してください"
+    select_to_learn: "学ぶ言語を選択してください"
+    select_generic: "選択..."
+    min_characters: "(%{count} 文字以上)"
+    new_password: "新しいパスワード"
+    confirm_new_password: "新しいパスワードの確認"
+    send_reset_instructions: "パスワード再設定の手順を送信"
+    change_my_password: "パスワードを変更"
+    update: "更新"
+    leave_blank: "(変更しない場合は空欄のままにしてください)"
+    need_current_password: "(変更を確認するため現在のパスワードが必要です)"
+    cancel_account: "アカウントを削除"
+    cancel_account_unhappy: "ご不満ですか？これによりアカウントが完全に削除されます。"
+    back: "戻る"
+
+  flash:
+    not_authorized: "この操作を実行する権限がありません。"
+
+  helpers:
+    submit:
+      collection:
+        create: "コレクションを作成"
+        update: "コレクションを更新"
+      card:
+        create: "カードを作成"
+        update: "カードを更新"
+      language:
+        create: "言語を作成"
+        update: "言語を更新"
+
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワードの確認"
+        current_password: "現在のパスワード"
+        remember_me: "ログイン状態を保持"
+        native_language_id: "母語"
+        preferred_language_id: "希望する言語"
+      collection:
+        name: "名前"
+        description: "説明"
+        language: "言語"
+      card:
+        front_text: "表面"
+        back_text: "裏面"
+      language:
+        name: "名前"
+        code: "コード"
+        native_name: "現地名"

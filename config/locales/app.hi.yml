@@ -1,0 +1,216 @@
+hi:
+  app_name: "Vi Translator"
+  locale_name: "हिन्दी"
+
+  nav:
+    collections: "संग्रह"
+    cards: "कार्ड"
+    languages: "भाषाएँ"
+    back_side: "पिछला भाग"
+    front_side: "अगला भाग"
+    back_side_title: "इस पृष्ठ के हर कार्ड का पिछला भाग दिखाएँ"
+    my_cards: "मेरे कार्ड"
+    my_collections: "मेरे संग्रह"
+    no_native_collections: "आपकी मातृभाषा में कोई संग्रह नहीं"
+    new_collection: "नया संग्रह"
+    import_cards: "कार्ड आयात करें (CSV)"
+    export_cards: "मेरे कार्ड निर्यात करें (CSV)"
+    deleted_cards: "हटाए गए कार्ड"
+    see_all_deleted: "सभी हटाए गए कार्ड देखें"
+    login: "लॉग इन"
+    sign_up: "साइन अप"
+    logout: "लॉग आउट"
+    edit_profile: "प्रोफ़ाइल संपादित करें"
+    native: "मातृभाषा"
+    learning: "सीख रहे हैं"
+    language_menu: "भाषा"
+
+  common:
+    view: "देखें"
+    edit: "संपादित करें"
+    delete: "हटाएँ"
+    back: "वापस"
+    restore: "पुनर्स्थापित करें"
+    owner: "स्वामी"
+    description: "विवरण"
+    language: "भाषा"
+    none: "—"
+    confirm_generic: "क्या आप निश्चित हैं?"
+    confirm_delete_card: "इस कार्ड को हटाएँ?"
+    add_to: "इसमें जोड़ें…"
+    add_to_collection: "मेरे संग्रह में जोड़ें"
+    no_collections_yet: "अभी तक कोई संग्रह नहीं"
+
+  errors:
+    prohibited:
+      collection:
+        one: "%{count} त्रुटि के कारण यह संग्रह सहेजा नहीं जा सका:"
+        other: "%{count} त्रुटियों के कारण यह संग्रह सहेजा नहीं जा सका:"
+      card:
+        one: "%{count} त्रुटि के कारण यह कार्ड सहेजा नहीं जा सका:"
+        other: "%{count} त्रुटियों के कारण यह कार्ड सहेजा नहीं जा सका:"
+      language:
+        one: "%{count} त्रुटि के कारण यह भाषा सहेजी नहीं जा सकी:"
+        other: "%{count} त्रुटियों के कारण यह भाषा सहेजी नहीं जा सकी:"
+
+  collections:
+    title: "संग्रह"
+    new_title: "नया संग्रह"
+    edit_title: "संग्रह संपादित करें"
+    new_button: "नया संग्रह"
+    cards_button: "कार्ड"
+    by: "द्वारा %{name}"
+    empty: "आपकी मातृभाषा में कोई संग्रह नहीं है।"
+    empty_hint_html: "मिलते-जुलते संग्रह देखने के लिए %{link} में अपनी <strong>मातृभाषा</strong> सेट करें।"
+    your_profile: "अपनी प्रोफ़ाइल"
+    back_to_collections: "← संग्रहों पर वापस"
+    back_to_collections_plain: "संग्रहों पर वापस"
+    show_this: "यह संग्रह दिखाएँ"
+    primary_language: "मुख्य भाषा"
+    field_description: "विवरण"
+    field_owner: "स्वामी"
+    field_language: "भाषा"
+    flash:
+      created: "संग्रह सफलतापूर्वक बनाया गया।"
+      updated: "संग्रह सफलतापूर्वक अपडेट किया गया।"
+      destroyed: "संग्रह सफलतापूर्वक हटाया गया।"
+
+  cards:
+    index_title: "कार्ड"
+    collection_cards: "%{name} के कार्ड"
+    new_title: "नया कार्ड"
+    edit_title: "कार्ड संपादित करें"
+    card_title: "कार्ड"
+    show_heading: "%{name} · कार्ड"
+    new_button: "नया कार्ड"
+    deleted_badge: "हटाया गया"
+    flip_aria: "अनुवाद देखने के लिए कार्ड पलटें"
+    empty_in_collection: "इस संग्रह में आपकी मातृभाषा और सीखी जा रही भाषा से मेल खाने वाला कोई कार्ड नहीं है।"
+    empty_all: "आपकी मातृभाषा और सीखी जा रही भाषा से मेल खाने वाला कोई कार्ड नहीं है।"
+    set_both_html: "मिलते-जुलते कार्ड देखने के लिए %{link} में दोनों सेट करें।"
+    your_profile: "अपनी प्रोफ़ाइल"
+    back_to_cards: "← कार्डों पर वापस"
+    back_to_cards_plain: "कार्डों पर वापस"
+    show_this: "यह कार्ड दिखाएँ"
+    from: "से"
+    to: "तक"
+    front: "अगला भाग"
+    back_translation: "पिछला भाग (अनुवाद)"
+    field_front: "अगला भाग"
+    field_back: "पिछला भाग"
+    field_collection: "संग्रह"
+    field_owner: "स्वामी"
+    field_translation: "अनुवाद"
+    flash:
+      created: "कार्ड सफलतापूर्वक बनाया गया।"
+      updated: "कार्ड सफलतापूर्वक अपडेट किया गया।"
+      deleted: "कार्ड सफलतापूर्वक हटाया गया।"
+      restored: "कार्ड सफलतापूर्वक पुनर्स्थापित किया गया।"
+      added: "\"%{card}\" को %{collection} में जोड़ा गया।"
+      already_present: "\"%{card}\" पहले से ही %{collection} में है।"
+      choose_collection: "इस कार्ड को जोड़ने के लिए अपना कोई संग्रह चुनें।"
+
+  all_cards:
+    title: "सभी कार्ड"
+    import_button: "आयात (CSV)"
+    export_button: "मेरे कार्ड निर्यात करें (CSV)"
+
+  deleted_cards:
+    title: "हटाए गए कार्ड"
+    all_cards_button: "सभी कार्ड"
+    empty: "आपके पास कोई हटाया गया कार्ड नहीं है।"
+
+  import:
+    title: "कार्ड आयात करें"
+    instructions_html: "एक हेडर पंक्ति और इन कॉलमों वाली CSV अपलोड करें: <code>collection, front_text, back_text, source_language, target_language</code> (निर्यात के समान प्रारूप)। भाषाएँ नाम या कोड से मिलाई जाती हैं; न मिलने पर संग्रह स्वतः बना दिया जाता है। खाली टेक्स्ट या अज्ञात भाषा वाली पंक्तियाँ छोड़ दी जाती हैं।"
+    file_label: "CSV फ़ाइल"
+    submit: "आयात करें"
+    back_to_all_cards: "← सभी कार्डों पर वापस"
+    flash:
+      no_file: "आयात करने के लिए एक CSV फ़ाइल चुनें।"
+      summary:
+        one: "%{count} कार्ड आयात किया गया।"
+        other: "%{count} कार्ड आयात किए गए।"
+      skipped:
+        one: "%{count} पंक्ति छोड़ी गई।"
+        other: "%{count} पंक्तियाँ छोड़ी गईं।"
+      parse_error: "इस फ़ाइल को CSV के रूप में पढ़ा नहीं जा सका।"
+
+  languages:
+    title: "भाषाएँ"
+    new_title: "नई भाषा"
+    edit_title: "भाषा संपादित करें"
+    new_button: "नई भाषा"
+    empty: "अभी तक कोई भाषा नहीं।"
+    back_to_languages: "← भाषाओं पर वापस"
+    back_to_languages_plain: "भाषाओं पर वापस"
+    show_this: "यह भाषा दिखाएँ"
+    field_code: "कोड"
+    field_native_name: "स्थानीय नाम"
+    code_hint_html: "दो अक्षरों का ISO कोड (जैसे <code>en</code>)।"
+    flash:
+      created: "भाषा सफलतापूर्वक बनाई गई।"
+      updated: "भाषा सफलतापूर्वक अपडेट की गई।"
+      destroyed: "भाषा सफलतापूर्वक हटाई गई।"
+
+  devise_ui:
+    log_in: "लॉग इन"
+    sign_up: "साइन अप"
+    edit_profile: "प्रोफ़ाइल संपादित करें"
+    forgot_password: "अपना पासवर्ड भूल गए?"
+    change_password: "अपना पासवर्ड बदलें"
+    native_language: "मातृभाषा"
+    language_to_learn: "वह भाषा जो आप सीखना चाहते हैं"
+    learning_language: "सीखने की भाषा"
+    select_native: "अपनी मातृभाषा चुनें"
+    select_to_learn: "सीखने के लिए भाषा चुनें"
+    select_generic: "चुनें..."
+    min_characters: "(कम से कम %{count} अक्षर)"
+    new_password: "नया पासवर्ड"
+    confirm_new_password: "नए पासवर्ड की पुष्टि करें"
+    send_reset_instructions: "मुझे पासवर्ड रीसेट निर्देश भेजें"
+    change_my_password: "मेरा पासवर्ड बदलें"
+    update: "अपडेट करें"
+    leave_blank: "(यदि आप इसे बदलना नहीं चाहते तो खाली छोड़ दें)"
+    need_current_password: "(परिवर्तनों की पुष्टि के लिए हमें आपके वर्तमान पासवर्ड की आवश्यकता है)"
+    cancel_account: "मेरा खाता रद्द करें"
+    cancel_account_unhappy: "असंतुष्ट हैं? यह आपके खाते को स्थायी रूप से हटा देगा।"
+    back: "वापस"
+
+  flash:
+    not_authorized: "आपको यह कार्य करने की अनुमति नहीं है।"
+
+  helpers:
+    submit:
+      collection:
+        create: "संग्रह बनाएँ"
+        update: "संग्रह अपडेट करें"
+      card:
+        create: "कार्ड बनाएँ"
+        update: "कार्ड अपडेट करें"
+      language:
+        create: "भाषा बनाएँ"
+        update: "भाषा अपडेट करें"
+
+  activerecord:
+    attributes:
+      user:
+        name: "नाम"
+        email: "ईमेल"
+        password: "पासवर्ड"
+        password_confirmation: "पासवर्ड की पुष्टि"
+        current_password: "वर्तमान पासवर्ड"
+        remember_me: "मुझे याद रखें"
+        native_language_id: "मातृभाषा"
+        preferred_language_id: "पसंदीदा भाषा"
+      collection:
+        name: "नाम"
+        description: "विवरण"
+        language: "भाषा"
+      card:
+        front_text: "अगला भाग"
+        back_text: "पिछला भाग"
+      language:
+        name: "नाम"
+        code: "कोड"
+        native_name: "स्थानीय नाम"

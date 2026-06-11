@@ -32,7 +32,7 @@ class CollectionsController < ApplicationController
     authorize @collection
 
     if @collection.save
-      redirect_to @collection, notice: "Collection was successfully created."
+      redirect_to @collection, notice: t("collections.flash.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.update(collection_params)
-        format.html { redirect_to @collection, notice: "Collection was successfully updated.", status: :see_other }
+        format.html { redirect_to @collection, notice: t("collections.flash.updated"), status: :see_other }
         format.json { render :show, status: :ok, location: @collection }
       else
         format.html { render :edit, status: :unprocessable_content }
@@ -59,7 +59,7 @@ class CollectionsController < ApplicationController
     @collection.destroy!
 
     respond_to do |format|
-      format.html { redirect_to collections_path, notice: "Collection was successfully destroyed.", status: :see_other }
+      format.html { redirect_to collections_path, notice: t("collections.flash.destroyed"), status: :see_other }
       format.json { head :no_content }
     end
   end

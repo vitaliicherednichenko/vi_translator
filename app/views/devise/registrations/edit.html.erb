@@ -1,8 +1,8 @@
-<% content_for :title, "Edit Profile" %>
+<% content_for :title, t("devise_ui.edit_profile") %>
 
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-6">
-    <h2 class="mb-4 text-center">Edit Profile</h2>
+    <h2 class="mb-4 text-center"><%= t("devise_ui.edit_profile") %></h2>
 
     <div class="card shadow-sm">
       <div class="card-body">
@@ -21,22 +21,22 @@
 
           <div class="row mb-3">
             <div class="col-md-6">
-              <%= f.label :native_language_id, "Native Language", class: "form-label" %>
+              <%= f.label :native_language_id, t("devise_ui.native_language"), class: "form-label" %>
               <%= f.collection_select :native_language_id, Language.all, :id, :name,
-                                      { prompt: "Select..." },
+                                      { prompt: t("devise_ui.select_generic") },
                                       { class: "form-select" } %>
             </div>
             <div class="col-md-6">
-              <%= f.label :preferred_language_id, "Learning Language", class: "form-label" %>
+              <%= f.label :preferred_language_id, t("devise_ui.learning_language"), class: "form-label" %>
               <%= f.collection_select :preferred_language_id, Language.all, :id, :name,
-                                      { prompt: "Select..." },
+                                      { prompt: t("devise_ui.select_generic") },
                                       { class: "form-select" } %>
             </div>
           </div>
 
           <div class="mb-3">
             <%= f.label :password, class: "form-label" %>
-            <i class="text-muted">(leave blank if you don't want to change it)</i>
+            <i class="text-muted"><%= t("devise_ui.leave_blank") %></i>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
 
@@ -47,12 +47,12 @@
 
           <div class="mb-3">
             <%= f.label :current_password, class: "form-label" %>
-            <i class="text-muted">(we need your current password to confirm your changes)</i>
+            <i class="text-muted"><%= t("devise_ui.need_current_password") %></i>
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
           </div>
 
           <div class="d-grid">
-            <%= f.submit "Update", class: "btn btn-primary" %>
+            <%= f.submit t("devise_ui.update"), class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
@@ -60,16 +60,16 @@
 
     <div class="card shadow-sm border-danger mt-3">
       <div class="card-body">
-        <h3 class="h6 text-danger">Cancel my account</h3>
-        <p class="text-muted small mb-3">Unhappy? This permanently deletes your account.</p>
-        <%= button_to "Cancel my account", registration_path(resource_name),
-                      data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
+        <h3 class="h6 text-danger"><%= t("devise_ui.cancel_account") %></h3>
+        <p class="text-muted small mb-3"><%= t("devise_ui.cancel_account_unhappy") %></p>
+        <%= button_to t("devise_ui.cancel_account"), registration_path(resource_name),
+                      data: { confirm: t("common.confirm_generic"), turbo_confirm: t("common.confirm_generic") },
                       method: :delete, class: "btn btn-outline-danger btn-sm" %>
       </div>
     </div>
 
     <div class="mt-3 text-center">
-      <%= link_to "Back", :back, class: "btn btn-link" %>
+      <%= link_to t("devise_ui.back"), :back, class: "btn btn-link" %>
     </div>
   </div>
 </div>
