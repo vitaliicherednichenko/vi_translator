@@ -1,10 +1,40 @@
 class AllCardsController < ApplicationController
-  before_action :authenticate_user!, only: %i[deleted export import run_import]
+  before_action :authenticate_user!, only: %i[deleted export import run_import add_to_collection]
 
   def index
     @cards = Card.between_user_languages(current_user)
+             .original
              .includes(:collection, :source_language, :target_language)
              .order(created_at: :desc)
+    @my_collections = current_user&.collections&.order(:name)&.to_a || []
+  end
+
+  # POST /cards/:id/add_to_collection
+  def add_to_collection
+    source = Card.find(params[:id])
+    collection = current_user.collections.find_by(id: params[:collection_id])
+
+    unless collection
+      redirect_back fallback_location: cards_path, alert: "Choose one of your collections to add this card to."
+      return
+    end
+
+    card = current_user.cards.find_or_create_by!(
+      collection: collection,
+      front_text: source.front_text,
+      back_text: source.back_text,
+      source_language_id: source.source_language_id,
+      target_language_id: source.target_language_id
+    ) { |c| c.copied_from = (source.copied_from || source) }
+
+    notice =
+      if card.previously_new_record?
+        "Added \"#{card.front_text}\" to #{collection.name}."
+      else
+        "\"#{card.front_text}\" is already in #{collection.name}."
+      end
+
+    redirect_back fallback_location: cards_path, notice: notice
   end
 
   # GET /cards/deleted

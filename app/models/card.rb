@@ -3,12 +3,14 @@ class Card < ApplicationRecord
   belongs_to :collection
   belongs_to :source_language, class_name: "Language", optional: true
   belongs_to :target_language, class_name: "Language", optional: true
+  belongs_to :copied_from, class_name: "Card", optional: true
 
   validates :front_text, presence: true
   validates :back_text, presence: true
 
-  scope :kept,    -> { where(deleted_at: nil) }
-  scope :deleted, -> { where.not(deleted_at: nil) }
+  scope :kept,     -> { where(deleted_at: nil) }
+  scope :deleted,  -> { where.not(deleted_at: nil) }
+  scope :original, -> { where(copied_from_id: nil) }
 
   scope :between_user_languages, ->(user) {
     native = user&.native_language_id

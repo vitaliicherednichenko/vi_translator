@@ -75,6 +75,70 @@ RSpec.describe "All cards pages", type: :request do
     end
   end
 
+  describe "POST /cards/:id/add_to_collection" do
+    it "redirects a guest to login" do
+      card = create(:card)
+      post add_card_to_collection_url(card), params: { collection_id: 1 }
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "copies another user's card into the current user's collection" do
+      other = create(:user)
+      other_collection = create(:collection, user: other, language: en)
+      source = create(:card, user: other, collection: other_collection,
+                      front_text: "borrow-me", back_text: "prestame",
+                      source_language: en, target_language: es)
+      my_collection = create(:collection, user: user, language: en)
+
+      sign_in user
+      expect {
+        post add_card_to_collection_url(source), params: { collection_id: my_collection.id }
+      }.to change { user.cards.count }.by(1)
+
+      copied = my_collection.cards.last
+      expect(copied.front_text).to eq("borrow-me")
+      expect(copied.back_text).to eq("prestame")
+      expect(copied.user).to eq(user)
+      expect(copied.copied_from).to eq(source)
+    end
+
+    it "does not show the copied card again on the All Cards page" do
+      source = create(:card, front_text: "once-only", back_text: "solo-una",
+                      source_language: en, target_language: es)
+      my_collection = create(:collection, user: user, language: en)
+
+      sign_in user
+      post add_card_to_collection_url(source), params: { collection_id: my_collection.id }
+      copy = my_collection.cards.last
+      get cards_url
+
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(source))
+      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(copy))
+    end
+
+    it "does not duplicate a card already in the collection" do
+      source = create(:card, front_text: "dup", back_text: "dup-back")
+      my_collection = create(:collection, user: user, language: en)
+
+      sign_in user
+      post add_card_to_collection_url(source), params: { collection_id: my_collection.id }
+      expect {
+        post add_card_to_collection_url(source), params: { collection_id: my_collection.id }
+      }.not_to change { user.cards.count }
+    end
+
+    it "does not let a user add into someone else's collection" do
+      source = create(:card, front_text: "x", back_text: "y")
+      foreign_collection = create(:collection)
+
+      sign_in user
+      expect {
+        post add_card_to_collection_url(source), params: { collection_id: foreign_collection.id }
+      }.not_to change { Card.count }
+      expect(flash[:alert]).to be_present
+    end
+  end
+
   describe "card import" do
     def csv_upload(content)
       file = Tempfile.new([ "cards", ".csv" ])
