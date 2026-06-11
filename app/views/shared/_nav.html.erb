@@ -13,16 +13,19 @@
           <%= link_to "Collections", collections_path, class: "nav-link #{'active' if controller_name == 'collections'}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Cards", cards_path, class: "nav-link #{'active' if controller_name == 'all_cards'}" %>
+          <%= link_to "Cards", cards_path, class: "nav-link #{'active' if controller_name == 'all_cards' || controller_name == 'cards'}" %>
         </li>
-        <li class="nav-item">
-          <button type="button" class="nav-link border-0 bg-transparent"
-                  data-controller="reverse-cards"
-                  data-action="reverse-cards#toggle"
-                  title="Show the back of every card on this page">
-            Back side
-          </button>
-        </li>
+        <% if controller_name == "all_cards" || controller_name == "cards" %>
+          <li class="nav-item">
+            <button type="button" class="nav-link border-0 bg-transparent"
+                    data-controller="reverse-cards"
+                    data-action="reverse-cards#toggle"
+                    title="Show the back of every card on this page">
+              Back side
+            </button>
+          </li>
+        <% end %>
+
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle <%= 'active' if controller_name == 'cards' %>" href="#"
