@@ -11,6 +11,17 @@ RSpec.describe "All cards pages", type: :request do
       expect(response).to be_successful
     end
 
+    it "offers only native-language collections in the Add-to menu" do
+      native_collection = create(:collection, user: user, language: en, name: "native-set")
+      foreign_collection = create(:collection, user: user, language: es, name: "foreign-set")
+
+      sign_in user
+      get cards_url
+
+      expect(response.body).to include("native-set")
+      expect(response.body).not_to include("foreign-set")
+    end
+
     it "still shows a card after it has been removed (soft-deleted)" do
       collection = create(:collection, user: user, language: en)
       card = create(:card, user: user, collection: collection,

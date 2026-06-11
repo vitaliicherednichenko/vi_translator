@@ -34,13 +34,14 @@
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">My Collections</li>
-              <% current_user.collections.order(:name).each do |collection| %>
+              <% my_collections = current_user.collections.in_user_native_language(current_user).order(:name).to_a %>
+              <% my_collections.each do |collection| %>
                 <li>
                   <%= link_to collection.name, collection_cards_path(collection), class: "dropdown-item" %>
                 </li>
               <% end %>
-              <% if current_user.collections.empty? %>
-                <li><span class="dropdown-item-text text-muted">No collections yet</span></li>
+              <% if my_collections.empty? %>
+                <li><span class="dropdown-item-text text-muted">No collections in your native language</span></li>
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "New collection", new_collection_path, class: "dropdown-item" %></li>

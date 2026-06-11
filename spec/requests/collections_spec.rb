@@ -14,6 +14,20 @@ RSpec.describe "/collections", type: :request do
       get collections_url
       expect(response).to be_successful
     end
+
+    it "shows only collections in the signed-in user's native language" do
+      es = create(:language)
+      english_collection = create(:collection, user: other, language: en, name: "english-set")
+      spanish_collection = create(:collection, user: other, language: es, name: "spanish-set")
+
+      sign_in owner # native_language: en
+      get collections_url
+
+      expect(response.body).to include("english-set")
+      expect(response.body).not_to include("spanish-set")
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(english_collection))
+      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(spanish_collection))
+    end
   end
 
   describe "GET /show" do
