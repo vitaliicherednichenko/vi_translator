@@ -15,18 +15,25 @@ RSpec.describe "/collections", type: :request do
       expect(response).to be_successful
     end
 
-    it "shows only collections in the signed-in user's native language" do
+    it "shows collections in either the user's native or preferred language" do
       es = create(:language)
+      fr = create(:language)
       english_collection = create(:collection, user: other, language: en, name: "english-set")
       spanish_collection = create(:collection, user: other, language: es, name: "spanish-set")
+      french_collection  = create(:collection, user: other, language: fr, name: "french-set")
 
-      sign_in owner # native_language: en
+      owner.update!(native_language: en, preferred_language: es)
+      sign_in owner
       get collections_url
 
+      # native (en) and preferred (es) both shown, regardless of pair direction
       expect(response.body).to include("english-set")
-      expect(response.body).not_to include("spanish-set")
+      expect(response.body).to include("spanish-set")
+      # a language that is neither stays hidden
+      expect(response.body).not_to include("french-set")
+      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(french_collection))
       expect(response.body).to include(ActionView::RecordIdentifier.dom_id(english_collection))
-      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(spanish_collection))
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(spanish_collection))
     end
   end
 

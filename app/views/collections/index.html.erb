@@ -32,7 +32,7 @@
 <% else %>
   <p class="text-muted">
     <%= t("collections.empty") %>
-    <% unless current_user&.native_language %>
+    <% unless current_user&.native_language || current_user&.preferred_language %>
       <%= t("collections.empty_hint_html", link: link_to(t("collections.your_profile"), edit_user_registration_path)).html_safe %>
     <% end %>
   </p>

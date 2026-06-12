@@ -7,7 +7,7 @@ class AllCardsController < ApplicationController
              .includes(:collection, :source_language, :target_language)
              .order(created_at: :desc)
     @my_collections =
-      current_user&.collections&.in_user_native_language(current_user)&.order(:name)&.to_a || []
+      current_user&.collections&.in_user_languages(current_user)&.order(:name)&.to_a || []
   end
 
   # POST /cards/:id/add_to_collection

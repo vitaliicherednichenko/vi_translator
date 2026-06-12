@@ -6,7 +6,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections or /collections.json
   def index
-    @collections = policy_scope(Collection).in_user_native_language(current_user)
+    @collections = policy_scope(Collection).in_user_languages(current_user)
   end
 
   # GET /collections/1 or /collections/1.json

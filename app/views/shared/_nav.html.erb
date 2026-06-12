@@ -36,7 +36,7 @@
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header"><%= t("nav.my_collections") %></li>
-              <% my_collections = current_user.collections.in_user_native_language(current_user).order(:name).to_a %>
+              <% my_collections = current_user.collections.in_user_languages(current_user).order(:name).to_a %>
               <% my_collections.each do |collection| %>
                 <li>
                   <%= link_to collection.name, collection_cards_path(collection), class: "dropdown-item" %>

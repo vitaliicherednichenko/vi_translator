@@ -7,8 +7,9 @@ class Collection < ApplicationRecord
 
   scope :by_language, ->(code) { joins(:language).where(languages: { code: code }) }
 
-  scope :in_user_native_language, ->(user) {
-    language = user&.native_language
-    language ? where(language_id: language.id) : none
+
+  scope :in_user_languages, ->(user) {
+    ids = [ user&.native_language_id, user&.preferred_language_id ].compact
+    ids.any? ? where(language_id: ids) : none
   }
 end
