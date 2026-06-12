@@ -20,6 +20,45 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
     end
   end
 
+  describe "DELETE /collections/:collection_id/cards/bulk" do
+    it "redirects a guest to login" do
+      delete bulk_collection_cards_url(collection), params: { card_ids: [ card.id ] }
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "soft-deletes the selected cards for the owner" do
+      a = create(:card, collection: collection, user: owner, source_language: en, target_language: es)
+      b = create(:card, collection: collection, user: owner, source_language: en, target_language: es)
+      keep = create(:card, collection: collection, user: owner, source_language: en, target_language: es)
+
+      sign_in owner
+      delete bulk_collection_cards_url(collection), params: { card_ids: [ a.id, b.id ] }
+
+      expect(a.reload.deleted?).to be(true)
+      expect(b.reload.deleted?).to be(true)
+      expect(keep.reload.deleted?).to be(false)
+      expect(response).to redirect_to(collection_cards_path(collection))
+    end
+
+    it "does not touch cards from other collections" do
+      other_collection = create(:collection, user: owner, language: en)
+      foreign = create(:card, collection: other_collection, user: owner, source_language: en, target_language: es)
+
+      sign_in owner
+      delete bulk_collection_cards_url(collection), params: { card_ids: [ foreign.id ] }
+
+      expect(foreign.reload.deleted?).to be(false)
+    end
+
+    it "forbids a non-owner from bulk-deleting" do
+      sign_in other
+      delete bulk_collection_cards_url(collection), params: { card_ids: [ card.id ] }
+
+      expect(card.reload.deleted?).to be(false)
+      expect(flash[:alert]).to be_present
+    end
+  end
+
   describe "GET /collections/:collection_id/cards/export" do
     it "redirects a guest to login" do
       get export_collection_cards_url(collection)
@@ -185,6 +224,27 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
       delete collection_card_url(collection, card)
       expect(card.reload.deleted_at).to be_nil
       expect(response).to be_redirect
+    end
+
+    it "keeps a first delete of a kept card a soft delete even with the hard flag" do
+      sign_in owner
+      delete collection_card_url(collection, card), params: { hard: true }
+      expect(Card.exists?(card.id)).to be(true)
+      expect(card.reload.deleted?).to be(true)
+    end
+
+    it "lets the owner permanently delete their own card once it is soft-deleted" do
+      card.soft_delete!
+      sign_in owner
+      delete collection_card_url(collection, card), params: { hard: true }
+      expect(Card.exists?(card.id)).to be(false)
+    end
+
+    it "forbids a non-owner from permanently deleting a soft-deleted card" do
+      card.soft_delete!
+      sign_in other
+      delete collection_card_url(collection, card), params: { hard: true }
+      expect(Card.exists?(card.id)).to be(true)
     end
 
     it "lets an admin (non-owner) soft-delete" do

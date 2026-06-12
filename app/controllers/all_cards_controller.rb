@@ -1,5 +1,5 @@
 class AllCardsController < ApplicationController
-  before_action :authenticate_user!, only: %i[deleted export import run_import add_to_collection]
+  before_action :authenticate_user!, only: %i[deleted export import run_import add_to_collection bulk_destroy]
 
   def index
     @cards = Card.between_user_languages(current_user)
@@ -71,5 +71,17 @@ class AllCardsController < ApplicationController
     else
       redirect_to import_cards_path, alert: result.error
     end
+  end
+
+  def bulk_destroy
+    unless current_user.admin?
+      redirect_to cards_path, alert: t("flash.not_authorized")
+      return
+    end
+
+    ids = Array(params[:card_ids]).map(&:to_i).reject(&:zero?)
+    count = Card.where(id: ids).destroy_all.size
+
+    redirect_to cards_path, notice: t("cards.flash.bulk_deleted", count: count), status: :see_other
   end
 end

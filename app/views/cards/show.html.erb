@@ -18,6 +18,12 @@
         <%= button_to t("common.restore"), restore_collection_card_path(@collection, @card),
                       method: :patch, class: "btn btn-success" %>
       <% end %>
+      <% if policy(@card).destroy? %>
+        <%= button_to t("cards.delete_permanently"), collection_card_path(@collection, @card),
+                      method: :delete, params: { hard: true },
+                      class: "btn btn-outline-danger",
+                      form: { data: { turbo_confirm: t("common.confirm_delete_card_permanent") } } %>
+      <% end %>
     <% else %>
       <% if policy(@card).update? %>
         <%= link_to t("common.edit"), edit_collection_card_path(@collection, @card), class: "btn btn-outline-secondary" %>

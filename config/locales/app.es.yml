@@ -78,6 +78,12 @@ es:
 
   cards:
     index_title: "Tarjetas"
+    delete_permanently: "Eliminar"
+    select_all: "Seleccionar todo"
+    delete_selected: "Eliminar seleccionadas"
+    confirm_bulk_delete: "¿Eliminar las tarjetas seleccionadas?"
+    confirm_bulk_delete_permanent: "¿Eliminar permanentemente las tarjetas seleccionadas para todos?"
+    select_card: "Seleccionar tarjeta"
     import_button: "Importar (CSV)"
     export_button: "Exportar (CSV)"
     collection_cards: "Tarjetas de %{name}"
@@ -109,6 +115,10 @@ es:
       updated: "La tarjeta se actualizó correctamente."
       deleted: "La tarjeta se eliminó correctamente."
       restored: "La tarjeta se restauró correctamente."
+      permanently_deleted: "La tarjeta se eliminó permanentemente."
+      bulk_deleted:
+        one: "%{count} tarjeta eliminada."
+        other: "%{count} tarjetas eliminadas."
       added: "Se añadió \"%{card}\" a %{collection}."
       already_present: "\"%{card}\" ya está en %{collection}."
       choose_collection: "Elige una de tus colecciones para añadir esta tarjeta."

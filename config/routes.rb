@@ -15,14 +15,16 @@ Rails.application.routes.draw do
   get "cards/import", to: "all_cards#import", as: :import_cards
   post "cards/import", to: "all_cards#run_import"
   post "cards/:id/add_to_collection", to: "all_cards#add_to_collection", as: :add_card_to_collection
+  delete "cards/bulk", to: "all_cards#bulk_destroy", as: :bulk_cards
 
   resources :collections do
     resources :cards do
       member { patch :restore }
       collection do
-        get  "export", to: "cards#export"
-        get  "import", to: "cards#import"
-        post "import", to: "cards#run_import"
+        get    "export", to: "cards#export"
+        get    "import", to: "cards#import"
+        post   "import", to: "cards#run_import"
+        delete "bulk",   to: "cards#bulk_destroy"
       end
     end
   end

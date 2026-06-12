@@ -78,6 +78,12 @@ pt:
 
   cards:
     index_title: "Cartões"
+    delete_permanently: "Excluir"
+    select_all: "Selecionar tudo"
+    delete_selected: "Excluir selecionados"
+    confirm_bulk_delete: "Excluir os cartões selecionados?"
+    confirm_bulk_delete_permanent: "Excluir permanentemente os cartões selecionados para todos?"
+    select_card: "Selecionar cartão"
     import_button: "Importar (CSV)"
     export_button: "Exportar (CSV)"
     collection_cards: "Cartões de %{name}"
@@ -109,6 +115,10 @@ pt:
       updated: "Cartão atualizado com sucesso."
       deleted: "Cartão excluído com sucesso."
       restored: "Cartão restaurado com sucesso."
+      permanently_deleted: "O cartão foi excluído permanentemente."
+      bulk_deleted:
+        one: "%{count} cartão excluído."
+        other: "%{count} cartões excluídos."
       added: "\"%{card}\" adicionado a %{collection}."
       already_present: "\"%{card}\" já está em %{collection}."
       choose_collection: "Escolha uma de suas coleções para adicionar este cartão."

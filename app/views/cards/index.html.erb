@@ -20,40 +20,64 @@
 </div>
 
 <% if @cards.any? %>
-  <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-    <% @cards.each do |card| %>
-      <div class="col">
-        <div id="<%= dom_id card %>"
-             class="flip-card"
-             data-controller="flip"
-             data-action="click->flip#toggle keydown->flip#toggleKey"
-             role="button" tabindex="0"
-             aria-label="<%= t('cards.flip_aria') %>">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-body border">
-              <% if card.source_language %>
-                <span class="badge bg-secondary mb-2"><%= card.source_language.code.upcase %></span>
-              <% end %>
-              <span class="fs-4 fw-semibold"><%= card.front_text %></span>
-            </div>
-            <div class="flip-card-back bg-primary text-white">
-              <% if card.target_language %>
-                <span class="badge bg-light text-dark mb-2"><%= card.target_language.code.upcase %></span>
-              <% end %>
-              <span class="fs-4 fw-semibold"><%= card.back_text %></span>
-            </div>
-          </div>
+  <% manage = policy(@collection).update? %>
+  <div data-controller="<%= 'bulk-select' if manage %>"
+       data-bulk-select-url-value="<%= bulk_collection_cards_path(@collection) %>"
+       data-bulk-select-confirm-value="<%= t('cards.confirm_bulk_delete') %>">
+    <% if manage %>
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+        <div class="form-check m-0">
+          <input type="checkbox" class="form-check-input" id="select-all"
+                 data-bulk-select-target="all" data-action="bulk-select#toggleAll">
+          <label class="form-check-label" for="select-all"><%= t("cards.select_all") %></label>
         </div>
-        <div class="d-flex justify-content-center gap-2 mt-2">
-          <%= link_to t("common.view"), collection_card_path(@collection, card), class: "btn btn-outline-primary btn-sm" %>
-          <% if policy(card).destroy? %>
-            <%= button_to t("common.delete"), collection_card_path(@collection, card), method: :delete,
-                          class: "btn btn-outline-danger btn-sm",
-                          form: { data: { turbo_confirm: t("common.confirm_delete_card"), turbo_preserve_scroll: true } } %>
-          <% end %>
-        </div>
+        <button type="button" class="btn btn-outline-danger btn-sm" disabled
+                data-bulk-select-target="submit" data-action="bulk-select#destroy">
+          <%= t("cards.delete_selected") %> (<span data-bulk-select-target="count">0</span>)
+        </button>
       </div>
     <% end %>
+
+    <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      <% @cards.each do |card| %>
+        <div class="col">
+          <div id="<%= dom_id card %>"
+               class="flip-card"
+               data-controller="flip"
+               data-action="click->flip#toggle keydown->flip#toggleKey"
+               role="button" tabindex="0"
+               aria-label="<%= t('cards.flip_aria') %>">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bg-body border">
+                <% if card.source_language %>
+                  <span class="badge bg-secondary mb-2"><%= card.source_language.code.upcase %></span>
+                <% end %>
+                <span class="fs-4 fw-semibold"><%= card.front_text %></span>
+              </div>
+              <div class="flip-card-back bg-primary text-white">
+                <% if card.target_language %>
+                  <span class="badge bg-light text-dark mb-2"><%= card.target_language.code.upcase %></span>
+                <% end %>
+                <span class="fs-4 fw-semibold"><%= card.back_text %></span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+            <% if manage %>
+              <input type="checkbox" class="form-check-input m-0" value="<%= card.id %>"
+                     aria-label="<%= t('cards.select_card') %>"
+                     data-bulk-select-target="item" data-action="bulk-select#update">
+            <% end %>
+            <%= link_to t("common.view"), collection_card_path(@collection, card), class: "btn btn-outline-primary btn-sm" %>
+            <% if policy(card).destroy? %>
+              <%= button_to t("common.delete"), collection_card_path(@collection, card), method: :delete,
+                            class: "btn btn-outline-danger btn-sm",
+                            form: { data: { turbo_confirm: t("common.confirm_delete_card"), turbo_preserve_scroll: true } } %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% else %>
   <p class="text-muted">

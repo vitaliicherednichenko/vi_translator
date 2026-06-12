@@ -84,6 +84,12 @@ uk:
 
   cards:
     index_title: "Картки"
+    delete_permanently: "Видалити"
+    select_all: "Вибрати все"
+    delete_selected: "Видалити вибрані"
+    confirm_bulk_delete: "Видалити вибрані картки?"
+    confirm_bulk_delete_permanent: "Видалити вибрані картки назавжди для всіх?"
+    select_card: "Вибрати картку"
     import_button: "Імпорт (CSV)"
     export_button: "Експорт (CSV)"
     collection_cards: "Картки: %{name}"
@@ -115,6 +121,12 @@ uk:
       updated: "Картку успішно оновлено."
       deleted: "Картку успішно видалено."
       restored: "Картку успішно відновлено."
+      permanently_deleted: "Картку видалено назавжди."
+      bulk_deleted:
+        one: "Видалено %{count} картку."
+        few: "Видалено %{count} картки."
+        many: "Видалено %{count} карток."
+        other: "Видалено %{count} карток."
       added: "«%{card}» додано до %{collection}."
       already_present: "«%{card}» вже є в %{collection}."
       choose_collection: "Виберіть одну зі своїх колекцій, щоб додати цю картку."

@@ -61,18 +61,21 @@ class CardsController < ApplicationController
   # DELETE /cards/1 or /cards/1.json
   def destroy
     authorize @card
-    hard_delete = params[:hard].present? && current_user&.admin?
+
+    hard_delete = params[:hard].present? && (current_user&.admin? || @card.deleted?)
 
     if hard_delete
       @card.destroy!
+      notice = t("cards.flash.permanently_deleted")
     else
       @card.soft_delete!
+      notice = t("cards.flash.deleted")
     end
 
     respond_to do |format|
       format.html do
-        redirect_to(hard_delete ? cards_path : collection_cards_path,
-                    notice: t("cards.flash.deleted"), status: :see_other)
+        redirect_back fallback_location: (hard_delete ? cards_path : collection_cards_path),
+                      notice: notice, status: :see_other
       end
       format.json { head :no_content }
     end
@@ -109,6 +112,19 @@ class CardsController < ApplicationController
     else
       redirect_to import_collection_cards_path(@collection), alert: result.error
     end
+  end
+
+  # DELETE /collections/:collection_id/cards/bulk
+  def bulk_destroy
+    authorize @collection, :update?
+
+    ids = Array(params[:card_ids]).map(&:to_i).reject(&:zero?)
+    scope = @collection.cards.kept.where(id: ids)
+    count = scope.count
+    scope.update_all(deleted_at: Time.current, updated_at: Time.current)
+
+    redirect_to collection_cards_path(@collection),
+                notice: t("cards.flash.bulk_deleted", count: count), status: :see_other
   end
 
   # PATCH /collections/:collection_id/cards/:id/restore

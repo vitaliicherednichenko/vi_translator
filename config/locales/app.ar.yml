@@ -78,6 +78,12 @@ ar:
 
   cards:
     index_title: "البطاقات"
+    delete_permanently: "حذف"
+    select_all: "تحديد الكل"
+    delete_selected: "حذف المحدد"
+    confirm_bulk_delete: "حذف البطاقات المحددة؟"
+    confirm_bulk_delete_permanent: "حذف البطاقات المحددة نهائيًا للجميع؟"
+    select_card: "تحديد البطاقة"
     import_button: "استيراد (CSV)"
     export_button: "تصدير (CSV)"
     collection_cards: "بطاقات %{name}"
@@ -109,6 +115,10 @@ ar:
       updated: "تم تحديث البطاقة بنجاح."
       deleted: "تم حذف البطاقة بنجاح."
       restored: "تمت استعادة البطاقة بنجاح."
+      permanently_deleted: "تم حذف البطاقة نهائيًا."
+      bulk_deleted:
+        one: "تم حذف بطاقة واحدة (%{count})."
+        other: "تم حذف %{count} بطاقة."
       added: "تمت إضافة \"%{card}\" إلى %{collection}."
       already_present: "\"%{card}\" موجودة بالفعل في %{collection}."
       choose_collection: "اختر إحدى مجموعاتك لإضافة هذه البطاقة إليها."

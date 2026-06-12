@@ -15,7 +15,25 @@
 </div>
 
 <% if @cards.any? %>
-  <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+  <% bulk = current_user&.admin? %>
+  <div data-controller="<%= 'bulk-select' if bulk %>"
+       data-bulk-select-url-value="<%= bulk_cards_path %>"
+       data-bulk-select-confirm-value="<%= t('cards.confirm_bulk_delete_permanent') %>">
+    <% if bulk %>
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+        <div class="form-check m-0">
+          <input type="checkbox" class="form-check-input" id="select-all"
+                 data-bulk-select-target="all" data-action="bulk-select#toggleAll">
+          <label class="form-check-label" for="select-all"><%= t("cards.select_all") %></label>
+        </div>
+        <button type="button" class="btn btn-outline-danger btn-sm" disabled
+                data-bulk-select-target="submit" data-action="bulk-select#destroy">
+          <%= t("cards.delete_selected") %> (<span data-bulk-select-target="count">0</span>)
+        </button>
+      </div>
+    <% end %>
+
+    <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
     <% @cards.each do |card| %>
       <div class="col">
         <div id="<%= dom_id card %>"
@@ -44,7 +62,12 @@
             <%= link_to card.collection.name, collection_path(card.collection),
                         class: "badge text-bg-light text-decoration-none" %>
           </div>
-          <div class="d-flex justify-content-center gap-2">
+          <div class="d-flex justify-content-center align-items-center gap-2">
+            <% if bulk %>
+              <input type="checkbox" class="form-check-input m-0" value="<%= card.id %>"
+                     aria-label="<%= t('cards.select_card') %>"
+                     data-bulk-select-target="item" data-action="bulk-select#update">
+            <% end %>
             <%= link_to t("common.view"), collection_card_path(card.collection, card),
                         class: "btn btn-outline-primary btn-sm" %>
             <% if user_signed_in? %>
@@ -72,19 +95,27 @@
               </div>
             <% end %>
             <% if policy(card).destroy? %>
-              <% admin_delete = current_user&.admin? %>
-              <%= button_to t("common.delete"), collection_card_path(card.collection, card), method: :delete,
-                            params: (admin_delete ? { hard: true } : {}),
-                            class: "btn btn-outline-danger btn-sm",
-                            form: { data: {
-                              turbo_confirm: admin_delete ? t("common.confirm_delete_card_permanent") : t("common.confirm_delete_card"),
-                              turbo_preserve_scroll: true
-                            } } %>
+              <% if card.deleted? %>
+                <%= button_to t("cards.delete_permanently"), collection_card_path(card.collection, card), method: :delete,
+                              params: { hard: true },
+                              class: "btn btn-outline-danger btn-sm",
+                              form: { data: { turbo_confirm: t("common.confirm_delete_card_permanent"), turbo_preserve_scroll: true } } %>
+              <% else %>
+                <% admin_delete = current_user&.admin? %>
+                <%= button_to t("common.delete"), collection_card_path(card.collection, card), method: :delete,
+                              params: (admin_delete ? { hard: true } : {}),
+                              class: "btn btn-outline-danger btn-sm",
+                              form: { data: {
+                                turbo_confirm: admin_delete ? t("common.confirm_delete_card_permanent") : t("common.confirm_delete_card"),
+                                turbo_preserve_scroll: true
+                              } } %>
+              <% end %>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
+    </div>
   </div>
 <% else %>
   <p class="text-muted">

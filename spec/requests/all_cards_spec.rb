@@ -25,6 +25,22 @@ RSpec.describe "All cards pages", type: :request do
       expect(response.body).not_to include("unrelated-set")
     end
 
+    it "shows the bulk-delete toolbar to an admin but not to a regular user" do
+      admin = create(:user, :admin, native_language: en, preferred_language: es)
+      collection = create(:collection, language: en)
+      create(:card, collection: collection, source_language: en, target_language: es)
+
+      sign_in admin
+      get cards_url
+      expect(response.body).to include('data-controller="bulk-select"')
+      expect(response.body).to include("bulk-select#destroy")
+
+      sign_in user
+      get cards_url
+      expect(response.body).not_to include('data-controller="bulk-select"')
+      expect(response.body).not_to include("bulk-select#destroy")
+    end
+
     it "still shows a card after it has been removed (soft-deleted)" do
       collection = create(:collection, user: user, language: en)
       card = create(:card, user: user, collection: collection,
@@ -128,6 +144,43 @@ RSpec.describe "All cards pages", type: :request do
 
       expect(Card.exists?(card.id)).to be(true)
       expect(card.reload.deleted?).to be(true)
+    end
+  end
+
+  describe "DELETE /cards/bulk (bulk delete on All Cards)" do
+    let(:admin) { create(:user, :admin, native_language: en, preferred_language: es) }
+
+    it "redirects a guest to login" do
+      card = create(:card)
+      delete bulk_cards_url, params: { card_ids: [ card.id ] }
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "lets an admin permanently destroy selected cards across collections" do
+      c1 = create(:collection, language: en)
+      c2 = create(:collection, language: en)
+      a = create(:card, collection: c1, source_language: en, target_language: es)
+      b = create(:card, collection: c2, source_language: en, target_language: es)
+      keep = create(:card, collection: c1, source_language: en, target_language: es)
+
+      sign_in admin
+      delete bulk_cards_url, params: { card_ids: [ a.id, b.id ] }
+
+      expect(Card.exists?(a.id)).to be(false)
+      expect(Card.exists?(b.id)).to be(false)
+      expect(Card.exists?(keep.id)).to be(true)
+      expect(response).to redirect_to(cards_path)
+    end
+
+    it "forbids a non-admin from bulk-deleting" do
+      collection = create(:collection, user: user, language: en)
+      card = create(:card, user: user, collection: collection, source_language: en, target_language: es)
+
+      sign_in user
+      delete bulk_cards_url, params: { card_ids: [ card.id ] }
+
+      expect(Card.exists?(card.id)).to be(true)
+      expect(flash[:alert]).to be_present
     end
   end
 

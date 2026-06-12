@@ -78,6 +78,12 @@ zh:
 
   cards:
     index_title: "卡片"
+    delete_permanently: "删除"
+    select_all: "全选"
+    delete_selected: "删除所选"
+    confirm_bulk_delete: "删除所选卡片？"
+    confirm_bulk_delete_permanent: "为所有人永久删除所选卡片？"
+    select_card: "选择卡片"
     import_button: "导入 (CSV)"
     export_button: "导出 (CSV)"
     collection_cards: "%{name} 的卡片"
@@ -109,6 +115,10 @@ zh:
       updated: "卡片更新成功。"
       deleted: "卡片删除成功。"
       restored: "卡片恢复成功。"
+      permanently_deleted: "卡片已永久删除。"
+      bulk_deleted:
+        one: "已删除 %{count} 张卡片。"
+        other: "已删除 %{count} 张卡片。"
       added: "已将“%{card}”添加到 %{collection}。"
       already_present: "“%{card}”已在 %{collection} 中。"
       choose_collection: "请选择你的一个合集来添加这张卡片。"

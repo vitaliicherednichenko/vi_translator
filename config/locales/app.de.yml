@@ -78,6 +78,12 @@ de:
 
   cards:
     index_title: "Karten"
+    delete_permanently: "Löschen"
+    select_all: "Alle auswählen"
+    delete_selected: "Auswahl löschen"
+    confirm_bulk_delete: "Die ausgewählten Karten löschen?"
+    confirm_bulk_delete_permanent: "Die ausgewählten Karten endgültig für alle löschen?"
+    select_card: "Karte auswählen"
     import_button: "Importieren (CSV)"
     export_button: "Exportieren (CSV)"
     collection_cards: "Karten von %{name}"
@@ -109,6 +115,10 @@ de:
       updated: "Die Karte wurde erfolgreich aktualisiert."
       deleted: "Die Karte wurde erfolgreich gelöscht."
       restored: "Die Karte wurde erfolgreich wiederhergestellt."
+      permanently_deleted: "Die Karte wurde endgültig gelöscht."
+      bulk_deleted:
+        one: "%{count} Karte gelöscht."
+        other: "%{count} Karten gelöscht."
       added: "\"%{card}\" wurde zu %{collection} hinzugefügt."
       already_present: "\"%{card}\" ist bereits in %{collection}."
       choose_collection: "Wähle eine deiner Sammlungen, um diese Karte hinzuzufügen."

@@ -78,6 +78,12 @@ en:
 
   cards:
     index_title: "Cards"
+    delete_permanently: "Delete"
+    select_all: "Select all"
+    delete_selected: "Delete selected"
+    confirm_bulk_delete: "Delete the selected cards?"
+    confirm_bulk_delete_permanent: "Permanently delete the selected cards for everyone?"
+    select_card: "Select card"
     import_button: "Import (CSV)"
     export_button: "Export (CSV)"
     collection_cards: "%{name} Cards"
@@ -109,6 +115,10 @@ en:
       updated: "Card was successfully updated."
       deleted: "Card was successfully deleted."
       restored: "Card was successfully restored."
+      permanently_deleted: "Card was permanently deleted."
+      bulk_deleted:
+        one: "%{count} card deleted."
+        other: "%{count} cards deleted."
       added: "Added \"%{card}\" to %{collection}."
       already_present: "\"%{card}\" is already in %{collection}."
       choose_collection: "Choose one of your collections to add this card to."

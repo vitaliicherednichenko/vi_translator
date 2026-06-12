@@ -78,6 +78,12 @@ hi:
 
   cards:
     index_title: "कार्ड"
+    delete_permanently: "हटाएँ"
+    select_all: "सभी चुनें"
+    delete_selected: "चयनित हटाएँ"
+    confirm_bulk_delete: "चयनित कार्ड हटाएँ?"
+    confirm_bulk_delete_permanent: "चयनित कार्ड सभी के लिए स्थायी रूप से हटाएँ?"
+    select_card: "कार्ड चुनें"
     import_button: "आयात (CSV)"
     export_button: "निर्यात (CSV)"
     collection_cards: "%{name} के कार्ड"
@@ -109,6 +115,10 @@ hi:
       updated: "कार्ड सफलतापूर्वक अपडेट किया गया।"
       deleted: "कार्ड सफलतापूर्वक हटाया गया।"
       restored: "कार्ड सफलतापूर्वक पुनर्स्थापित किया गया।"
+      permanently_deleted: "कार्ड स्थायी रूप से हटा दिया गया।"
+      bulk_deleted:
+        one: "%{count} कार्ड हटाया गया।"
+        other: "%{count} कार्ड हटाए गए।"
       added: "\"%{card}\" को %{collection} में जोड़ा गया।"
       already_present: "\"%{card}\" पहले से ही %{collection} में है।"
       choose_collection: "इस कार्ड को जोड़ने के लिए अपना कोई संग्रह चुनें।"

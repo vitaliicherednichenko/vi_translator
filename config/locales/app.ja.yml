@@ -78,6 +78,12 @@ ja:
 
   cards:
     index_title: "カード"
+    delete_permanently: "削除"
+    select_all: "すべて選択"
+    delete_selected: "選択を削除"
+    confirm_bulk_delete: "選択したカードを削除しますか？"
+    confirm_bulk_delete_permanent: "選択したカードを全員から完全に削除しますか？"
+    select_card: "カードを選択"
     import_button: "インポート (CSV)"
     export_button: "エクスポート (CSV)"
     collection_cards: "%{name} のカード"
@@ -109,6 +115,10 @@ ja:
       updated: "カードを更新しました。"
       deleted: "カードを削除しました。"
       restored: "カードを復元しました。"
+      permanently_deleted: "カードを完全に削除しました。"
+      bulk_deleted:
+        one: "%{count} 枚のカードを削除しました。"
+        other: "%{count} 枚のカードを削除しました。"
       added: "「%{card}」を %{collection} に追加しました。"
       already_present: "「%{card}」はすでに %{collection} にあります。"
       choose_collection: "このカードを追加するコレクションを選んでください。"

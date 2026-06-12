@@ -78,6 +78,12 @@ ru:
 
   cards:
     index_title: "Карточки"
+    delete_permanently: "Удалить"
+    select_all: "Выбрать все"
+    delete_selected: "Удалить выбранные"
+    confirm_bulk_delete: "Удалить выбранные карточки?"
+    confirm_bulk_delete_permanent: "Удалить выбранные карточки навсегда для всех?"
+    select_card: "Выбрать карточку"
     import_button: "Импорт (CSV)"
     export_button: "Экспорт (CSV)"
     collection_cards: "Карточки: %{name}"
@@ -109,6 +115,12 @@ ru:
       updated: "Карточка успешно обновлена."
       deleted: "Карточка успешно удалена."
       restored: "Карточка успешно восстановлена."
+      permanently_deleted: "Карточка удалена навсегда."
+      bulk_deleted:
+        one: "Удалена %{count} карточка."
+        few: "Удалено %{count} карточки."
+        many: "Удалено %{count} карточек."
+        other: "Удалено %{count} карточек."
       added: "«%{card}» добавлена в %{collection}."
       already_present: "«%{card}» уже есть в %{collection}."
       choose_collection: "Выберите одну из своих коллекций, чтобы добавить эту карточку."
