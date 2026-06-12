@@ -15,6 +15,19 @@ RSpec.describe "/collections", type: :request do
       expect(response).to be_successful
     end
 
+    it "with ?mine=1 shows only the current user's own collections" do
+      mine = create(:collection, user: owner, language: en, name: "mine-set")
+      theirs = create(:collection, user: other, language: en, name: "their-set")
+
+      sign_in owner
+      get collections_url(mine: true)
+
+      expect(response.body).to include("mine-set")
+      expect(response.body).not_to include("their-set")
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(mine))
+      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(theirs))
+    end
+
     it "shows collections in either the user's native or preferred language" do
       es = create(:language)
       fr = create(:language)

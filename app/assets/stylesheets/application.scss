@@ -63,3 +63,25 @@ body {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1030;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+[dir="rtl"] .scroll-top-btn {
+  right: auto;
+  left: 1.5rem;
+}
+
+.bg-navy {
+  background-color: #14213d !important;
+}

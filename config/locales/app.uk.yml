@@ -17,6 +17,7 @@ uk:
     export_cards: "Експорт моїх карток (CSV)"
     deleted_cards: "Видалені картки"
     see_all_deleted: "Показати всі видалені картки"
+    see_all_collections: "Показати всі мої колекції"
     login: "Увійти"
     sign_up: "Реєстрація"
     logout: "Вийти"
@@ -35,6 +36,7 @@ uk:
     description: "Опис"
     language: "Мова"
     none: "—"
+    back_to_top: "Догори"
     confirm_generic: "Ви впевнені?"
     confirm_delete_card: "Видалити цю картку?"
     confirm_delete_card_permanent: "Видалити цю картку назавжди для всіх?"
@@ -133,6 +135,7 @@ uk:
 
   all_cards:
     title: "Усі картки"
+    load_more: "Завантажити ще"
     import_button: "Імпорт (CSV)"
     export_button: "Експорт моїх карток (CSV)"
 

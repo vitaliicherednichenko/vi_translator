@@ -1,0 +1,7 @@
+<%= turbo_stream.append "cards" do %>
+  <%= render partial: "all_cards/card", collection: @cards, as: :card %>
+<% end %>
+
+<%= turbo_stream.replace "load_more" do %>
+  <%= render "all_cards/load_more", has_more: @has_more, next_offset: @next_offset %>
+<% end %>

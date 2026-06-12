@@ -1,13 +1,26 @@
 class AllCardsController < ApplicationController
   before_action :authenticate_user!, only: %i[deleted export import run_import add_to_collection bulk_destroy]
 
+  PER_BLOCK = 16
+
   def index
-    @cards = Card.between_user_languages(current_user)
-             .original
-             .includes(:collection, :source_language, :target_language)
-             .order(created_at: :desc)
+    scope = Card.between_user_languages(current_user)
+            .original
+            .includes(:collection, :source_language, :target_language)
+            .order(created_at: :desc)
+
+    @offset = [ params[:offset].to_i, 0 ].max
+    @cards = scope.offset(@offset).limit(PER_BLOCK).to_a
+    @next_offset = @offset + PER_BLOCK
+    @has_more = scope.offset(@next_offset).limit(1).exists?
+
     @my_collections =
       current_user&.collections&.in_user_languages(current_user)&.order(:name)&.to_a || []
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # POST /cards/:id/add_to_collection

@@ -1,0 +1,84 @@
+<% bulk = current_user&.admin? %>
+<div class="col">
+  <div id="<%= dom_id card %>"
+       class="flip-card"
+       data-controller="flip"
+       data-action="click->flip#toggle keydown->flip#toggleKey"
+       role="button" tabindex="0"
+       aria-label="<%= t('cards.flip_aria') %>">
+    <div class="flip-card-inner">
+      <div class="flip-card-front bg-body border">
+        <% if card.source_language %>
+          <span class="badge bg-secondary mb-2"><%= card.source_language.code.upcase %></span>
+        <% end %>
+        <span class="fs-4 fw-semibold"><%= card.front_text %></span>
+      </div>
+      <div class="flip-card-back bg-primary text-white">
+        <% if card.target_language %>
+          <span class="badge bg-light text-dark mb-2"><%= card.target_language.code.upcase %></span>
+        <% end %>
+        <span class="fs-4 fw-semibold"><%= card.back_text %></span>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-2">
+    <div class="mb-2">
+      <%= link_to card.collection.name, collection_path(card.collection),
+                  class: "badge text-bg-light text-decoration-none" %>
+    </div>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <% if bulk %>
+        <input type="checkbox" class="form-check-input m-0" value="<%= card.id %>"
+               aria-label="<%= t('cards.select_card') %>"
+               data-bulk-select-target="item" data-action="bulk-select#update">
+      <% end %>
+      <%= link_to (bulk ? icon("eye") : t("common.view")), collection_card_path(card.collection, card),
+                  class: "btn btn-outline-primary btn-sm",
+                  title: (t("common.view") if bulk), "aria-label": (t("common.view") if bulk) %>
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle"
+                  data-bs-toggle="dropdown" aria-expanded="false"
+                  title="<%= t('common.add_to') if bulk %>" aria-label="<%= t('common.add_to') if bulk %>">
+            <%= bulk ? icon("plus-lg") : t("common.add_to") %>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header"><%= t("common.add_to_collection") %></li>
+            <% @my_collections.each do |collection| %>
+              <li>
+                <%= button_to collection.name,
+                              add_card_to_collection_path(card),
+                              params: { collection_id: collection.id },
+                              class: "dropdown-item" %>
+              </li>
+            <% end %>
+            <% if @my_collections.empty? %>
+              <li><span class="dropdown-item-text text-muted"><%= t("common.no_collections_yet") %></span></li>
+            <% end %>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to t("nav.new_collection"), new_collection_path, class: "dropdown-item" %></li>
+          </ul>
+        </div>
+      <% end %>
+      <% if policy(card).destroy? %>
+        <% if card.deleted? %>
+          <%= button_to (bulk ? icon("trash") : t("cards.delete_permanently")), collection_card_path(card.collection, card), method: :delete,
+                        params: { hard: true },
+                        class: "btn btn-outline-danger btn-sm",
+                        title: (t("cards.delete_permanently") if bulk), "aria-label": (t("cards.delete_permanently") if bulk),
+                        form: { data: { turbo_confirm: t("common.confirm_delete_card_permanent"), turbo_preserve_scroll: true } } %>
+        <% else %>
+          <% admin_delete = current_user&.admin? %>
+          <%= button_to (bulk ? icon("trash") : t("common.delete")), collection_card_path(card.collection, card), method: :delete,
+                        params: (admin_delete ? { hard: true } : {}),
+                        class: "btn btn-outline-danger btn-sm",
+                        title: (t("common.delete") if bulk), "aria-label": (t("common.delete") if bulk),
+                        form: { data: {
+                          turbo_confirm: admin_delete ? t("common.confirm_delete_card_permanent") : t("common.confirm_delete_card"),
+                          turbo_preserve_scroll: true
+                        } } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

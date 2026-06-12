@@ -6,7 +6,9 @@ class CollectionsController < ApplicationController
 
   # GET /collections or /collections.json
   def index
+    @mine = params[:mine].present? && current_user.present?
     @collections = policy_scope(Collection).in_user_languages(current_user)
+    @collections = @collections.where(user: current_user) if @mine
   end
 
   # GET /collections/1 or /collections/1.json

@@ -17,6 +17,7 @@ zh:
     export_cards: "导出我的卡片 (CSV)"
     deleted_cards: "已删除的卡片"
     see_all_deleted: "查看所有已删除的卡片"
+    see_all_collections: "查看我的所有合集"
     login: "登录"
     sign_up: "注册"
     logout: "退出登录"
@@ -35,6 +36,7 @@ zh:
     description: "描述"
     language: "语言"
     none: "—"
+    back_to_top: "返回顶部"
     confirm_generic: "确定吗？"
     confirm_delete_card: "删除这张卡片？"
     confirm_delete_card_permanent: "为所有人永久删除这张卡片？"
@@ -125,6 +127,7 @@ zh:
 
   all_cards:
     title: "所有卡片"
+    load_more: "加载更多"
     import_button: "导入 (CSV)"
     export_button: "导出我的卡片 (CSV)"
 

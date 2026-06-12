@@ -17,6 +17,7 @@ pt:
     export_cards: "Exportar meus cartões (CSV)"
     deleted_cards: "Cartões excluídos"
     see_all_deleted: "Ver todos os cartões excluídos"
+    see_all_collections: "Ver todas as minhas coleções"
     login: "Entrar"
     sign_up: "Cadastrar-se"
     logout: "Sair"
@@ -35,6 +36,7 @@ pt:
     description: "Descrição"
     language: "Idioma"
     none: "—"
+    back_to_top: "Voltar ao topo"
     confirm_generic: "Tem certeza?"
     confirm_delete_card: "Excluir este cartão?"
     confirm_delete_card_permanent: "Excluir permanentemente este cartão para todos?"
@@ -125,6 +127,7 @@ pt:
 
   all_cards:
     title: "Todos os cartões"
+    load_more: "Carregar mais"
     import_button: "Importar (CSV)"
     export_button: "Exportar meus cartões (CSV)"
 

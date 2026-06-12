@@ -17,6 +17,7 @@ es:
     export_cards: "Exportar mis tarjetas (CSV)"
     deleted_cards: "Tarjetas eliminadas"
     see_all_deleted: "Ver todas las tarjetas eliminadas"
+    see_all_collections: "Ver todas mis colecciones"
     login: "Iniciar sesión"
     sign_up: "Registrarse"
     logout: "Cerrar sesión"
@@ -35,6 +36,7 @@ es:
     description: "Descripción"
     language: "Idioma"
     none: "—"
+    back_to_top: "Volver arriba"
     confirm_generic: "¿Estás seguro?"
     confirm_delete_card: "¿Eliminar esta tarjeta?"
     confirm_delete_card_permanent: "¿Eliminar esta tarjeta permanentemente para todos?"
@@ -125,6 +127,7 @@ es:
 
   all_cards:
     title: "Todas las tarjetas"
+    load_more: "Cargar más"
     import_button: "Importar (CSV)"
     export_button: "Exportar mis tarjetas (CSV)"
 

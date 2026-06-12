@@ -17,6 +17,7 @@ fr:
     export_cards: "Exporter mes cartes (CSV)"
     deleted_cards: "Cartes supprimées"
     see_all_deleted: "Voir toutes les cartes supprimées"
+    see_all_collections: "Voir toutes mes collections"
     login: "Connexion"
     sign_up: "Inscription"
     logout: "Déconnexion"
@@ -35,6 +36,7 @@ fr:
     description: "Description"
     language: "Langue"
     none: "—"
+    back_to_top: "Haut de page"
     confirm_generic: "Êtes-vous sûr ?"
     confirm_delete_card: "Supprimer cette carte ?"
     confirm_delete_card_permanent: "Supprimer définitivement cette carte pour tout le monde ?"
@@ -125,6 +127,7 @@ fr:
 
   all_cards:
     title: "Toutes les cartes"
+    load_more: "Charger plus"
     import_button: "Importer (CSV)"
     export_button: "Exporter mes cartes (CSV)"
 

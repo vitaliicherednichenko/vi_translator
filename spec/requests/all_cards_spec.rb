@@ -25,6 +25,22 @@ RSpec.describe "All cards pages", type: :request do
       expect(response.body).not_to include("unrelated-set")
     end
 
+    it "renders the action buttons as icons for an admin and as text for a regular user" do
+      admin = create(:user, :admin, native_language: en, preferred_language: es)
+      collection = create(:collection, language: en)
+      create(:card, collection: collection, source_language: en, target_language: es)
+
+      eye_icon = "M16 8s-3-5.5-8-5.5" # unique fragment of the "eye" (View) icon
+
+      sign_in admin
+      get cards_url
+      expect(response.body).to include(eye_icon)       # View rendered as an icon
+
+      sign_in user
+      get cards_url
+      expect(response.body).not_to include(eye_icon)   # View rendered as text
+    end
+
     it "shows the bulk-delete toolbar to an admin but not to a regular user" do
       admin = create(:user, :admin, native_language: en, preferred_language: es)
       collection = create(:collection, language: en)
@@ -102,6 +118,36 @@ RSpec.describe "All cards pages", type: :request do
       expect(response.body).to include("hello").and include("hola")
       expect(response.body).not_to include("trashed")  # soft-deleted excluded
       expect(response.body).not_to include("not-mine") # another user's card excluded
+    end
+  end
+
+  describe "loading in blocks of 16" do
+    before do
+      20.times do |i|
+        c = create(:collection, language: en)
+        create(:card, collection: c, front_text: "blk-#{i}", source_language: en, target_language: es)
+      end
+    end
+
+    it "renders only the first 16 cards plus an auto-loading control" do
+      sign_in user # native en, preferred es
+      get cards_url
+
+      expect(response.body.scan('id="card_').size).to eq(16)
+      expect(response.body).to include('data-controller="infinite-scroll"')
+      expect(response.body).to include("offset=16") # next block link carries the offset
+    end
+
+    it "appends the next block as a Turbo Stream and stops when exhausted" do
+      sign_in user
+      get cards_url(offset: 16), headers: { "Accept" => "text/vnd.turbo-stream.html" }
+
+      expect(response.media_type).to eq("text/vnd.turbo-stream.html")
+      expect(response.body).to include('action="append"').and include('target="cards"')
+      expect(response.body).to include('action="replace"').and include('target="load_more"')
+      expect(response.body.scan('id="card_').size).to eq(4) # 20 total, 4 left after 16
+      # no more after this block -> the replacement load_more has no auto-loader
+      expect(response.body).not_to include('data-controller="infinite-scroll"')
     end
   end
 

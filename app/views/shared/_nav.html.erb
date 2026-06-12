@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-navy mb-4">
   <div class="container">
     <%= link_to t("app_name"), root_path, class: "navbar-brand" %>
 
@@ -36,14 +36,21 @@
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header"><%= t("nav.my_collections") %></li>
-              <% my_collections = current_user.collections.in_user_languages(current_user).order(:name).to_a %>
-              <% my_collections.each do |collection| %>
+              <% my_collections = current_user.collections.in_user_languages(current_user).order(:name).limit(6).to_a %>
+              <% my_collections.first(5).each do |collection| %>
                 <li>
                   <%= link_to collection.name, collection_cards_path(collection), class: "dropdown-item" %>
                 </li>
               <% end %>
               <% if my_collections.empty? %>
                 <li><span class="dropdown-item-text text-muted"><%= t("nav.no_native_collections") %></span></li>
+              <% end %>
+              <% if my_collections.size > 5 %>
+                <li>
+                  <%= link_to "…", collections_path(mine: true),
+                              class: "dropdown-item text-center fs-5 lh-1 py-1",
+                              title: t("nav.see_all_collections") %>
+                </li>
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to t("nav.new_collection"), new_collection_path, class: "dropdown-item" %></li>

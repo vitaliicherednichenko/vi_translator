@@ -17,6 +17,7 @@ ja:
     export_cards: "マイカードをエクスポート (CSV)"
     deleted_cards: "削除済みカード"
     see_all_deleted: "削除済みカードをすべて表示"
+    see_all_collections: "すべてのコレクションを表示"
     login: "ログイン"
     sign_up: "新規登録"
     logout: "ログアウト"
@@ -35,6 +36,7 @@ ja:
     description: "説明"
     language: "言語"
     none: "—"
+    back_to_top: "トップへ戻る"
     confirm_generic: "よろしいですか？"
     confirm_delete_card: "このカードを削除しますか？"
     confirm_delete_card_permanent: "このカードを全員から完全に削除しますか？"
@@ -125,6 +127,7 @@ ja:
 
   all_cards:
     title: "すべてのカード"
+    load_more: "もっと見る"
     import_button: "インポート (CSV)"
     export_button: "マイカードをエクスポート (CSV)"
 

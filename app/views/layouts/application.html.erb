@@ -31,5 +31,23 @@
       <% end %>
       <%= yield %>
     </div>
+
+    <footer class="bg-light border-top mt-5 py-4">
+      <div class="container text-center text-muted small">
+        Made with <span class="text-danger">❤</span> by
+        <%= link_to "Vitalii Cherednichenko", "https://www.linkedin.com/in/vitalii-cherednichenko",
+                    target: "_blank", rel: "noopener noreferrer",
+                    class: "text-reset fw-semibold" %>
+      </div>
+    </footer>
+
+    <button type="button"
+            class="btn btn-primary rounded-circle shadow scroll-top-btn"
+            data-controller="scroll-top"
+            data-action="scroll-top#scrollUp"
+            title="<%= t('common.back_to_top') %>"
+            aria-label="<%= t('common.back_to_top') %>">
+      <%= icon("arrow-up") %>
+    </button>
   </body>
 </html>

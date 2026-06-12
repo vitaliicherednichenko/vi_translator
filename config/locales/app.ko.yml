@@ -17,6 +17,7 @@ ko:
     export_cards: "내 카드 내보내기 (CSV)"
     deleted_cards: "삭제된 카드"
     see_all_deleted: "삭제된 카드 모두 보기"
+    see_all_collections: "내 모든 컬렉션 보기"
     login: "로그인"
     sign_up: "회원가입"
     logout: "로그아웃"
@@ -35,6 +36,7 @@ ko:
     description: "설명"
     language: "언어"
     none: "—"
+    back_to_top: "맨 위로"
     confirm_generic: "정말입니까?"
     confirm_delete_card: "이 카드를 삭제할까요?"
     confirm_delete_card_permanent: "이 카드를 모두에게서 영구적으로 삭제할까요?"
@@ -125,6 +127,7 @@ ko:
 
   all_cards:
     title: "모든 카드"
+    load_more: "더 보기"
     import_button: "가져오기 (CSV)"
     export_button: "내 카드 내보내기 (CSV)"
 

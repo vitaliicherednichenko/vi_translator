@@ -17,6 +17,7 @@ it:
     export_cards: "Esporta le mie carte (CSV)"
     deleted_cards: "Carte eliminate"
     see_all_deleted: "Vedi tutte le carte eliminate"
+    see_all_collections: "Vedi tutte le mie raccolte"
     login: "Accedi"
     sign_up: "Registrati"
     logout: "Esci"
@@ -35,6 +36,7 @@ it:
     description: "Descrizione"
     language: "Lingua"
     none: "—"
+    back_to_top: "Torna su"
     confirm_generic: "Sei sicuro?"
     confirm_delete_card: "Eliminare questa carta?"
     confirm_delete_card_permanent: "Eliminare definitivamente questa carta per tutti?"
@@ -125,6 +127,7 @@ it:
 
   all_cards:
     title: "Tutte le carte"
+    load_more: "Carica altri"
     import_button: "Importa (CSV)"
     export_button: "Esporta le mie carte (CSV)"
 

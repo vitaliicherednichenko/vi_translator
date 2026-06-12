@@ -17,6 +17,7 @@ ru:
     export_cards: "Экспорт моих карточек (CSV)"
     deleted_cards: "Удалённые карточки"
     see_all_deleted: "Показать все удалённые карточки"
+    see_all_collections: "Показать все мои коллекции"
     login: "Вход"
     sign_up: "Регистрация"
     logout: "Выход"
@@ -35,6 +36,7 @@ ru:
     description: "Описание"
     language: "Язык"
     none: "—"
+    back_to_top: "Наверх"
     confirm_generic: "Вы уверены?"
     confirm_delete_card: "Удалить эту карточку?"
     confirm_delete_card_permanent: "Удалить эту карточку навсегда для всех?"
@@ -127,6 +129,7 @@ ru:
 
   all_cards:
     title: "Все карточки"
+    load_more: "Показать ещё"
     import_button: "Импорт (CSV)"
     export_button: "Экспорт моих карточек (CSV)"
 

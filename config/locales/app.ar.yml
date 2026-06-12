@@ -17,6 +17,7 @@ ar:
     export_cards: "تصدير بطاقاتي (CSV)"
     deleted_cards: "البطاقات المحذوفة"
     see_all_deleted: "عرض جميع البطاقات المحذوفة"
+    see_all_collections: "عرض كل مجموعاتي"
     login: "تسجيل الدخول"
     sign_up: "إنشاء حساب"
     logout: "تسجيل الخروج"
@@ -35,6 +36,7 @@ ar:
     description: "الوصف"
     language: "اللغة"
     none: "—"
+    back_to_top: "العودة إلى الأعلى"
     confirm_generic: "هل أنت متأكد؟"
     confirm_delete_card: "حذف هذه البطاقة؟"
     confirm_delete_card_permanent: "حذف هذه البطاقة نهائيًا للجميع؟"
@@ -125,6 +127,7 @@ ar:
 
   all_cards:
     title: "جميع البطاقات"
+    load_more: "تحميل المزيد"
     import_button: "استيراد (CSV)"
     export_button: "تصدير بطاقاتي (CSV)"
 

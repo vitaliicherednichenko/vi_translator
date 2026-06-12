@@ -17,6 +17,7 @@ hi:
     export_cards: "मेरे कार्ड निर्यात करें (CSV)"
     deleted_cards: "हटाए गए कार्ड"
     see_all_deleted: "सभी हटाए गए कार्ड देखें"
+    see_all_collections: "मेरे सभी संग्रह देखें"
     login: "लॉग इन"
     sign_up: "साइन अप"
     logout: "लॉग आउट"
@@ -35,6 +36,7 @@ hi:
     description: "विवरण"
     language: "भाषा"
     none: "—"
+    back_to_top: "ऊपर जाएँ"
     confirm_generic: "क्या आप निश्चित हैं?"
     confirm_delete_card: "इस कार्ड को हटाएँ?"
     confirm_delete_card_permanent: "इस कार्ड को सभी के लिए स्थायी रूप से हटाएँ?"
@@ -125,6 +127,7 @@ hi:
 
   all_cards:
     title: "सभी कार्ड"
+    load_more: "और लोड करें"
     import_button: "आयात (CSV)"
     export_button: "मेरे कार्ड निर्यात करें (CSV)"
 

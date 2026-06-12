@@ -17,6 +17,7 @@ en:
     export_cards: "Export my cards (CSV)"
     deleted_cards: "Deleted Cards"
     see_all_deleted: "See all deleted cards"
+    see_all_collections: "See all my collections"
     login: "Login"
     sign_up: "Sign up"
     logout: "Logout"
@@ -35,6 +36,7 @@ en:
     description: "Description"
     language: "Language"
     none: "—"
+    back_to_top: "Back to top"
     confirm_generic: "Are you sure?"
     confirm_delete_card: "Delete this card?"
     confirm_delete_card_permanent: "Permanently delete this card for everyone?"
@@ -125,6 +127,7 @@ en:
 
   all_cards:
     title: "All Cards"
+    load_more: "Load more"
     import_button: "Import (CSV)"
     export_button: "Export my cards (CSV)"
 
