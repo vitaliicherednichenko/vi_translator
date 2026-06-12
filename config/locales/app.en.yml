@@ -37,6 +37,7 @@ en:
     none: "—"
     confirm_generic: "Are you sure?"
     confirm_delete_card: "Delete this card?"
+    confirm_delete_card_permanent: "Permanently delete this card for everyone?"
     add_to: "Add to…"
     add_to_collection: "Add to my collection"
     no_collections_yet: "No collections yet"
@@ -77,6 +78,8 @@ en:
 
   cards:
     index_title: "Cards"
+    import_button: "Import (CSV)"
+    export_button: "Export (CSV)"
     collection_cards: "%{name} Cards"
     new_title: "New card"
     edit_title: "Editing card"
@@ -123,6 +126,7 @@ en:
   import:
     title: "Import Cards"
     instructions_html: "Upload a CSV with a header row and these columns: <code>collection, front_text, back_text, source_language, target_language</code> (the same format as the export). Languages are matched by name or code; a missing collection is created for you. Rows with blank text or an unknown language are skipped."
+    into_collection_html: "Upload a CSV with a header row (columns: <code>front_text, back_text, source_language, target_language</code>). Every row is added to <strong>this</strong> collection — any <code>collection</code> column is ignored. Languages are matched by name or code; rows with blank text or an unknown language are skipped."
     file_label: "CSV file"
     submit: "Import"
     back_to_all_cards: "← Back to all cards"

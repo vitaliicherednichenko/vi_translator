@@ -37,6 +37,7 @@ es:
     none: "—"
     confirm_generic: "¿Estás seguro?"
     confirm_delete_card: "¿Eliminar esta tarjeta?"
+    confirm_delete_card_permanent: "¿Eliminar esta tarjeta permanentemente para todos?"
     add_to: "Añadir a…"
     add_to_collection: "Añadir a mi colección"
     no_collections_yet: "Aún no hay colecciones"
@@ -77,6 +78,8 @@ es:
 
   cards:
     index_title: "Tarjetas"
+    import_button: "Importar (CSV)"
+    export_button: "Exportar (CSV)"
     collection_cards: "Tarjetas de %{name}"
     new_title: "Nueva tarjeta"
     edit_title: "Editar tarjeta"
@@ -123,6 +126,7 @@ es:
   import:
     title: "Importar tarjetas"
     instructions_html: "Sube un CSV con una fila de encabezado y estas columnas: <code>collection, front_text, back_text, source_language, target_language</code> (el mismo formato que la exportación). Los idiomas se identifican por nombre o código; si falta una colección, se crea automáticamente. Las filas con texto vacío o un idioma desconocido se omiten."
+    into_collection_html: "Sube un CSV con una fila de encabezado (columnas: <code>front_text, back_text, source_language, target_language</code>). Cada fila se añade a <strong>esta</strong> colección; cualquier columna <code>collection</code> se ignora. Los idiomas se identifican por nombre o código; las filas con texto vacío o un idioma desconocido se omiten."
     file_label: "Archivo CSV"
     submit: "Importar"
     back_to_all_cards: "← Volver a todas las tarjetas"

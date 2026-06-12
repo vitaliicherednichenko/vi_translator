@@ -72,9 +72,14 @@
               </div>
             <% end %>
             <% if policy(card).destroy? %>
+              <% admin_delete = current_user&.admin? %>
               <%= button_to t("common.delete"), collection_card_path(card.collection, card), method: :delete,
+                            params: (admin_delete ? { hard: true } : {}),
                             class: "btn btn-outline-danger btn-sm",
-                            form: { data: { turbo_confirm: t("common.confirm_delete_card"), turbo_preserve_scroll: true } } %>
+                            form: { data: {
+                              turbo_confirm: admin_delete ? t("common.confirm_delete_card_permanent") : t("common.confirm_delete_card"),
+                              turbo_preserve_scroll: true
+                            } } %>
             <% end %>
           </div>
         </div>

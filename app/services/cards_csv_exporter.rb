@@ -3,8 +3,10 @@ require "csv"
 class CardsCsvExporter
   HEADERS = %w[collection front_text back_text source_language target_language created_at].freeze
 
-  def initialize(user)
+
+  def initialize(user, collection: nil)
     @user = user
+    @collection = collection
   end
 
   def call
@@ -25,11 +27,12 @@ class CardsCsvExporter
 
   private
 
-  attr_reader :user
+  attr_reader :user, :collection
 
   def cards
-    user.cards.kept
-        .includes(:collection, :source_language, :target_language)
-        .order(:created_at)
+    scope = collection ? collection.cards : user.cards
+    scope.kept
+         .includes(:collection, :source_language, :target_language)
+         .order(:created_at)
   end
 end

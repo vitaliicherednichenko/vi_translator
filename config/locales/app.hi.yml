@@ -37,6 +37,7 @@ hi:
     none: "—"
     confirm_generic: "क्या आप निश्चित हैं?"
     confirm_delete_card: "इस कार्ड को हटाएँ?"
+    confirm_delete_card_permanent: "इस कार्ड को सभी के लिए स्थायी रूप से हटाएँ?"
     add_to: "इसमें जोड़ें…"
     add_to_collection: "मेरे संग्रह में जोड़ें"
     no_collections_yet: "अभी तक कोई संग्रह नहीं"
@@ -77,6 +78,8 @@ hi:
 
   cards:
     index_title: "कार्ड"
+    import_button: "आयात (CSV)"
+    export_button: "निर्यात (CSV)"
     collection_cards: "%{name} के कार्ड"
     new_title: "नया कार्ड"
     edit_title: "कार्ड संपादित करें"
@@ -123,6 +126,7 @@ hi:
   import:
     title: "कार्ड आयात करें"
     instructions_html: "एक हेडर पंक्ति और इन कॉलमों वाली CSV अपलोड करें: <code>collection, front_text, back_text, source_language, target_language</code> (निर्यात के समान प्रारूप)। भाषाएँ नाम या कोड से मिलाई जाती हैं; न मिलने पर संग्रह स्वतः बना दिया जाता है। खाली टेक्स्ट या अज्ञात भाषा वाली पंक्तियाँ छोड़ दी जाती हैं।"
+    into_collection_html: "एक हेडर पंक्ति वाली CSV अपलोड करें (कॉलम: <code>front_text, back_text, source_language, target_language</code>)। हर पंक्ति <strong>इसी</strong> संग्रह में जोड़ी जाती है; कोई भी <code>collection</code> कॉलम अनदेखा कर दिया जाता है। भाषाएँ नाम या कोड से मिलाई जाती हैं; खाली टेक्स्ट या अज्ञात भाषा वाली पंक्तियाँ छोड़ दी जाती हैं।"
     file_label: "CSV फ़ाइल"
     submit: "आयात करें"
     back_to_all_cards: "← सभी कार्डों पर वापस"

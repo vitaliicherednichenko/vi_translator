@@ -86,6 +86,48 @@ RSpec.describe "All cards pages", type: :request do
     end
   end
 
+  describe "deleting from All Cards" do
+    it "soft-deletes for a regular owner (card stays in All Cards)" do
+      collection = create(:collection, user: user, language: en)
+      card = create(:card, user: user, collection: collection,
+                    front_text: "soft-me", source_language: en, target_language: es)
+
+      sign_in user
+      delete collection_card_path(collection, card)
+
+      expect(Card.exists?(card.id)).to be(true)
+      expect(card.reload.deleted?).to be(true)
+    end
+
+    it "lets an admin permanently destroy a card so it leaves All Cards" do
+      admin = create(:user, :admin, native_language: en, preferred_language: es)
+      owner = create(:user)
+      collection = create(:collection, user: owner, language: en)
+      card = create(:card, user: owner, collection: collection,
+                    front_text: "destroy-me", source_language: en, target_language: es)
+
+      sign_in admin
+      delete collection_card_path(collection, card), params: { hard: true }
+
+      expect(Card.exists?(card.id)).to be(false)
+
+      get cards_url
+      expect(response.body).not_to include("destroy-me")
+    end
+
+    it "ignores the hard flag for a non-admin (still a soft delete)" do
+      collection = create(:collection, user: user, language: en)
+      card = create(:card, user: user, collection: collection,
+                    front_text: "still-here", source_language: en, target_language: es)
+
+      sign_in user
+      delete collection_card_path(collection, card), params: { hard: true }
+
+      expect(Card.exists?(card.id)).to be(true)
+      expect(card.reload.deleted?).to be(true)
+    end
+  end
+
   describe "POST /cards/:id/add_to_collection" do
     it "redirects a guest to login" do
       card = create(:card)

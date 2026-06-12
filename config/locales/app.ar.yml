@@ -37,6 +37,7 @@ ar:
     none: "—"
     confirm_generic: "هل أنت متأكد؟"
     confirm_delete_card: "حذف هذه البطاقة؟"
+    confirm_delete_card_permanent: "حذف هذه البطاقة نهائيًا للجميع؟"
     add_to: "إضافة إلى…"
     add_to_collection: "إضافة إلى مجموعتي"
     no_collections_yet: "لا توجد مجموعات بعد"
@@ -77,6 +78,8 @@ ar:
 
   cards:
     index_title: "البطاقات"
+    import_button: "استيراد (CSV)"
+    export_button: "تصدير (CSV)"
     collection_cards: "بطاقات %{name}"
     new_title: "بطاقة جديدة"
     edit_title: "تعديل البطاقة"
@@ -123,6 +126,7 @@ ar:
   import:
     title: "استيراد البطاقات"
     instructions_html: "ارفع ملف CSV يحتوي على صف عناوين والأعمدة التالية: <code>collection, front_text, back_text, source_language, target_language</code> (نفس تنسيق التصدير). يتم مطابقة اللغات بالاسم أو الرمز؛ وتُنشأ المجموعة المفقودة تلقائيًا. تُتجاهل الصفوف ذات النص الفارغ أو اللغة غير المعروفة."
+    into_collection_html: "ارفع ملف CSV يحتوي على صف عناوين (الأعمدة: <code>front_text, back_text, source_language, target_language</code>). تُضاف كل صف إلى <strong>هذه</strong> المجموعة، ويُتجاهل أي عمود <code>collection</code>. تُطابق اللغات بالاسم أو الرمز؛ وتُتجاهل الصفوف ذات النص الفارغ أو اللغة غير المعروفة."
     file_label: "ملف CSV"
     submit: "استيراد"
     back_to_all_cards: "← العودة إلى جميع البطاقات"

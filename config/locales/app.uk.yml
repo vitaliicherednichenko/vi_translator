@@ -37,6 +37,7 @@ uk:
     none: "—"
     confirm_generic: "Ви впевнені?"
     confirm_delete_card: "Видалити цю картку?"
+    confirm_delete_card_permanent: "Видалити цю картку назавжди для всіх?"
     add_to: "Додати до…"
     add_to_collection: "Додати до моєї колекції"
     no_collections_yet: "Колекцій поки немає"
@@ -83,6 +84,8 @@ uk:
 
   cards:
     index_title: "Картки"
+    import_button: "Імпорт (CSV)"
+    export_button: "Експорт (CSV)"
     collection_cards: "Картки: %{name}"
     new_title: "Нова картка"
     edit_title: "Редагування картки"
@@ -129,6 +132,7 @@ uk:
   import:
     title: "Імпорт карток"
     instructions_html: "Завантажте CSV із рядком заголовка та цими стовпцями: <code>collection, front_text, back_text, source_language, target_language</code> (той самий формат, що й експорт). Мови визначаються за назвою або кодом; відсутню колекцію буде створено автоматично. Рядки з порожнім текстом або невідомою мовою пропускаються."
+    into_collection_html: "Завантажте CSV із рядком заголовка (стовпці: <code>front_text, back_text, source_language, target_language</code>). Кожен рядок додається до <strong>цієї</strong> колекції — будь-який стовпець <code>collection</code> ігнорується. Мови визначаються за назвою або кодом; рядки з порожнім текстом або невідомою мовою пропускаються."
     file_label: "Файл CSV"
     submit: "Імпортувати"
     back_to_all_cards: "← Назад до всіх карток"

@@ -37,6 +37,7 @@ it:
     none: "—"
     confirm_generic: "Sei sicuro?"
     confirm_delete_card: "Eliminare questa carta?"
+    confirm_delete_card_permanent: "Eliminare definitivamente questa carta per tutti?"
     add_to: "Aggiungi a…"
     add_to_collection: "Aggiungi alla mia raccolta"
     no_collections_yet: "Ancora nessuna raccolta"
@@ -77,6 +78,8 @@ it:
 
   cards:
     index_title: "Carte"
+    import_button: "Importa (CSV)"
+    export_button: "Esporta (CSV)"
     collection_cards: "Carte di %{name}"
     new_title: "Nuova carta"
     edit_title: "Modifica carta"
@@ -123,6 +126,7 @@ it:
   import:
     title: "Importa carte"
     instructions_html: "Carica un CSV con una riga di intestazione e queste colonne: <code>collection, front_text, back_text, source_language, target_language</code> (lo stesso formato dell'esportazione). Le lingue vengono riconosciute per nome o codice; una raccolta mancante viene creata automaticamente. Le righe con testo vuoto o lingua sconosciuta vengono saltate."
+    into_collection_html: "Carica un CSV con una riga di intestazione (colonne: <code>front_text, back_text, source_language, target_language</code>). Ogni riga viene aggiunta a <strong>questa</strong> raccolta; un'eventuale colonna <code>collection</code> viene ignorata. Le lingue vengono riconosciute per nome o codice; le righe con testo vuoto o lingua sconosciuta vengono saltate."
     file_label: "File CSV"
     submit: "Importa"
     back_to_all_cards: "← Torna a tutte le carte"

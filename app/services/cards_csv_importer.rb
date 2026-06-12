@@ -13,9 +13,11 @@ class CardsCsvImporter
     end
   end
 
-  def initialize(user, io)
+
+  def initialize(user, io, collection: nil)
     @user = user
     @io = io
+    @collection = collection
   end
 
   def call
@@ -31,7 +33,7 @@ class CardsCsvImporter
 
   private
 
-  attr_reader :user, :io
+  attr_reader :user, :io, :collection
 
   def import_row(row)
     front  = row["front_text"].to_s.strip
@@ -44,7 +46,7 @@ class CardsCsvImporter
       return
     end
 
-    collection = user.collections.find_or_create_by!(name: collection_name(row)) do |c|
+    collection = self.collection || user.collections.find_or_create_by!(name: collection_name(row)) do |c|
       c.language = source || user.native_language
     end
 

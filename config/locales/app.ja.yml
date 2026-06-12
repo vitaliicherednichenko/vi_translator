@@ -37,6 +37,7 @@ ja:
     none: "—"
     confirm_generic: "よろしいですか？"
     confirm_delete_card: "このカードを削除しますか？"
+    confirm_delete_card_permanent: "このカードを全員から完全に削除しますか？"
     add_to: "追加先…"
     add_to_collection: "マイコレクションに追加"
     no_collections_yet: "コレクションはまだありません"
@@ -77,6 +78,8 @@ ja:
 
   cards:
     index_title: "カード"
+    import_button: "インポート (CSV)"
+    export_button: "エクスポート (CSV)"
     collection_cards: "%{name} のカード"
     new_title: "新しいカード"
     edit_title: "カードを編集"
@@ -123,6 +126,7 @@ ja:
   import:
     title: "カードをインポート"
     instructions_html: "ヘッダー行と次の列を含む CSV をアップロードしてください: <code>collection, front_text, back_text, source_language, target_language</code>（エクスポートと同じ形式）。言語は名前またはコードで照合され、存在しないコレクションは自動的に作成されます。テキストが空、または不明な言語の行はスキップされます。"
+    into_collection_html: "ヘッダー行付きの CSV をアップロードしてください（列: <code>front_text, back_text, source_language, target_language</code>）。各行は<strong>この</strong>コレクションに追加され、<code>collection</code> 列があっても無視されます。言語は名前またはコードで照合され、テキストが空または不明な言語の行はスキップされます。"
     file_label: "CSV ファイル"
     submit: "インポート"
     back_to_all_cards: "← すべてのカードに戻る"

@@ -37,6 +37,7 @@ ru:
     none: "—"
     confirm_generic: "Вы уверены?"
     confirm_delete_card: "Удалить эту карточку?"
+    confirm_delete_card_permanent: "Удалить эту карточку навсегда для всех?"
     add_to: "Добавить в…"
     add_to_collection: "Добавить в мою коллекцию"
     no_collections_yet: "Пока нет коллекций"
@@ -77,6 +78,8 @@ ru:
 
   cards:
     index_title: "Карточки"
+    import_button: "Импорт (CSV)"
+    export_button: "Экспорт (CSV)"
     collection_cards: "Карточки: %{name}"
     new_title: "Новая карточка"
     edit_title: "Редактирование карточки"
@@ -123,6 +126,7 @@ ru:
   import:
     title: "Импорт карточек"
     instructions_html: "Загрузите CSV-файл со строкой заголовка и этими столбцами: <code>collection, front_text, back_text, source_language, target_language</code> (тот же формат, что и при экспорте). Языки определяются по названию или коду; отсутствующая коллекция создаётся автоматически. Строки с пустым текстом или неизвестным языком пропускаются."
+    into_collection_html: "Загрузите CSV со строкой заголовка (столбцы: <code>front_text, back_text, source_language, target_language</code>). Каждая строка добавляется в <strong>эту</strong> коллекцию — столбец <code>collection</code>, если он есть, игнорируется. Языки определяются по названию или коду; строки с пустым текстом или неизвестным языком пропускаются."
     file_label: "CSV-файл"
     submit: "Импортировать"
     back_to_all_cards: "← Назад ко всем карточкам"

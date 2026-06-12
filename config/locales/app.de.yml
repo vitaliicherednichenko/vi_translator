@@ -37,6 +37,7 @@ de:
     none: "—"
     confirm_generic: "Bist du sicher?"
     confirm_delete_card: "Diese Karte löschen?"
+    confirm_delete_card_permanent: "Diese Karte endgültig für alle löschen?"
     add_to: "Hinzufügen zu…"
     add_to_collection: "Zu meiner Sammlung hinzufügen"
     no_collections_yet: "Noch keine Sammlungen"
@@ -77,6 +78,8 @@ de:
 
   cards:
     index_title: "Karten"
+    import_button: "Importieren (CSV)"
+    export_button: "Exportieren (CSV)"
     collection_cards: "Karten von %{name}"
     new_title: "Neue Karte"
     edit_title: "Karte bearbeiten"
@@ -123,6 +126,7 @@ de:
   import:
     title: "Karten importieren"
     instructions_html: "Lade eine CSV-Datei mit einer Kopfzeile und diesen Spalten hoch: <code>collection, front_text, back_text, source_language, target_language</code> (dasselbe Format wie der Export). Sprachen werden anhand von Name oder Code zugeordnet; eine fehlende Sammlung wird für dich angelegt. Zeilen mit leerem Text oder unbekannter Sprache werden übersprungen."
+    into_collection_html: "Lade eine CSV-Datei mit einer Kopfzeile hoch (Spalten: <code>front_text, back_text, source_language, target_language</code>). Jede Zeile wird zu <strong>dieser</strong> Sammlung hinzugefügt – eine etwaige <code>collection</code>-Spalte wird ignoriert. Sprachen werden anhand von Name oder Code zugeordnet; Zeilen mit leerem Text oder unbekannter Sprache werden übersprungen."
     file_label: "CSV-Datei"
     submit: "Importieren"
     back_to_all_cards: "← Zurück zu allen Karten"

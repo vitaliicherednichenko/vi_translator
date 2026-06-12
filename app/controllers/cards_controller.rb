@@ -61,11 +61,53 @@ class CardsController < ApplicationController
   # DELETE /cards/1 or /cards/1.json
   def destroy
     authorize @card
-    @card.soft_delete!
+    hard_delete = params[:hard].present? && current_user&.admin?
+
+    if hard_delete
+      @card.destroy!
+    else
+      @card.soft_delete!
+    end
 
     respond_to do |format|
-      format.html { redirect_to collection_cards_path, notice: t("cards.flash.deleted"), status: :see_other }
+      format.html do
+        redirect_to(hard_delete ? cards_path : collection_cards_path,
+                    notice: t("cards.flash.deleted"), status: :see_other)
+      end
       format.json { head :no_content }
+    end
+  end
+
+  # GET /collections/:collection_id/cards/export
+  def export
+    authorize @collection, :show?
+    send_data CardsCsvExporter.new(current_user, collection: @collection).call,
+              filename: "#{@collection.name.parameterize.presence || 'collection'}-#{Date.current.iso8601}.csv",
+              type: "text/csv",
+              disposition: "attachment"
+  end
+
+  # GET /collections/:collection_id/cards/import
+  def import
+    authorize @collection, :update?
+  end
+
+  # POST /collections/:collection_id/cards/import
+  def run_import
+    authorize @collection, :update?
+
+    file = params[:file]
+    unless file.respond_to?(:read)
+      redirect_to import_collection_cards_path(@collection), alert: t("import.flash.no_file")
+      return
+    end
+
+    result = CardsCsvImporter.new(current_user, file, collection: @collection).call
+
+    if result.success?
+      redirect_to collection_cards_path(@collection), notice: result.summary
+    else
+      redirect_to import_collection_cards_path(@collection), alert: result.error
     end
   end
 

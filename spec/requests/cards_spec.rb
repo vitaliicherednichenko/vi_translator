@@ -20,6 +20,89 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
     end
   end
 
+  describe "GET /collections/:collection_id/cards/export" do
+    it "redirects a guest to login" do
+      get export_collection_cards_url(collection)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "exports only this collection's kept cards as CSV" do
+      create(:card, collection: collection, user: owner, front_text: "keep", back_text: "manten",
+                    source_language: en, target_language: es)
+      create(:card, collection: collection, user: owner, front_text: "trashed", back_text: "x",
+                    source_language: en, target_language: es, deleted_at: Time.current)
+      other_collection = create(:collection, user: owner, language: en)
+      create(:card, collection: other_collection, user: owner, front_text: "elsewhere", back_text: "y",
+                    source_language: en, target_language: es)
+
+      sign_in owner
+      get export_collection_cards_url(collection)
+
+      expect(response.media_type).to eq("text/csv")
+      expect(response.body).to include("keep")
+      expect(response.body).not_to include("trashed")    # soft-deleted excluded
+      expect(response.body).not_to include("elsewhere")  # other collection excluded
+    end
+  end
+
+  describe "card import into a collection" do
+    def csv_upload(content)
+      file = Tempfile.new([ "cards", ".csv" ])
+      file.write(content)
+      file.rewind
+      Rack::Test::UploadedFile.new(file.path, "text/csv")
+    end
+
+    let(:csv) do
+      <<~CSV
+        front_text,back_text,source_language,target_language
+        hello,hola,#{en.name},#{es.name}
+        dog,perro,#{en.code},#{es.code}
+      CSV
+    end
+
+    it "redirects a guest to login" do
+      get import_collection_cards_url(collection)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "forbids importing into a collection you don't own" do
+      sign_in other
+      post import_collection_cards_url(collection), params: { file: csv_upload(csv) }
+      expect(response).to redirect_to(root_path).or have_http_status(:found)
+      expect(collection.cards.where(front_text: "hello")).to be_empty
+    end
+
+    it "imports every row into this collection for the owner" do
+      sign_in owner
+      expect {
+        post import_collection_cards_url(collection), params: { file: csv_upload(csv) }
+      }.to change { collection.cards.count }.by(2)
+
+      expect(collection.cards.pluck(:front_text)).to include("hello", "dog")
+    end
+
+    it "ignores the CSV collection column and uses this collection" do
+      csv_with_other = <<~CSV
+        collection,front_text,back_text,source_language,target_language
+        Some Other Name,bird,pajaro,#{en.name},#{es.name}
+      CSV
+
+      sign_in owner
+      post import_collection_cards_url(collection), params: { file: csv_upload(csv_with_other) }
+
+      expect(collection.cards.pluck(:front_text)).to include("bird")
+      expect(Collection.where(name: "Some Other Name")).to be_empty
+    end
+
+    it "shows an alert when no file is given" do
+      sign_in owner
+      post import_collection_cards_url(collection)
+      expect(response).to redirect_to(import_collection_cards_path(collection))
+      expect(flash[:alert]).to be_present
+    end
+  end
+
   describe "GET /show" do
     it "renders for everyone" do
       get collection_card_url(collection, card)
