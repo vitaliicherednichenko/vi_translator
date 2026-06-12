@@ -41,7 +41,7 @@
           <% if policy(card).destroy? %>
             <%= button_to t("common.delete"), collection_card_path(@collection, card), method: :delete,
                           class: "btn btn-outline-danger btn-sm",
-                          form: { data: { turbo_confirm: t("common.confirm_delete_card") } } %>
+                          form: { data: { turbo_confirm: t("common.confirm_delete_card"), turbo_preserve_scroll: true } } %>
           <% end %>
         </div>
       </div>

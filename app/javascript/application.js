@@ -4,3 +4,5 @@ import "@hotwired/turbo-rails"
 import "bootstrap"
 
 import "controllers"
+
+import "preserve_scroll"
