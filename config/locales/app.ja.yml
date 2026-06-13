@@ -25,6 +25,7 @@ ja:
     native: "母語"
     learning: "学習中"
     language_menu: "言語"
+    how_to_use: "使い方"
 
   common:
     view: "表示"
@@ -37,6 +38,9 @@ ja:
     language: "言語"
     none: "—"
     back_to_top: "トップへ戻る"
+    search: "検索"
+    clear: "クリア"
+    no_search_results: '「%{query}」の結果がありません。'
     confirm_generic: "よろしいですか？"
     confirm_delete_card: "このカードを削除しますか？"
     confirm_delete_card_permanent: "このカードを全員から完全に削除しますか？"
@@ -231,3 +235,31 @@ ja:
         name: "名前"
         code: "コード"
         native_name: "現地名"
+
+  how_to_use:
+    title: "Vi Translator の使い方"
+    intro: "Vi Translator は単語カードで新しい言語を学ぶのに役立ちます。いくつかの簡単なステップで始められます。"
+    cta_sign_up: "アカウントを作成"
+    cta_collections: "コレクションを見る"
+    steps:
+      languages:
+        title: "言語を設定する"
+        body: "プロフィールを開き、母語と学びたい言語を選びます。アプリはこの組み合わせに合ったコレクションとカードを表示します。"
+      collection:
+        title: "コレクションを作成する"
+        body: "コレクションは「食べ物」や「動詞」などテーマごとのカードのまとまりです。コレクションのページから作成し、名前と言語を設定します。"
+      cards:
+        title: "カードを追加する"
+        body: "コレクションの中で、表に単語やフレーズ、裏にその訳を入れてカードを追加します。"
+      study:
+        title: "カードをめくって学ぶ"
+        body: "カードをクリックするとめくれて訳が表示されます。「裏面」ボタンでページ内のすべてのカードを一度にめくれます。"
+      browse:
+        title: "カードを探してコピーする"
+        body: "カードのページには全ユーザーのカードが表示されます。役立つカードを見つけたら、「追加先」ボタンで自分のコレクションにコピーできます。"
+      import:
+        title: "インポートとエクスポート（CSV）"
+        body: "「マイカード」メニューや任意のコレクションから CSV ファイルとしてカードを出し入れできます。バックアップや一括追加に便利です。"
+      search:
+        title: "いつでも検索"
+        body: "コレクションとカードのページの検索ボックスを使えば、デッキや特定の単語をすばやく見つけられます。"

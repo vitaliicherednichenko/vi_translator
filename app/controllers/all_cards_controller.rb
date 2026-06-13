@@ -4,8 +4,10 @@ class AllCardsController < ApplicationController
   PER_BLOCK = 16
 
   def index
+    @q = params[:q]
     scope = Card.between_user_languages(current_user)
             .original
+            .search(@q)
             .includes(:collection, :source_language, :target_language)
             .order(created_at: :desc)
 

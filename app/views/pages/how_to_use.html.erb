@@ -1,0 +1,30 @@
+<% content_for :title, t("how_to_use.title") %>
+
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+    <h1 class="mb-3"><%= t("how_to_use.title") %></h1>
+    <p class="lead text-muted mb-4"><%= t("how_to_use.intro") %></p>
+
+    <ol class="list-unstyled how-to-steps">
+      <% %w[languages collection cards study browse import search].each_with_index do |step, i| %>
+        <li class="d-flex gap-3 mb-4">
+          <span class="badge bg-navy rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                style="width: 2.5rem; height: 2.5rem; font-size: 1.1rem;">
+            <%= i + 1 %>
+          </span>
+          <div>
+            <h2 class="h5 mb-1"><%= t("how_to_use.steps.#{step}.title") %></h2>
+            <p class="mb-0 text-muted"><%= t("how_to_use.steps.#{step}.body") %></p>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+
+    <div class="d-flex flex-wrap gap-2 my-4">
+      <% unless user_signed_in? %>
+        <%= link_to t("how_to_use.cta_sign_up"), new_user_registration_path, class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to t("how_to_use.cta_collections"), collections_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+</div>

@@ -37,6 +37,9 @@ ko:
     language: "언어"
     none: "—"
     back_to_top: "맨 위로"
+    search: "검색"
+    clear: "지우기"
+    no_search_results: '"%{query}"에 대한 결과가 없습니다.'
     confirm_generic: "정말입니까?"
     confirm_delete_card: "이 카드를 삭제할까요?"
     confirm_delete_card_permanent: "이 카드를 모두에게서 영구적으로 삭제할까요?"

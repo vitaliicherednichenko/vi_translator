@@ -12,6 +12,13 @@ class Card < ApplicationRecord
   scope :deleted,  -> { where.not(deleted_at: nil) }
   scope :original, -> { where(copied_from_id: nil) }
 
+  scope :search, ->(query) {
+    q = query.to_s.strip
+    next all if q.blank?
+
+    where("front_text ILIKE :q OR back_text ILIKE :q", q: "%#{sanitize_sql_like(q)}%")
+  }
+
   scope :between_user_languages, ->(user) {
     native = user&.native_language_id
     preferred = user&.preferred_language_id

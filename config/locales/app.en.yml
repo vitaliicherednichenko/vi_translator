@@ -25,6 +25,7 @@ en:
     native: "Native"
     learning: "Learning"
     language_menu: "Language"
+    how_to_use: "How to Use"
 
   common:
     view: "View"
@@ -37,6 +38,9 @@ en:
     language: "Language"
     none: "—"
     back_to_top: "Back to top"
+    search: "Search"
+    clear: "Clear"
+    no_search_results: 'No results for "%{query}".'
     confirm_generic: "Are you sure?"
     confirm_delete_card: "Delete this card?"
     confirm_delete_card_permanent: "Permanently delete this card for everyone?"
@@ -231,3 +235,31 @@ en:
         name: "Name"
         code: "Code"
         native_name: "Native name"
+
+  how_to_use:
+    title: "How to Use Vi Translator"
+    intro: "Vi Translator helps you learn a new language with flashcards. Here is how to get started in a few simple steps."
+    cta_sign_up: "Create an account"
+    cta_collections: "Browse collections"
+    steps:
+      languages:
+        title: "Set your languages"
+        body: "Open your profile and choose your native language and the language you want to learn. The app then shows you the collections and cards that match this pair."
+      collection:
+        title: "Create a collection"
+        body: "A collection is a themed set of cards, such as Food or Verbs. Create one from the Collections page and give it a name and a language."
+      cards:
+        title: "Add cards"
+        body: "Inside a collection, add cards with a word or phrase on the front and its translation on the back."
+      study:
+        title: "Study by flipping cards"
+        body: "Click any card to flip it and reveal the translation. Use the Back side button to flip every card on the page at once."
+      browse:
+        title: "Explore and copy cards"
+        body: "The Cards page lists cards from every user. Found a useful one? Copy it into one of your own collections with the Add to button."
+      import:
+        title: "Import and export (CSV)"
+        body: "Move cards in and out as CSV files from the My Cards menu or from any collection — handy for backups or adding many cards at once."
+      search:
+        title: "Search anytime"
+        body: "Use the search box on the Collections and Cards pages to quickly find a deck or a specific word."

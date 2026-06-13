@@ -142,6 +142,21 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
     end
   end
 
+  describe "GET /index with ?q (search)" do
+    it "filters the collection's cards by front or back text" do
+      create(:card, collection: collection, user: owner, front_text: "perro", back_text: "dog",
+                    source_language: en, target_language: es)
+      create(:card, collection: collection, user: owner, front_text: "gato", back_text: "cat",
+                    source_language: en, target_language: es)
+
+      sign_in owner # native en, preferred es
+      get collection_cards_url(collection, q: "perr")
+
+      expect(response.body).to include("perro")
+      expect(response.body).not_to include("gato")
+    end
+  end
+
   describe "GET /show" do
     it "renders for everyone" do
       get collection_card_url(collection, card)

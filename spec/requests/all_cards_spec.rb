@@ -121,6 +121,24 @@ RSpec.describe "All cards pages", type: :request do
     end
   end
 
+  describe "search (?q)" do
+    it "filters cards by front or back text" do
+      c = create(:collection, language: en)
+      create(:card, collection: c, front_text: "perro", back_text: "dog", source_language: en, target_language: es)
+      create(:card, collection: c, front_text: "gato", back_text: "cat", source_language: en, target_language: es)
+
+      sign_in user # native en, preferred es
+
+      get cards_url(q: "perr")          # front-text match
+      expect(response.body).to include("perro")
+      expect(response.body).not_to include("gato")
+
+      get cards_url(q: "cat")           # back-text match
+      expect(response.body).to include("gato")
+      expect(response.body).not_to include("perro")
+    end
+  end
+
   describe "loading in blocks of 16" do
     before do
       20.times do |i|

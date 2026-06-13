@@ -25,6 +25,7 @@ pt:
     native: "Nativo"
     learning: "Aprendendo"
     language_menu: "Idioma"
+    how_to_use: "Como usar"
 
   common:
     view: "Ver"
@@ -37,6 +38,9 @@ pt:
     language: "Idioma"
     none: "—"
     back_to_top: "Voltar ao topo"
+    search: "Pesquisar"
+    clear: "Limpar"
+    no_search_results: 'Nenhum resultado para "%{query}".'
     confirm_generic: "Tem certeza?"
     confirm_delete_card: "Excluir este cartão?"
     confirm_delete_card_permanent: "Excluir permanentemente este cartão para todos?"
@@ -231,3 +235,31 @@ pt:
         name: "Nome"
         code: "Código"
         native_name: "Nome nativo"
+
+  how_to_use:
+    title: "Como usar o Vi Translator"
+    intro: "O Vi Translator ajuda você a aprender um novo idioma com cartões. Veja como começar em alguns passos simples."
+    cta_sign_up: "Criar uma conta"
+    cta_collections: "Ver coleções"
+    steps:
+      languages:
+        title: "Defina seus idiomas"
+        body: "Abra seu perfil e escolha seu idioma nativo e o idioma que deseja aprender. O aplicativo mostra então as coleções e os cartões que combinam com esse par."
+      collection:
+        title: "Crie uma coleção"
+        body: "Uma coleção é um conjunto temático de cartões, como Comida ou Verbos. Crie uma na página de Coleções e dê a ela um nome e um idioma."
+      cards:
+        title: "Adicione cartões"
+        body: "Dentro de uma coleção, adicione cartões com uma palavra ou frase na frente e sua tradução no verso."
+      study:
+        title: "Estude virando os cartões"
+        body: "Clique em qualquer cartão para virá-lo e ver a tradução. Use o botão Verso para virar todos os cartões da página de uma vez."
+      browse:
+        title: "Explore e copie cartões"
+        body: "A página de Cartões lista cartões de todos os usuários. Encontrou um útil? Copie-o para uma das suas coleções com o botão Adicionar a."
+      import:
+        title: "Importe e exporte (CSV)"
+        body: "Mova cartões como arquivos CSV pelo menu Meus cartões ou por qualquer coleção, prático para backups ou para adicionar muitos cartões de uma vez."
+      search:
+        title: "Pesquise quando quiser"
+        body: "Use a caixa de pesquisa nas páginas de Coleções e Cartões para encontrar rapidamente um baralho ou uma palavra específica."

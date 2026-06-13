@@ -25,6 +25,7 @@ fr:
     native: "Maternelle"
     learning: "Apprentissage"
     language_menu: "Langue"
+    how_to_use: "Comment utiliser"
 
   common:
     view: "Voir"
@@ -37,6 +38,9 @@ fr:
     language: "Langue"
     none: "—"
     back_to_top: "Haut de page"
+    search: "Rechercher"
+    clear: "Effacer"
+    no_search_results: 'Aucun résultat pour « %{query} ».'
     confirm_generic: "Êtes-vous sûr ?"
     confirm_delete_card: "Supprimer cette carte ?"
     confirm_delete_card_permanent: "Supprimer définitivement cette carte pour tout le monde ?"
@@ -231,3 +235,31 @@ fr:
         name: "Nom"
         code: "Code"
         native_name: "Nom natif"
+
+  how_to_use:
+    title: "Comment utiliser Vi Translator"
+    intro: "Vi Translator vous aide à apprendre une nouvelle langue avec des cartes mémoire. Voici comment commencer en quelques étapes simples."
+    cta_sign_up: "Créer un compte"
+    cta_collections: "Parcourir les collections"
+    steps:
+      languages:
+        title: "Définissez vos langues"
+        body: "Ouvrez votre profil et choisissez votre langue maternelle et la langue que vous voulez apprendre. L’application affiche alors les collections et les cartes correspondant à cette paire."
+      collection:
+        title: "Créez une collection"
+        body: "Une collection est un ensemble de cartes thématique, comme Nourriture ou Verbes. Créez-en une depuis la page Collections et donnez-lui un nom et une langue."
+      cards:
+        title: "Ajoutez des cartes"
+        body: "Dans une collection, ajoutez des cartes avec un mot ou une phrase au recto et sa traduction au verso."
+      study:
+        title: "Révisez en retournant les cartes"
+        body: "Cliquez sur une carte pour la retourner et révéler la traduction. Utilisez le bouton Verso pour retourner toutes les cartes de la page en une fois."
+      browse:
+        title: "Explorez et copiez des cartes"
+        body: "La page Cartes liste les cartes de tous les utilisateurs. Vous en trouvez une utile ? Copiez-la dans l’une de vos collections avec le bouton Ajouter à."
+      import:
+        title: "Importez et exportez (CSV)"
+        body: "Déplacez des cartes sous forme de fichiers CSV depuis le menu Mes cartes ou depuis n’importe quelle collection, pratique pour les sauvegardes ou pour ajouter de nombreuses cartes."
+      search:
+        title: "Recherchez à tout moment"
+        body: "Utilisez le champ de recherche sur les pages Collections et Cartes pour trouver rapidement un paquet ou un mot précis."

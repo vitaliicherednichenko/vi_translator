@@ -25,6 +25,7 @@ es:
     native: "Nativo"
     learning: "Aprendiendo"
     language_menu: "Idioma"
+    how_to_use: "Cómo usar"
 
   common:
     view: "Ver"
@@ -37,6 +38,9 @@ es:
     language: "Idioma"
     none: "—"
     back_to_top: "Volver arriba"
+    search: "Buscar"
+    clear: "Limpiar"
+    no_search_results: 'No hay resultados para "%{query}".'
     confirm_generic: "¿Estás seguro?"
     confirm_delete_card: "¿Eliminar esta tarjeta?"
     confirm_delete_card_permanent: "¿Eliminar esta tarjeta permanentemente para todos?"
@@ -231,3 +235,31 @@ es:
         name: "Nombre"
         code: "Código"
         native_name: "Nombre nativo"
+
+  how_to_use:
+    title: "Cómo usar Vi Translator"
+    intro: "Vi Translator te ayuda a aprender un nuevo idioma con tarjetas. Así puedes empezar en unos pocos pasos sencillos."
+    cta_sign_up: "Crear una cuenta"
+    cta_collections: "Ver colecciones"
+    steps:
+      languages:
+        title: "Configura tus idiomas"
+        body: "Abre tu perfil y elige tu idioma nativo y el idioma que quieres aprender. La aplicación te mostrará las colecciones y tarjetas que coinciden con ese par."
+      collection:
+        title: "Crea una colección"
+        body: "Una colección es un conjunto temático de tarjetas, como Comida o Verbos. Crea una desde la página de Colecciones y ponle un nombre y un idioma."
+      cards:
+        title: "Añade tarjetas"
+        body: "Dentro de una colección, añade tarjetas con una palabra o frase en el anverso y su traducción en el reverso."
+      study:
+        title: "Estudia girando las tarjetas"
+        body: "Haz clic en cualquier tarjeta para girarla y ver la traducción. Usa el botón Reverso para girar todas las tarjetas de la página a la vez."
+      browse:
+        title: "Explora y copia tarjetas"
+        body: "La página de Tarjetas muestra tarjetas de todos los usuarios. ¿Encontraste una útil? Cópiala en una de tus colecciones con el botón Añadir a."
+      import:
+        title: "Importa y exporta (CSV)"
+        body: "Mueve tarjetas como archivos CSV desde el menú Mis tarjetas o desde cualquier colección, ideal para copias de seguridad o para añadir muchas tarjetas a la vez."
+      search:
+        title: "Busca cuando quieras"
+        body: "Usa el cuadro de búsqueda en las páginas de Colecciones y Tarjetas para encontrar rápidamente un mazo o una palabra concreta."

@@ -1,9 +1,7 @@
-<%# Replaced in place after each block loads. Auto-loads the next 16 cards when
-    scrolled into view; the button is a manual fallback. %>
 <% if has_more %>
   <div id="load_more" class="text-center my-4"
        data-controller="infinite-scroll"
-       data-infinite-scroll-url-value="<%= cards_path(offset: next_offset) %>"
+       data-infinite-scroll-url-value="<%= cards_path(offset: next_offset, q: local_assigns[:q]) %>"
        data-infinite-scroll-auto-value="true">
     <button type="button" class="btn btn-outline-secondary" data-action="infinite-scroll#load">
       <%= t("all_cards.load_more") %>

@@ -37,6 +37,9 @@ zh:
     language: "语言"
     none: "—"
     back_to_top: "返回顶部"
+    search: "搜索"
+    clear: "清除"
+    no_search_results: '没有“%{query}”的结果。'
     confirm_generic: "确定吗？"
     confirm_delete_card: "删除这张卡片？"
     confirm_delete_card_permanent: "为所有人永久删除这张卡片？"

@@ -25,6 +25,7 @@ it:
     native: "Madre"
     learning: "Apprendimento"
     language_menu: "Lingua"
+    how_to_use: "Come usare"
 
   common:
     view: "Visualizza"
@@ -37,6 +38,9 @@ it:
     language: "Lingua"
     none: "—"
     back_to_top: "Torna su"
+    search: "Cerca"
+    clear: "Cancella"
+    no_search_results: 'Nessun risultato per "%{query}".'
     confirm_generic: "Sei sicuro?"
     confirm_delete_card: "Eliminare questa carta?"
     confirm_delete_card_permanent: "Eliminare definitivamente questa carta per tutti?"
@@ -231,3 +235,31 @@ it:
         name: "Nome"
         code: "Codice"
         native_name: "Nome nativo"
+
+  how_to_use:
+    title: "Come usare Vi Translator"
+    intro: "Vi Translator ti aiuta a imparare una nuova lingua con le flashcard. Ecco come iniziare in pochi semplici passaggi."
+    cta_sign_up: "Crea un account"
+    cta_collections: "Sfoglia le collezioni"
+    steps:
+      languages:
+        title: "Imposta le tue lingue"
+        body: "Apri il tuo profilo e scegli la tua lingua madre e la lingua che vuoi imparare. L’app ti mostrerà le collezioni e le carte che corrispondono a questa coppia."
+      collection:
+        title: "Crea una collezione"
+        body: "Una collezione è un insieme tematico di carte, come Cibo o Verbi. Creane una dalla pagina Collezioni e assegnale un nome e una lingua."
+      cards:
+        title: "Aggiungi carte"
+        body: "All’interno di una collezione, aggiungi carte con una parola o frase sul fronte e la sua traduzione sul retro."
+      study:
+        title: "Studia girando le carte"
+        body: "Fai clic su una carta per girarla e vedere la traduzione. Usa il pulsante Retro per girare tutte le carte della pagina contemporaneamente."
+      browse:
+        title: "Esplora e copia le carte"
+        body: "La pagina Carte elenca le carte di tutti gli utenti. Ne hai trovata una utile? Copiala in una delle tue collezioni con il pulsante Aggiungi a."
+      import:
+        title: "Importa ed esporta (CSV)"
+        body: "Sposta le carte come file CSV dal menu Le mie carte o da qualsiasi collezione, utile per i backup o per aggiungere molte carte insieme."
+      search:
+        title: "Cerca quando vuoi"
+        body: "Usa la casella di ricerca nelle pagine Collezioni e Carte per trovare rapidamente un mazzo o una parola specifica."

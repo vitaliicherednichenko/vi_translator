@@ -15,6 +15,19 @@ RSpec.describe "/collections", type: :request do
       expect(response).to be_successful
     end
 
+    it "filters by ?q against name and description" do
+      hit_name = create(:collection, user: owner, language: en, name: "Travel words")
+      hit_desc = create(:collection, user: owner, language: en, name: "Set A", description: "about travel")
+      miss = create(:collection, user: owner, language: en, name: "Cooking")
+
+      sign_in owner
+      get collections_url(q: "travel")
+
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(hit_name))
+      expect(response.body).to include(ActionView::RecordIdentifier.dom_id(hit_desc))
+      expect(response.body).not_to include(ActionView::RecordIdentifier.dom_id(miss))
+    end
+
     it "with ?mine=1 shows only the current user's own collections" do
       mine = create(:collection, user: owner, language: en, name: "mine-set")
       theirs = create(:collection, user: other, language: en, name: "their-set")

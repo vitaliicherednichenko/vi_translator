@@ -11,7 +11,18 @@
     <%= link_to t("collections.new_button"), new_collection_path, class: "btn btn-primary" %>
   <% end %>
 </div>
-
+<% if current_user %>
+  <%= form_with url: collections_path, method: :get, class: "mb-4" do %>
+    <%= hidden_field_tag(:mine, "1") if @mine %>
+    <div class="input-group">
+      <%= search_field_tag :q, @q, class: "form-control", placeholder: t("common.search"), "aria-label": t("common.search") %>
+      <%= submit_tag t("common.search"), class: "btn btn-outline-primary" %>
+      <% if @q.present? %>
+        <%= link_to t("common.clear"), collections_path(mine: (@mine ? "1" : nil)), class: "btn btn-outline-secondary" %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
 <% if @collections.any? %>
   <div id="collections" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
     <% @collections.each do |collection| %>
@@ -33,6 +44,8 @@
       </div>
     <% end %>
   </div>
+<% elsif @q.present? %>
+  <p class="text-muted"><%= t("common.no_search_results", query: @q) %></p>
 <% else %>
   <p class="text-muted">
     <%= t("collections.empty") %>

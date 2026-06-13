@@ -25,6 +25,7 @@ de:
     native: "Muttersprache"
     learning: "Lernsprache"
     language_menu: "Sprache"
+    how_to_use: "Anleitung"
 
   common:
     view: "Ansehen"
@@ -37,6 +38,9 @@ de:
     language: "Sprache"
     none: "—"
     back_to_top: "Nach oben"
+    search: "Suchen"
+    clear: "Zurücksetzen"
+    no_search_results: 'Keine Ergebnisse für „%{query}".'
     confirm_generic: "Bist du sicher?"
     confirm_delete_card: "Diese Karte löschen?"
     confirm_delete_card_permanent: "Diese Karte endgültig für alle löschen?"
@@ -231,3 +235,31 @@ de:
         name: "Name"
         code: "Code"
         native_name: "Einheimischer Name"
+
+  how_to_use:
+    title: "So verwenden Sie Vi Translator"
+    intro: "Vi Translator hilft Ihnen, mit Karteikarten eine neue Sprache zu lernen. So starten Sie in wenigen einfachen Schritten."
+    cta_sign_up: "Konto erstellen"
+    cta_collections: "Sammlungen durchsuchen"
+    steps:
+      languages:
+        title: "Sprachen festlegen"
+        body: "Öffnen Sie Ihr Profil und wählen Sie Ihre Muttersprache und die Sprache, die Sie lernen möchten. Die App zeigt Ihnen dann die Sammlungen und Karten, die zu diesem Paar passen."
+      collection:
+        title: "Sammlung erstellen"
+        body: "Eine Sammlung ist ein thematisches Kartenset, zum Beispiel Essen oder Verben. Erstellen Sie eine auf der Seite Sammlungen und geben Sie ihr einen Namen und eine Sprache."
+      cards:
+        title: "Karten hinzufügen"
+        body: "Fügen Sie innerhalb einer Sammlung Karten hinzu, mit einem Wort oder Satz auf der Vorderseite und der Übersetzung auf der Rückseite."
+      study:
+        title: "Lernen durch Umdrehen der Karten"
+        body: "Klicken Sie auf eine Karte, um sie umzudrehen und die Übersetzung anzuzeigen. Mit der Schaltfläche Rückseite drehen Sie alle Karten der Seite auf einmal um."
+      browse:
+        title: "Karten entdecken und kopieren"
+        body: "Die Seite Karten zeigt Karten aller Nutzer. Eine nützliche gefunden? Kopieren Sie sie mit der Schaltfläche Hinzufügen zu in eine Ihrer eigenen Sammlungen."
+      import:
+        title: "Importieren und exportieren (CSV)"
+        body: "Verschieben Sie Karten als CSV-Dateien über das Menü Meine Karten oder aus jeder Sammlung — praktisch für Backups oder das Hinzufügen vieler Karten."
+      search:
+        title: "Jederzeit suchen"
+        body: "Nutzen Sie das Suchfeld auf den Seiten Sammlungen und Karten, um schnell ein Set oder ein bestimmtes Wort zu finden."

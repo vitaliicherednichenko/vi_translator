@@ -7,7 +7,8 @@ class CardsController < ApplicationController
 
   # GET /cards or /cards.json
   def index
-    @cards = policy_scope(@collection.cards).between_user_languages(current_user)
+    @q = params[:q]
+    @cards = policy_scope(@collection.cards).between_user_languages(current_user).search(@q)
   end
 
   # GET /cards/1 or /cards/1.json

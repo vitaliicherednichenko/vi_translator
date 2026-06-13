@@ -37,6 +37,9 @@ hi:
     language: "भाषा"
     none: "—"
     back_to_top: "ऊपर जाएँ"
+    search: "खोजें"
+    clear: "साफ़ करें"
+    no_search_results: '"%{query}" के लिए कोई परिणाम नहीं।'
     confirm_generic: "क्या आप निश्चित हैं?"
     confirm_delete_card: "इस कार्ड को हटाएँ?"
     confirm_delete_card_permanent: "इस कार्ड को सभी के लिए स्थायी रूप से हटाएँ?"

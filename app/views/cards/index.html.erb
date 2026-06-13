@@ -19,6 +19,16 @@
   </div>
 </div>
 
+<%= form_with url: collection_cards_path(@collection), method: :get, class: "mb-4" do %>
+  <div class="input-group">
+    <%= search_field_tag :q, @q, class: "form-control", placeholder: t("common.search"), "aria-label": t("common.search") %>
+    <%= submit_tag t("common.search"), class: "btn btn-outline-primary" %>
+    <% if @q.present? %>
+      <%= link_to t("common.clear"), collection_cards_path(@collection), class: "btn btn-outline-secondary" %>
+    <% end %>
+  </div>
+<% end %>
+
 <% if @cards.any? %>
   <% manage = policy(@collection).update? %>
   <div data-controller="<%= 'bulk-select' if manage %>"
@@ -79,6 +89,8 @@
       <% end %>
     </div>
   </div>
+<% elsif @q.present? %>
+  <p class="text-muted"><%= t("common.no_search_results", query: @q) %></p>
 <% else %>
   <p class="text-muted">
     <%= t("cards.empty_in_collection") %>

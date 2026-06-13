@@ -37,6 +37,9 @@ ar:
     language: "اللغة"
     none: "—"
     back_to_top: "العودة إلى الأعلى"
+    search: "بحث"
+    clear: "مسح"
+    no_search_results: 'لا توجد نتائج لـ "%{query}".'
     confirm_generic: "هل أنت متأكد؟"
     confirm_delete_card: "حذف هذه البطاقة؟"
     confirm_delete_card_permanent: "حذف هذه البطاقة نهائيًا للجميع؟"

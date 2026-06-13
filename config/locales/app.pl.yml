@@ -25,6 +25,7 @@ pl:
     native: "Ojczysty"
     learning: "Uczę się"
     language_menu: "Język"
+    how_to_use: "Jak używać"
 
   common:
     view: "Zobacz"
@@ -37,6 +38,9 @@ pl:
     language: "Język"
     none: "—"
     back_to_top: "Do góry"
+    search: "Szukaj"
+    clear: "Wyczyść"
+    no_search_results: 'Brak wyników dla „%{query}".'
     confirm_generic: "Jesteś pewien?"
     confirm_delete_card: "Usunąć tę kartę?"
     confirm_delete_card_permanent: "Trwale usunąć tę kartę dla wszystkich?"
@@ -243,3 +247,31 @@ pl:
         name: "Nazwa"
         code: "Kod"
         native_name: "Nazwa rodzima"
+
+  how_to_use:
+    title: "Jak używać Vi Translator"
+    intro: "Vi Translator pomaga uczyć się nowego języka za pomocą fiszek. Oto jak zacząć w kilku prostych krokach."
+    cta_sign_up: "Załóż konto"
+    cta_collections: "Przeglądaj kolekcje"
+    steps:
+      languages:
+        title: "Ustaw swoje języki"
+        body: "Otwórz profil i wybierz język ojczysty oraz język, którego chcesz się uczyć. Aplikacja pokaże kolekcje i fiszki pasujące do tej pary."
+      collection:
+        title: "Utwórz kolekcję"
+        body: "Kolekcja to tematyczny zestaw fiszek, na przykład Jedzenie lub Czasowniki. Utwórz ją na stronie Kolekcje i nadaj jej nazwę oraz język."
+      cards:
+        title: "Dodaj fiszki"
+        body: "W kolekcji dodawaj fiszki ze słowem lub zwrotem z przodu i tłumaczeniem z tyłu."
+      study:
+        title: "Ucz się, obracając fiszki"
+        body: "Kliknij dowolną fiszkę, aby ją obrócić i zobaczyć tłumaczenie. Użyj przycisku Tył, aby obrócić wszystkie fiszki na stronie naraz."
+      browse:
+        title: "Przeglądaj i kopiuj fiszki"
+        body: "Strona Fiszki zawiera fiszki wszystkich użytkowników. Znalazłeś przydatną? Skopiuj ją do jednej ze swoich kolekcji przyciskiem Dodaj do."
+      import:
+        title: "Import i eksport (CSV)"
+        body: "Przenoś fiszki jako pliki CSV z menu Moje fiszki lub z dowolnej kolekcji — przydatne do kopii zapasowych lub dodawania wielu fiszek naraz."
+      search:
+        title: "Szukaj w każdej chwili"
+        body: "Użyj pola wyszukiwania na stronach Kolekcje i Fiszki, aby szybko znaleźć zestaw lub konkretne słowo."
