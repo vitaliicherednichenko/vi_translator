@@ -446,7 +446,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.3.3)
-  brakeman
+  brakeman (~> 8.0.4)
   bundler-audit
   csv
   dartsass-rails
