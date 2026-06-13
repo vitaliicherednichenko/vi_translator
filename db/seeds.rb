@@ -11,7 +11,8 @@ languages = [
   { name: "Korean", code: "ko", native_name: "한국어" },
   { name: "Arabic", code: "ar", native_name: "العربية" },
   { name: "Hindi", code: "hi", native_name: "हिन्दी" },
-  { name: "Ukrainian", code: "uk", native_name: "Українська" }
+  { name: "Ukrainian", code: "uk", native_name: "Українська" },
+  { name: "Polish", code: "pl", native_name: "Polski" }
 ]
 
 languages.each do |attrs|

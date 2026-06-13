@@ -23,16 +23,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%= render "shared/nav" %>
-    <div class="container">
+    <main class="container flex-grow-1">
       <% if flash[:alert] %>
         <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
       <% end %>
       <%= yield %>
-    </div>
+    </main>
 
-    <footer class="bg-light border-top mt-5 py-4">
+    <footer class="bg-light border-top py-4">
       <div class="container text-center text-muted small">
         Made with <span class="text-danger">❤</span> by
         <%= link_to "Vitalii Cherednichenko", "https://www.linkedin.com/in/vitalii-cherednichenko",
