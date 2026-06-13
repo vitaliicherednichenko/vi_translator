@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Builds themed vocabulary collections for the language pairs
 #   uk -> pl, pl -> en, pl -> es, en -> es
