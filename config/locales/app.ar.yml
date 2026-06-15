@@ -236,6 +236,23 @@ ar:
         code: "الرمز"
         native_name: "الاسم المحلي"
 
+  practice:
+    button: "تدرّب على الكتابة"
+    title: "%{name} — تدريب الكتابة"
+    back: "العودة إلى البطاقات"
+    progress_label: "التقدّم"
+    score_label: "النتيجة"
+    translate_to: "اكتب الترجمة بـ"
+    placeholder: "اكتب إجابتك…"
+    check: "تحقّق"
+    show_answer: "إظهار الإجابة"
+    skip: "تخطٍّ"
+    correct: "صحيح!"
+    answer_was: "الإجابة:"
+    finished: "لقد أكملت جميع البطاقات!"
+    restart: "إعادة"
+    empty: "لا توجد بطاقات للتدرّب هنا بعد."
+
   how_to_use:
     title: "كيفية استخدام Vi Translator"
     intro: "يساعدك Vi Translator على تعلم لغة جديدة باستخدام البطاقات التعليمية. إليك كيفية البدء في بضع خطوات بسيطة."

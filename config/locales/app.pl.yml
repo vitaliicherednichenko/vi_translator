@@ -248,6 +248,23 @@ pl:
         code: "Kod"
         native_name: "Nazwa rodzima"
 
+  practice:
+    button: "Ćwicz pisanie"
+    title: "%{name} — Ćwiczenie pisania"
+    back: "Powrót do fiszek"
+    progress_label: "Postęp"
+    score_label: "Wynik"
+    translate_to: "Napisz tłumaczenie w języku"
+    placeholder: "Wpisz swoją odpowiedź…"
+    check: "Sprawdź"
+    show_answer: "Pokaż odpowiedź"
+    skip: "Pomiń"
+    correct: "Poprawnie!"
+    answer_was: "Odpowiedź:"
+    finished: "Ukończyłeś wszystkie fiszki!"
+    restart: "Zacznij od nowa"
+    empty: "Nie ma tu jeszcze fiszek do ćwiczenia."
+
   how_to_use:
     title: "Jak używać Vi Translator"
     intro: "Vi Translator pomaga uczyć się nowego języka za pomocą fiszek. Oto jak zacząć w kilku prostych krokach."

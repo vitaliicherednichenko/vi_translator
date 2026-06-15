@@ -248,6 +248,23 @@ uk:
         code: "Код"
         native_name: "Рідна назва"
 
+  practice:
+    button: "Тренування письма"
+    title: "%{name} — Тренування письма"
+    back: "Назад до карток"
+    progress_label: "Прогрес"
+    score_label: "Рахунок"
+    translate_to: "Напишіть переклад на"
+    placeholder: "Введіть вашу відповідь…"
+    check: "Перевірити"
+    show_answer: "Показати відповідь"
+    skip: "Пропустити"
+    correct: "Правильно!"
+    answer_was: "Відповідь:"
+    finished: "Ви пройшли всі картки!"
+    restart: "Спочатку"
+    empty: "Тут поки немає карток для тренування."
+
   how_to_use:
     title: "Як користуватися Vi Translator"
     intro: "Vi Translator допомагає вивчати нову мову за допомогою карток. Ось як почати за кілька простих кроків."

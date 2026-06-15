@@ -236,6 +236,23 @@ fr:
         code: "Code"
         native_name: "Nom natif"
 
+  practice:
+    button: "S’entraîner à l’écrit"
+    title: "%{name} — Entraînement à l’écrit"
+    back: "Retour aux cartes"
+    progress_label: "Progression"
+    score_label: "Score"
+    translate_to: "Écrivez la traduction en"
+    placeholder: "Saisissez votre réponse…"
+    check: "Vérifier"
+    show_answer: "Afficher la réponse"
+    skip: "Passer"
+    correct: "Correct !"
+    answer_was: "Réponse :"
+    finished: "Vous avez terminé toutes les cartes !"
+    restart: "Recommencer"
+    empty: "Il n’y a pas encore de cartes à pratiquer ici."
+
   how_to_use:
     title: "Comment utiliser Vi Translator"
     intro: "Vi Translator vous aide à apprendre une nouvelle langue avec des cartes mémoire. Voici comment commencer en quelques étapes simples."

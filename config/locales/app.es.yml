@@ -236,6 +236,23 @@ es:
         code: "Código"
         native_name: "Nombre nativo"
 
+  practice:
+    button: "Practicar escritura"
+    title: "%{name} — Práctica de escritura"
+    back: "Volver a las tarjetas"
+    progress_label: "Progreso"
+    score_label: "Puntuación"
+    translate_to: "Escribe la traducción en"
+    placeholder: "Escribe tu respuesta…"
+    check: "Comprobar"
+    show_answer: "Mostrar respuesta"
+    skip: "Saltar"
+    correct: "¡Correcto!"
+    answer_was: "Respuesta:"
+    finished: "¡Has terminado todas las tarjetas!"
+    restart: "Reiniciar"
+    empty: "Aún no hay tarjetas para practicar aquí."
+
   how_to_use:
     title: "Cómo usar Vi Translator"
     intro: "Vi Translator te ayuda a aprender un nuevo idioma con tarjetas. Así puedes empezar en unos pocos pasos sencillos."

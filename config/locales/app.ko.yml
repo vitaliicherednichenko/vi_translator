@@ -236,6 +236,23 @@ ko:
         code: "코드"
         native_name: "현지 이름"
 
+  practice:
+    button: "쓰기 연습"
+    title: "%{name} — 쓰기 연습"
+    back: "카드로 돌아가기"
+    progress_label: "진행도"
+    score_label: "점수"
+    translate_to: "다음 언어로 번역을 쓰세요:"
+    placeholder: "답을 입력하세요…"
+    check: "확인"
+    show_answer: "정답 보기"
+    skip: "건너뛰기"
+    correct: "정답입니다!"
+    answer_was: "정답:"
+    finished: "모든 카드를 끝냈습니다!"
+    restart: "다시 시작"
+    empty: "아직 연습할 카드가 없습니다."
+
   how_to_use:
     title: "Vi Translator 사용 방법"
     intro: "Vi Translator는 플래시카드로 새로운 언어를 배우도록 도와줍니다. 몇 가지 간단한 단계로 시작하세요."

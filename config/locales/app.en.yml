@@ -236,6 +236,23 @@ en:
         code: "Code"
         native_name: "Native name"
 
+  practice:
+    button: "Practice writing"
+    title: "%{name} — Writing practice"
+    back: "Back to cards"
+    progress_label: "Progress"
+    score_label: "Score"
+    translate_to: "Write the translation in"
+    placeholder: "Type your answer…"
+    check: "Check"
+    show_answer: "Show answer"
+    skip: "Skip"
+    correct: "Correct!"
+    answer_was: "Answer:"
+    finished: "You finished all the cards!"
+    restart: "Restart"
+    empty: "There are no cards to practice here yet."
+
   how_to_use:
     title: "How to Use Vi Translator"
     intro: "Vi Translator helps you learn a new language with flashcards. Here is how to get started in a few simple steps."

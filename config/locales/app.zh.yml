@@ -236,6 +236,23 @@ zh:
         code: "代码"
         native_name: "本地名称"
 
+  practice:
+    button: "书写练习"
+    title: "%{name} — 书写练习"
+    back: "返回卡片"
+    progress_label: "进度"
+    score_label: "得分"
+    translate_to: "用以下语言写出翻译："
+    placeholder: "输入你的答案…"
+    check: "检查"
+    show_answer: "显示答案"
+    skip: "跳过"
+    correct: "正确！"
+    answer_was: "答案："
+    finished: "你完成了所有卡片！"
+    restart: "重新开始"
+    empty: "这里还没有可练习的卡片。"
+
   how_to_use:
     title: "如何使用 Vi Translator"
     intro: "Vi Translator 通过单词卡帮助你学习新语言。只需几个简单步骤即可开始。"

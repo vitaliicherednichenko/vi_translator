@@ -236,6 +236,23 @@ de:
         code: "Code"
         native_name: "Einheimischer Name"
 
+  practice:
+    button: "Schreiben üben"
+    title: "%{name} — Schreibübung"
+    back: "Zurück zu den Karten"
+    progress_label: "Fortschritt"
+    score_label: "Punktzahl"
+    translate_to: "Schreibe die Übersetzung auf"
+    placeholder: "Gib deine Antwort ein…"
+    check: "Prüfen"
+    show_answer: "Antwort anzeigen"
+    skip: "Überspringen"
+    correct: "Richtig!"
+    answer_was: "Antwort:"
+    finished: "Du hast alle Karten geschafft!"
+    restart: "Neu starten"
+    empty: "Hier gibt es noch keine Karten zum Üben."
+
   how_to_use:
     title: "So verwenden Sie Vi Translator"
     intro: "Vi Translator hilft Ihnen, mit Karteikarten eine neue Sprache zu lernen. So starten Sie in wenigen einfachen Schritten."

@@ -236,6 +236,23 @@ it:
         code: "Codice"
         native_name: "Nome nativo"
 
+  practice:
+    button: "Esercizio di scrittura"
+    title: "%{name} — Esercizio di scrittura"
+    back: "Torna alle carte"
+    progress_label: "Avanzamento"
+    score_label: "Punteggio"
+    translate_to: "Scrivi la traduzione in"
+    placeholder: "Scrivi la tua risposta…"
+    check: "Verifica"
+    show_answer: "Mostra la risposta"
+    skip: "Salta"
+    correct: "Corretto!"
+    answer_was: "Risposta:"
+    finished: "Hai completato tutte le carte!"
+    restart: "Ricomincia"
+    empty: "Non ci sono ancora carte da esercitare qui."
+
   how_to_use:
     title: "Come usare Vi Translator"
     intro: "Vi Translator ti aiuta a imparare una nuova lingua con le flashcard. Ecco come iniziare in pochi semplici passaggi."

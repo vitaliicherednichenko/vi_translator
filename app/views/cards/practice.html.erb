@@ -1,0 +1,76 @@
+<% content_for :title, t("practice.title", name: @collection.name) %>
+
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+      <h1 class="h4 mb-0"><%= t("practice.title", name: @collection.name) %></h1>
+      <%= link_to t("practice.back"), collection_cards_path(@collection), class: "btn btn-outline-secondary btn-sm flex-shrink-0" %>
+    </div>
+
+    <% if @cards.any? %>
+      <% cards_data = @cards.map { |c|
+           { front: c.front_text, back: c.back_text,
+             src: c.source_language&.code, tgt: c.target_language&.code } } %>
+
+      <div data-controller="writing-game"
+           data-writing-game-cards-value="<%= cards_data.to_json %>"
+           data-writing-game-correct-text-value="<%= t('practice.correct') %>"
+           data-writing-game-answer-prefix-value="<%= t('practice.answer_was') %>">
+
+        <div data-writing-game-target="play">
+          <div class="d-flex justify-content-between text-muted small mb-2">
+            <span><%= t("practice.progress_label") %>: <span data-writing-game-target="progress">0</span></span>
+            <span><%= t("practice.score_label") %>: <span data-writing-game-target="score">0</span></span>
+          </div>
+
+          <div class="card shadow-sm mb-3 game-card" data-writing-game-target="card">
+            <div class="card-body text-center py-5">
+              <span class="badge bg-secondary mb-3" data-writing-game-target="srcBadge"></span>
+              <div class="fs-1 fw-semibold mb-2" data-writing-game-target="prompt"></div>
+              <div class="text-muted small">
+                <%= t("practice.translate_to") %>
+                <span class="badge bg-primary" data-writing-game-target="tgtBadge"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group input-group-lg">
+            <%= text_field_tag :answer, nil,
+                  class: "form-control",
+                  autocomplete: "off", autocapitalize: "off", autocorrect: "off", spellcheck: "false",
+                  placeholder: t("practice.placeholder"),
+                  data: { "writing-game-target": "input", action: "keydown->writing-game#onKey" } %>
+            <button type="button" class="btn btn-primary" data-action="writing-game#check">
+              <%= t("practice.check") %>
+            </button>
+          </div>
+          <div class="form-text mt-2" data-writing-game-target="feedback"></div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-action="writing-game#reveal">
+              <%= t("practice.show_answer") %>
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-action="writing-game#skip">
+              <%= t("practice.skip") %>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center py-5" data-writing-game-target="done" hidden>
+          <div class="display-5 mb-2">🎉</div>
+          <p class="fs-5 mb-1"><%= t("practice.finished") %></p>
+          <p class="text-muted">
+            <%= t("practice.score_label") %>:
+            <span data-writing-game-target="doneScore">0</span> /
+            <span data-writing-game-target="doneCount">0</span>
+          </p>
+          <button type="button" class="btn btn-primary" data-action="writing-game#restart">
+            <%= t("practice.restart") %>
+          </button>
+        </div>
+      </div>
+    <% else %>
+      <p class="text-muted"><%= t("practice.empty") %></p>
+    <% end %>
+  </div>
+</div>

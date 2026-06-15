@@ -236,6 +236,23 @@ hi:
         code: "कोड"
         native_name: "स्थानीय नाम"
 
+  practice:
+    button: "लिखाई अभ्यास"
+    title: "%{name} — लिखाई अभ्यास"
+    back: "कार्ड पर वापस जाएँ"
+    progress_label: "प्रगति"
+    score_label: "स्कोर"
+    translate_to: "इस भाषा में अनुवाद लिखें:"
+    placeholder: "अपना उत्तर लिखें…"
+    check: "जाँचें"
+    show_answer: "उत्तर दिखाएँ"
+    skip: "छोड़ें"
+    correct: "सही!"
+    answer_was: "उत्तर:"
+    finished: "आपने सभी कार्ड पूरे कर लिए!"
+    restart: "फिर से शुरू करें"
+    empty: "यहाँ अभ्यास के लिए अभी कोई कार्ड नहीं है।"
+
   how_to_use:
     title: "Vi Translator का उपयोग कैसे करें"
     intro: "Vi Translator आपको फ़्लैशकार्ड के ज़रिए नई भाषा सीखने में मदद करता है। कुछ आसान चरणों में शुरुआत करें।"

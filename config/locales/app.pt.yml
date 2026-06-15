@@ -236,6 +236,23 @@ pt:
         code: "Código"
         native_name: "Nome nativo"
 
+  practice:
+    button: "Praticar escrita"
+    title: "%{name} — Prática de escrita"
+    back: "Voltar aos cartões"
+    progress_label: "Progresso"
+    score_label: "Pontuação"
+    translate_to: "Escreva a tradução em"
+    placeholder: "Digite sua resposta…"
+    check: "Verificar"
+    show_answer: "Mostrar resposta"
+    skip: "Pular"
+    correct: "Correto!"
+    answer_was: "Resposta:"
+    finished: "Você concluiu todos os cartões!"
+    restart: "Reiniciar"
+    empty: "Ainda não há cartões para praticar aqui."
+
   how_to_use:
     title: "Como usar o Vi Translator"
     intro: "O Vi Translator ajuda você a aprender um novo idioma com cartões. Veja como começar em alguns passos simples."

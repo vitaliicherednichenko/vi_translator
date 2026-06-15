@@ -236,6 +236,23 @@ ja:
         code: "コード"
         native_name: "現地名"
 
+  practice:
+    button: "書く練習"
+    title: "%{name} — 書く練習"
+    back: "カードに戻る"
+    progress_label: "進捗"
+    score_label: "スコア"
+    translate_to: "次の言語で訳を書いてください："
+    placeholder: "答えを入力…"
+    check: "確認"
+    show_answer: "答えを見る"
+    skip: "スキップ"
+    correct: "正解！"
+    answer_was: "答え："
+    finished: "すべてのカードを終えました！"
+    restart: "もう一度"
+    empty: "ここにはまだ練習できるカードがありません。"
+
   how_to_use:
     title: "Vi Translator の使い方"
     intro: "Vi Translator は単語カードで新しい言語を学ぶのに役立ちます。いくつかの簡単なステップで始められます。"

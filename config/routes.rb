@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :cards do
       member { patch :restore }
       collection do
+        get    "practice", to: "cards#practice"
         get    "export", to: "cards#export"
         get    "import", to: "cards#import"
         post   "import", to: "cards#run_import"

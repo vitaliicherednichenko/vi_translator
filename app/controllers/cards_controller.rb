@@ -2,13 +2,20 @@ class CardsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_collection
   before_action :set_card, only: %i[ show edit update destroy restore ]
-  after_action :verify_authorized, except: :index
-  after_action :verify_policy_scoped, only: :index
+  after_action :verify_authorized, except: %i[index practice]
+  after_action :verify_policy_scoped, only: %i[index practice]
 
   # GET /cards or /cards.json
   def index
     @q = params[:q]
     @cards = policy_scope(@collection.cards).between_user_languages(current_user).search(@q)
+  end
+
+  # GET /collections/:collection_id/cards/practice
+  # Writing-practice game: the cards are rendered into the page and a Stimulus
+  # controller drives the quiz entirely client-side (one card at a time, shuffled).
+  def practice
+    @cards = policy_scope(@collection.cards).between_user_languages(current_user)
   end
 
   # GET /cards/1 or /cards/1.json

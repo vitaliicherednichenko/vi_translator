@@ -242,6 +242,23 @@ ru:
         code: "Код"
         native_name: "Родное название"
 
+  practice:
+    button: "Тренировка письма"
+    title: "%{name} — Тренировка письма"
+    back: "Назад к карточкам"
+    progress_label: "Прогресс"
+    score_label: "Счёт"
+    translate_to: "Напишите перевод на"
+    placeholder: "Введите ваш ответ…"
+    check: "Проверить"
+    show_answer: "Показать ответ"
+    skip: "Пропустить"
+    correct: "Правильно!"
+    answer_was: "Ответ:"
+    finished: "Вы прошли все карточки!"
+    restart: "Заново"
+    empty: "Здесь пока нет карточек для тренировки."
+
   how_to_use:
     title: "Как пользоваться Vi Translator"
     intro: "Vi Translator помогает учить новый язык с помощью карточек. Вот как начать за несколько простых шагов."

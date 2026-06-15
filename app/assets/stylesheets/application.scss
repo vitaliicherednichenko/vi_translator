@@ -85,3 +85,63 @@ body {
 .bg-navy {
   background-color: #14213d !important;
 }
+
+// Writing-game card: slides off to the right and turns green on a correct answer.
+.game-card {
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+// Wrong answer: hold a red background for ~2s (no slide), then fade back.
+.game-card.is-wrong {
+  background-color: #f8d7da; // danger-subtle
+  border-color: #dc3545 !important;
+}
+
+.game-card.is-correct {
+  animation: game-card-correct 0.55s ease forwards;
+  border-color: #198754 !important; // bootstrap success
+}
+
+.game-card.is-skipped {
+  animation: game-card-skipped 0.55s ease forwards;
+  border-color: #dc3545 !important; // bootstrap danger
+}
+
+@keyframes game-card-correct {
+  0% {
+    transform: translateX(0);
+    background-color: #d1e7dd; // success-subtle
+  }
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+    background-color: #198754; // success
+  }
+}
+
+@keyframes game-card-skipped {
+  0% {
+    transform: translateX(0);
+    background-color: #f8d7da; // danger-subtle
+  }
+  100% {
+    transform: translateX(-130%);
+    opacity: 0;
+    background-color: #dc3545; // danger
+  }
+}
+
+// Honour reduced-motion: just change colour, no slide.
+@media (prefers-reduced-motion: reduce) {
+  .game-card.is-correct {
+    animation: none;
+    background-color: #d1e7dd;
+    border-color: #198754 !important;
+  }
+
+  .game-card.is-skipped {
+    animation: none;
+    background-color: #f8d7da;
+    border-color: #dc3545 !important;
+  }
+}

@@ -157,6 +157,34 @@ RSpec.describe "/collections/:collection_id/cards", type: :request do
     end
   end
 
+  describe "GET /collections/:collection_id/cards/practice" do
+    it "redirects a guest to login" do
+      get practice_collection_cards_url(collection)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "renders the writing game for a signed-in user" do
+      sign_in owner # native en, preferred es
+      get practice_collection_cards_url(collection)
+      expect(response).to be_successful
+      expect(response.body).to include('data-controller="writing-game"')
+    end
+
+    it "only includes cards between the user's languages" do
+      fr = create(:language)
+      create(:card, collection: collection, user: owner, front_text: "perro", back_text: "dog",
+                    source_language: es, target_language: en) # es<->en pair: included
+      create(:card, collection: collection, user: owner, front_text: "bonjour", back_text: "salut",
+                    source_language: fr, target_language: en) # fr not in pair: excluded
+
+      sign_in owner
+      get practice_collection_cards_url(collection)
+
+      expect(response.body).to include("perro")
+      expect(response.body).not_to include("bonjour")
+    end
+  end
+
   describe "GET /show" do
     it "renders for everyone" do
       get collection_card_url(collection, card)
