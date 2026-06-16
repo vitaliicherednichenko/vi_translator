@@ -21,6 +21,10 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :application, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <% if Rails.env.production? %>
+      <%= javascript_include_tag "https://www.googletagmanager.com/gtag/js?id=G-RC8KCZ01J4", async: true %>
+      <meta name="google-analytics-id" content="G-RC8KCZ01J4">
+    <% end %>
   </head>
 
   <body class="d-flex flex-column min-vh-100">
