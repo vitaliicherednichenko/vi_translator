@@ -4,6 +4,13 @@ A flashcard app for language learning, built with Rails 8. Organize translation
 cards into collections and study them with click-to-flip flashcards — the front
 shows a word or phrase, the back reveals its translation.
 
+Practice:
+<img width="1371" height="725" alt="practice" src="https://github.com/user-attachments/assets/ac10d14f-5665-42d5-8826-04bc8e6a5d02" />
+
+Cards:
+<img width="1371" height="724" alt="cards" src="https://github.com/user-attachments/assets/373c9f20-1a5f-4cfa-bb1e-1ccd78cddb8e" />
+
+
 ## Features
 
 - **Collections** of flashcards, each tied to a language
